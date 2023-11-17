@@ -1,0 +1,9 @@
+#
+# This file contains the cache rules, and can be customized.
+#
+# By default, it includes the default rules.
+#
+
+$include "./default_rules.any"
+
+/0002 { /type "deny" /glob "/content/vida/in/en/sf-master/jcr:content.nearbybranches.*.json" }

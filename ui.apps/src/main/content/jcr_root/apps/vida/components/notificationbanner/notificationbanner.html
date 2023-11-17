@@ -1,0 +1,29 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Notification Banner Component"></div>
+<section class="vida-banner-notification" data-component="banner-notification">
+  <div class="vida-banner-notification__wrapper">
+    <div class="vida-banner-notification__container vida-container">
+      <div class="vida-banner-notification__title" role="heading" aria-level="3">${properties.bannertext}</div>
+	  <sly data-sly-test="${properties.tickerdate}">
+		  <div class="vida-banner-notification__timer-title" role="heading" aria-level="3">${properties.tickerbannertext @context = 'html'}</div>
+		  <div class="vida-banner-notification__timer" data-time="${'MMM d, YYYY HH:mm:ss' @ format=properties.tickerdate}">
+			  <div class="vida-banner-notification__timer-text">
+				<p class="vida-banner-notification__timer-day-text"></p>
+				<p>${properties.dayslabel}</p>
+			  </div>
+			  <div class="vida-banner-notification__timer-text">
+				<p class="vida-banner-notification__timer-hrs-text"></p>
+				<p>${properties.hourslabel}</p>
+			  </div>
+			  <div class="vida-banner-notification__timer-text">
+				<p class="vida-banner-notification__timer-mins-text"></p>
+				<p>${properties.minuteslabel}</p>
+			  </div>
+			  <div class="vida-banner-notification__timer-text">
+				<p class="vida-banner-notification__timer-secs-text"></p>
+				<p>${properties.secondslabel}</p>
+			  </div>
+		</div>
+	 </sly>
+    </div>
+  </div>
+</section>

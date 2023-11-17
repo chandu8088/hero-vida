@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Quick Purchase</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Quick-Purchase" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+    <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async>
+    </script>
+</head>
+
+<body>
+  <header></header>
+
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "quickPurchaseConfig": {
+        "scooterColorCheck": {
+					
+						"title": "Are you sure with the Scooter color",
+						"description": "Are you sure you want to select this color -",
+						"yesBtn": {
+							"label": "Yes"
+						},
+						"noBtn": {
+							"label": "No"
+						}
+				},
+        "submitWaitingMessage": "We are processing your order, it will take a couple of seconds to complete , please do not refresh ",
+        "otpConfig": {
+          "verifyOTPtitle": "Verify OTP",
+          "verifyMobileNumbertitle": "Verify Mobile Number",
+          "verifyEmailtitle": "Verify Email",
+          "message": "We've send verification code to",
+          "emailVerifyMessage": {
+            "messageOne": "We will send a verification code to ",
+            "messageTwo": "You can do this step later as well."
+          },
+          "changeNumberLabel": "Change Number/Email",
+          "otpLabel": "OTP",
+          "resendLabel": "Resend",
+          "timer": {
+            "minutes": 0,
+            "seconds": 05
+          },
+          "verifyBtn": {
+            "label": "Verify"
+          },
+          "emailVerifyBtns": {
+            "sendOTPLabel": "Send Verification Code",
+            "cancelEmailVerifyLabel": "I’ll do it later"
+          },
+          "validationRules": {
+            required: {
+              message: "Please enter OTP"
+            }
+          }
+        },
+        "title": "Purchase for just Rs. 200499",
+        "errorMessagesSkipped": ["Customer Already Exists!"],
+        "cityField": {
+          "label": "City",
+          "validationRules": {
+            "required": {
+              "message": "City is required."
+            }
+          }
+        },
+        "notificationField": {
+            "label": "Receive notifications on Whatsapp",
+            "message": "Don’t worry we won’t spam you with any offers, promotions or messages."
+          },
+        "stateField": {
+					"id": "state",
+					"label": "State",
+					"placeholder": "Enter your State",
+					"validationRules": {
+						"required": {
+							"message": "State is required."
+						}
+					}
+				},
+        "genericConfig": {
+          "stepLabel": "Step",
+          "nonDealerSelectedError": "Please select a dealer",
+          "noDealerAvailableError": "No Dealers found",
+          "dealersLoadingMsg": "Loading Dealers..."
+        },
+        "firstNameField": {
+          "label": "First Name",
+          "placeholder": "Enter First Name",
+          "validationRules": {
+            "required": {
+              "message": "First Name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "First name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid first name."
+            }
+          }
+        },
+        "lastNameField": {
+          "label": "Last Name",
+          "placeholder": "Enter Last Name",
+          "validationRules": {
+            "required": {
+              "message": "Last name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "Last name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid last name."
+            }
+          }
+        },
+        "mobileField": {
+          "id": "mobile",
+          "label": "Mobile Number",
+          "placeholder": "Enter Mobile Number",
+          "validationRules": {
+            "required": {
+              "message": "Mobile number is required."
+            },
+            "minLength": {
+              "value": 10,
+              "message": "Minimum 10 digit required."
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "Maximum 10 digit required."
+            },
+            "customValidation": {
+              "message": "Please enter valid mobile number."
+            }
+          }
+        },
+        "emailField": {
+          "label": "Email ID",
+          "placeholder": "Enter Email",
+          "infoLabel": "Mention active account, this will be used to send important mails",
+          "validationRules": {
+            "required": {
+              "message": "Email is required."
+            },
+            "customValidation": {
+              "message": "Please enter valid email address."
+            }
+          }
+        },
+        "agreeTerms": {
+          "id": "quickReserveTerms",
+          "agreeLabel": "I agree to",
+          "terms": {
+            "label": "Terms and Conditions",
+            "actionUrl": ""
+          },
+          "btnLabel": {
+            "agree": "Agree",
+            "close": "Close"
+          },
+          "validationRules": {
+            "required": {
+              "message": "Please agree the terms and conditions."
+            }
+          }
+        },
+        "paymentBtn": {
+          "label": "Pay Rs. 2499/-"
+        },
+        "scooterInfo": {
+          "priceType": "Ex-Showroom Price",
+          "defaultCityState": "BENGALURU~KARNATAKA~INDIA",
+          "splitterChar": "~",
+          "product": {
+            "range": "Range",
+            "topSpeed": "Top speed",
+            "acceleration": "0-40km/h",
+            "chargingTime": "0 - 100% in"
+          },
+          "colorSummaryLabel": "Included"
+        }
+      }
+    });
+
+  </script>
+  <div data-component="Spinner" data-cmp-type="react"></div>
+
+  <div data-component="QuickPurchase" data-cmp-type="react" data-cmp-config="quickPurchaseConfig"></div>
+  <div id="quickReserveTerms" class="hideTerms">
+    <p>Quick reserve booking Terms</p>
+    <p>&</p>
+    <p>Conditions</p>
+  </div>
+</body>
+
+</html>

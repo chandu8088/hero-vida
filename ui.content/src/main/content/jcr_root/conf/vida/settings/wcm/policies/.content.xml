@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <vida jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <form jcr:primaryType="nt:unstructured">
+                <container jcr:primaryType="nt:unstructured">
+                    <form-container
+                        jcr:description="Allows the form components to be dropped into this core form container."
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Content Form"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/vida/components/form/button,/apps/vida/components/form/hidden,/apps/vida/components/form/options,/apps/vida/components/form/text]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </form-container>
+                </container>
+            </form>
+            <languagenavigation jcr:primaryType="nt:unstructured">
+                <policy_xfm
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Vida Language Navigation - Experience Fragment"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    navigationRoot="/content/vida"
+                    structureDepth="1">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_xfm>
+            </languagenavigation>
+            <image jcr:primaryType="nt:unstructured">
+                <policy_651483963895698
+                    jcr:description="- Enable lazy loading for faster page loading.&#xd;&#xa;- Define allowed image widths for automatic loading of the image in the most optimal resolution, given the size at which each image is displayed on the page, and the visitor's pixel density.&#xd;&#xa;- Disallow direct asset upload, to force authors to first upload the images to Assets."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Image"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
+                    allowUpload="false"
+                    altValueFromDAM="true"
+                    disableLazyLoading="false"
+                    displayPopupTitle="true"
+                    enableDmFeatures="true"
+                    isDecorative="false"
+                    jpegQuality="{Long}85"
+                    titleValueFromDAM="true"
+                    uuidDisabled="true">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <plugins jcr:primaryType="nt:unstructured">
+                        <crop
+                            jcr:primaryType="nt:unstructured"
+                            features="*">
+                            <aspectRatios jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    name="Wide Landscape"
+                                    ratio="0.6180"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    name="Landscape"
+                                    ratio="0.8284"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    name="Square"
+                                    ratio="1"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    name="Portrait"
+                                    ratio="1.6180"/>
+                            </aspectRatios>
+                        </crop>
+                        <rotate
+                            jcr:primaryType="nt:unstructured"
+                            features="right"/>
+                        <flip
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                    </plugins>
+                </policy_651483963895698>
+            </image>
+            <text jcr:primaryType="nt:unstructured">
+                <policy_641562756958017
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Text"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <rtePlugins jcr:primaryType="nt:unstructured">
+                        <paraformat
+                            jcr:primaryType="nt:unstructured"
+                            features="*">
+                            <formats
+                                jcr:primaryType="nt:unstructured"
+                                override="true">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Paragraph"
+                                    tag="p"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Quote"
+                                    tag="blockquote"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Preformatted"
+                                    tag="pre"/>
+                            </formats>
+                        </paraformat>
+                        <misctools
+                            jcr:primaryType="nt:unstructured"
+                            features="-">
+                            <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                <chars
+                                    jcr:primaryType="nt:unstructured"
+                                    override="true">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;copy;"
+                                        name="copyright"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;euro;"
+                                        name="euro"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;reg;"
+                                        name="registered"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;trade;"
+                                        name="trademark"/>
+                                </chars>
+                            </specialCharsConfig>
+                        </misctools>
+                        <edit
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <findreplace
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <undo
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <spellcheck
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <image
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <table
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <lists
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        <justify
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <format
+                            jcr:primaryType="nt:unstructured"
+                            features="bold,italic"/>
+                        <links
+                            jcr:primaryType="nt:unstructured"
+                            features="modifylink,unlink"/>
+                        <subsuperscript
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                    </rtePlugins>
+                </policy_641562756958017>
+                <policy_6268259484546
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Terms and conditions"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <rtePlugins jcr:primaryType="nt:unstructured">
+                        <paraformat
+                            jcr:primaryType="nt:unstructured"
+                            features="-">
+                            <formats
+                                jcr:primaryType="nt:unstructured"
+                                override="true">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Paragraph"
+                                    tag="p"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 1"
+                                    tag="h1"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 2"
+                                    tag="h2"/>
+                                <item3
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 3"
+                                    tag="h3"/>
+                                <item4
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 4"
+                                    tag="h4"/>
+                                <item5
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 5"
+                                    tag="h5"/>
+                                <item6
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Heading 6"
+                                    tag="h6"/>
+                                <item7
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Quote"
+                                    tag="blockquote"/>
+                                <item8
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Horizontal Rule (visual line break)"
+                                    tag="hr"/>
+                                <item9
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Preformatted"
+                                    tag="pre"/>
+                            </formats>
+                        </paraformat>
+                        <misctools
+                            jcr:primaryType="nt:unstructured"
+                            features="-">
+                            <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                <chars
+                                    jcr:primaryType="nt:unstructured"
+                                    override="true">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;copy;"
+                                        name="copyright"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;euro;"
+                                        name="euro"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;reg;"
+                                        name="registered"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        entity="&amp;trade;"
+                                        name="trademark"/>
+                                </chars>
+                            </specialCharsConfig>
+                        </misctools>
+                        <edit
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <findreplace
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <undo
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <spellcheck
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <image
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <table
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        <lists
+                            jcr:primaryType="nt:unstructured"
+                            features="*"/>
+                        <justify
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <format
+                            jcr:primaryType="nt:unstructured"
+                            features="bold,italic"/>
+                        <links
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                        <subsuperscript
+                            jcr:primaryType="nt:unstructured"
+                            features="-"/>
+                    </rtePlugins>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="vida-container"
+                            cq:styleGroupMultiple="true"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-container"
+                                    cq:styleId="1661338243538"
+                                    cq:styleLabel="vida-container"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_6268259484546>
+            </text>
+            <title jcr:primaryType="nt:unstructured">
+                <policy_641475696923109
+                    jcr:description="Allows only H1 and disallows links for the main page title."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Title"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedTypes="h1"
+                    linkDisabled="true"
+                    type="h1">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_641475696923109>
+                <policy_641528232375303
+                    jcr:description="Allows all sizes, but not H1, which is reserved for the main page title."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Title"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedTypes="[h2,h3,h4,h5,h6]"
+                    linkDisabled="false"
+                    type="h2">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_641528232375303>
+            </title>
+            <experiencefragment jcr:primaryType="nt:unstructured">
+                <policy_header
+                    cq:styleDefaultElement="header"
+                    jcr:description="Sets a &lt;header> element on the page header experience fragment."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Header"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_header>
+                <policy_footer
+                    cq:styleDefaultElement="footer"
+                    jcr:description="Sets a &lt;footer> element on the page footer experience fragment."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Footer"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_footer>
+                <policy_3886680285200
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hide Section"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="hideTerms"
+                                    cq:styleId="1663829493852"
+                                    cq:styleLabel="Hide Section"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_3886680285200>
+            </experiencefragment>
+            <container jcr:primaryType="nt:unstructured">
+                <policy_1574694950110
+                    jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Root"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Heromotocorp Vida- AEM - Content,/apps/vida/components/form/container,group:Vida - Structure]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575024218483
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="image/*"
+                                droptarget="image"
+                                resourceType="vida/components/image"/>
+                            <mapping_1575030843388
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030853128
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1574694950110>
+                <policy_1574695586800
+                    jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2022-05-13T12:11:59.391+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Heromotocorp Vida- AEM - Content,/apps/vida/components/form/container]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1574695586800>
+                <policy_649128221558427
+                    cq:styleDefaultElement="main"
+                    jcr:description="Sets a &lt;main> element on the page content area."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Page Main"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_649128221558427>
+                <policy_1575040440977
+                    jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="XF Root"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Vida - Content,group:Vida - Commerce,group:Vida - Header,/apps/vida/components/form/container]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575024218483
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="image/*"
+                                droptarget="image"
+                                resourceType="vida/components/image"/>
+                            <mapping_1575030843388
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030853128
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                            <mapping_1590416532200
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="product"
+                                droptarget="product-data-reference"
+                                resourceType="vida/components/commerce/productteaser"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1575040440977>
+                <policy_1652705796953
+                    jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2022-05-16T18:27:02.995+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="testdrive"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/vida/components/testride]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1652705796953>
+                <policy_1652857395373
+                    jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2022-05-18T12:33:41.729+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="prebooking"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/vida/components/prebooking]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1652857395373>
+                <policy_1669621979584
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="User Manual List"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/vida/components/backnavigation,/apps/vida/components/container,/apps/vida/components/usermanuallist,/apps/vida/components/usermanualsearch]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1669621979584>
+                <policy_9740173184200
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="User Manual Search"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/vida/components/download,/apps/vida/components/videobanner,/apps/vida/components/usermanualimage,/libs/foundation/components/text,/apps/vida/components/usermanualtitle,/libs/mcm/components/cta-clickthroughlink,/apps/vida/components/backnavigation,/apps/vida/components/container,/apps/vida/components/usermanualrte]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_9740173184200>
+                <policy_123033123845308
+                    jcr:lastModified="{Date}2023-04-26T13:46:17.374Z"
+                    jcr:lastModifiedBy="cal64678@adobe.com"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Color Container "
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="offers-container__smoke-white"
+                                    cq:styleId="1682514770640"
+                                    cq:styleLabel="Light Grey"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="offers-container__whisper-grey"
+                                    cq:styleId="1682514791470"
+                                    cq:styleLabel="Dark Grey"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="left-section"
+                                    cq:styleId="1692341365561"
+                                    cq:styleLabel="Charging Two Column"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item3
+                                    cq:styleClasses="theme-v1"
+                                    cq:styleId="1692358273129"
+                                    cq:styleLabel="Overview Theme"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_123033123845308>
+                <policy_1574694950111
+                    jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Campaign Page Root"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Heromotocorp Vida- AEM - Campaign,/apps/vida/components/form/container,group:Vida - Campaign Structure]">
+                    <jcr:content
+                        cq:lastReplicated="{Date}2022-11-07T13:32:07.705Z"
+                        cq:lastReplicated_publish="{Date}2022-11-07T13:32:07.705Z"
+                        cq:lastReplicatedBy="diz42553@adobe.com"
+                        cq:lastReplicatedBy_publish="diz42553@adobe.com"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575024218483
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="image/*"
+                                droptarget="image"
+                                resourceType="vida/components/image"/>
+                            <mapping_1575030843388
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030853128
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1574694950111>
+                <policy_1574695586801
+                    jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2023-08-31T15:44:36.469+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Campaign Page Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Heromotocorp Vida- AEM - Campaign,/apps/vida/components/container,/apps/vida/components/image,/apps/vida/components/form/container]"
+                    layoutDisabled="false">
+                    <jcr:content
+                        cq:lastReplicated="{Date}2022-11-07T13:32:07.705Z"
+                        cq:lastReplicated_publish="{Date}2022-11-07T13:32:07.705Z"
+                        cq:lastReplicatedBy="diz42553@adobe.com"
+                        cq:lastReplicatedBy_publish="diz42553@adobe.com"
+                        cq:lastReplicationAction="Activate"
+                        cq:lastReplicationAction_publish="Activate"
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1574695586801>
+                <policy_1574695586802
+                    jcr:description="Allows the campaign blog page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Campaign Blog Page Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:General,group:Heromotocorp Vida- AEM - Content,/apps/vida/components/form/container]"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+					<cq:styleGroups jcr:primaryType="nt:unstructured">
+						<item0
+							cq:styleGroupLabel="Layout"
+							jcr:primaryType="nt:unstructured">
+							<cq:styles jcr:primaryType="nt:unstructured">
+								<item0
+									cq:styleClasses="left-element"
+									cq:styleId="1695203972266"
+									cq:styleLabel="Left Element"
+									jcr:primaryType="nt:unstructured"/>
+                                <item1
+									cq:styleClasses="right-element"
+									cq:styleId="1695196969792"
+									cq:styleLabel="Right Element"
+									jcr:primaryType="nt:unstructured"/>
+							</cq:styles>
+						</item0>
+					</cq:styleGroups>
+                </policy_1574695586802>
+				<policy_1696337354562
+                    jcr:description="Allows the lead page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Lead Page Content"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/vida/components/campaignnomineeform,/apps/vida/components/container,/apps/vida/components/image,/apps/vida/components/form/container]"
+                    layoutDisabled="false">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575030260142
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="content"
+                                assetMimetype="text/html"
+                                droptarget="experiencefragment"
+                                resourceType="vida/components/experiencefragment"/>
+                            <mapping_1575030269139
+                                jcr:primaryType="nt:unstructured"
+                                assetGroup="media"
+                                assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                droptarget="contentfragment"
+                                resourceType="vida/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_1696337354562>
+            </container>
+            <teaser jcr:primaryType="nt:unstructured">
+                <policy_1575031387650
+                    jcr:description="Sets the title size to H3."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Teaser"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    titleType="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1575031387650>
+            </teaser>
+            <download jcr:primaryType="nt:unstructured">
+                <policy_1575032193319
+                    jcr:description="Sets the title size to H3."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Download"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowUpload="false"
+                    displayFilename="true"
+                    displayFormat="true"
+                    displaySize="true"
+                    titleType="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1575032193319>
+            </download>
+            <page jcr:primaryType="nt:unstructured">
+                <policy
+                    jcr:description="Includes the required client libraries."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Generic Page"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[vida.site]"
+                    clientlibsJsHead="">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy>
+            </page>
+            <commerce jcr:primaryType="nt:unstructured">
+                <productlist jcr:primaryType="nt:unstructured">
+                    <default
+                        cq:styleDefaultClasses="category__style_grid"
+                        jcr:lastModified="{Date}2019-04-01T15:42:05.554+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Product List"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        showImage="true"
+                        showTitle="true">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="Layout"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="category__style_grid"
+                                        cq:styleId="1570700958199"
+                                        cq:styleLabel="Grid"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="category__style_list"
+                                        cq:styleId="1570700958900"
+                                        cq:styleLabel="List"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </default>
+                </productlist>
+                <productcarousel jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:lastModified="{Date}2020-09-28T15:37:21.146+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Product Carousel"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        allowedTypes="[h2,h3,h4,h5,h6]"
+                        type="h2">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </productcarousel>
+                <relatedproducts jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:lastModified="{Date}2020-09-28T15:37:21.146+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Related Products"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        allowedTypes="[h2,h3,h4,h5,h6]"
+                        type="h2">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </relatedproducts>
+                <featuredcategorylist jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:lastModified="{Date}2020-09-28T15:37:21.146+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Featured Category List"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        allowedTypes="[h2,h3,h4,h5,h6]"
+                        type="h2">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </featuredcategorylist>
+                <categorycarousel jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:lastModified="{Date}2020-10-15T10:12:01.134+02:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Category Carousel"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        allowedTypes="[h2,h3,h4,h5,h6]"
+                        type="h2">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </categorycarousel>
+                <teaser jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:lastModified="{Date}2020-10-28T17:35:15.554+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM CIF Core Components Commerce Teaser"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        titleType="h3">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </default>
+                </teaser>
+            </commerce>
+            <accordion jcr:primaryType="nt:unstructured">
+                <policy_1652334995164
+                    jcr:lastModified="{Date}2022-05-12T11:32:41.869+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Vida_Accordion_Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-accordion"
+                                    cq:styleId="1652335325436"
+                                    cq:styleLabel="vida accordion"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="faq-accordion"
+                                    cq:styleId="1684306461554"
+                                    cq:styleLabel="faq accordion"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1652334995164>
+            </accordion>
+            <twocolumncard jcr:primaryType="nt:unstructured">
+                <policy_1654683260575
+                    jcr:lastModified="{Date}2022-06-09T12:44:34.693+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Two Column Card Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-two-column-card__position--overlap"
+                                    cq:styleId="1654758861859"
+                                    cq:styleLabel="Vida Two Column Card"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1654683260575>
+            </twocolumncard>
+            <roundedcarousel jcr:primaryType="nt:unstructured">
+                <policy_1654694400206
+                    jcr:lastModified="{Date}2022-06-09T17:36:26.647+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Rounded Carousel Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="bg-color--smoke-white"
+                                    cq:styleId="1654776375793"
+                                    cq:styleLabel="vida rounded carousel"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1654694400206>
+            </roundedcarousel>
+            <bannercarousel jcr:primaryType="nt:unstructured">
+                <policy_1654771017078
+                    jcr:lastModified="{Date}2022-06-09T16:07:37.246+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Banner Carousel Style"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-banner-carousel--left-image"
+                                    cq:styleId="1654771031488"
+                                    cq:styleLabel="Banner Carousel Reverse"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1654771017078>
+            </bannercarousel>
+            <textasset jcr:primaryType="nt:unstructured">
+                <policy_1654855840922
+                    jcr:lastModified="{Date}2022-06-10T17:49:30.683+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Text Asset Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Text Asset Group"
+                            cq:styleGroupMultiple="true"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-text-asset--reverse"
+                                    cq:styleId="1654855862057"
+                                    cq:styleLabel="Text Asset Reverse"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="vida-text-asset--lg"
+                                    cq:styleId="1654855943181"
+                                    cq:styleLabel="Text Asset Large"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1654855840922>
+            </textasset>
+            <multicards jcr:primaryType="nt:unstructured">
+                <policy_1655446955075
+                    jcr:lastModified="{Date}2022-06-17T13:42:11.101+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Multi Cards"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-multi-cards--two-cards"
+                                    cq:styleId="1655446970942"
+                                    cq:styleLabel="Two Cards Variation"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="vida-multi-cards--reverse"
+                                    cq:styleId="1655447084372"
+                                    cq:styleLabel="Two Cards Reverse Variation"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1655446955075>
+            </multicards>
+            <assetcollage jcr:primaryType="nt:unstructured">
+                <policy_1655890221471
+                    jcr:lastModified="{Date}2022-06-22T15:01:30.864+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Asset Collage Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-asset-collage--reverse"
+                                    cq:styleId="1655890238738"
+                                    cq:styleLabel="Asset Collage Reverse"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="vida-asset-collage--with-description"
+                                    cq:styleId="1655890263058"
+                                    cq:styleLabel="Asset Collage With Description"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1655890221471>
+            </assetcollage>
+            <productinfo jcr:primaryType="nt:unstructured">
+                <policy_1655876473886
+                    jcr:lastModified="{Date}2022-06-22T11:12:23.487+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Product Info Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-product-info--varient-selection"
+                                    cq:styleId="1655876516298"
+                                    cq:styleLabel="vida-product-info--varient-selection"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1655876473886>
+            </productinfo>
+            <advancedaccordion jcr:primaryType="nt:unstructured">
+                <policy_1656498316617
+                    jcr:lastModified="{Date}2022-06-29T15:56:04.433+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Advanced Accordion"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="bg-color--smoke-white"
+                                    cq:styleId="1656498329238"
+                                    cq:styleLabel="BG Smoke White Color"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1656498316617>
+            </advancedaccordion>
+            <textassetlight jcr:primaryType="nt:unstructured">
+                <policy_1656567948685
+                    jcr:lastModified="{Date}2022-06-30T11:16:55.856+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Text Asset Light"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupMultiple="true"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-text-asset-light--reverse"
+                                    cq:styleId="1656567960072"
+                                    cq:styleLabel="Reverse Variant"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="vida-text-asset-light--sm"
+                                    cq:styleId="1656567988214"
+                                    cq:styleLabel="SM Variant"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1656567948685>
+            </textassetlight>
+            <infobanner jcr:primaryType="nt:unstructured">
+                <policy_1656572529279
+                    jcr:lastModified="{Date}2022-06-30T12:37:26.082+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Info Banner Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedHeadingElements="[h2,h3,h4,h5,h6]"
+                    headingElement="h3">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-info-banner--mb-lg"
+                                    cq:styleId="1656572780746"
+                                    cq:styleLabel="Large Image For Mobile"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1656572529279>
+            </infobanner>
+            <tab jcr:primaryType="nt:unstructured">
+                <policy_1668064417504
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Vida Container"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="vida-container"
+                                    cq:styleId="1668064425992"
+                                    cq:styleLabel="Vida Container"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1668064417504>
+            </tab>
+            <fullscreenvideo jcr:primaryType="nt:unstructured">
+                <policy_1668065306673
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Full Screen Video Style System"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Full Screen Video Style"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="fullscreenvideo--title-top"
+                                    cq:styleId="1668065325903"
+                                    cq:styleLabel="headingTop"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="fullscreenvideo--title-bottom"
+                                    cq:styleId="1668065333326"
+                                    cq:styleLabel="headingBottom"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="fullscreenvideo--content-left"
+                                    cq:styleId="1668065349502"
+                                    cq:styleLabel="contentLeft"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item3
+                                    cq:styleClasses="fullscreenvideo--content-center"
+                                    cq:styleId="1668065360430"
+                                    cq:styleLabel="contentMiddle"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item4
+                                    cq:styleClasses="fullscreenvideo--content-right"
+                                    cq:styleId="1668065373836"
+                                    cq:styleLabel="contentRight"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1668065306673>
+            </fullscreenvideo>
+            <richtext jcr:primaryType="nt:unstructured">
+                <policy_1673950483667
+                    cq:styleDefaultClasses="vida-container"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="app policy "
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <rtePlugins jcr:primaryType="nt:unstructured">
+						<format
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<paraformat
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<formats jcr:primaryType="nt:unstructured">
+								<default_p
+									jcr:primaryType="nt:unstructured"
+									description="Paragraph"
+									tag="p"/>
+								<default_h1
+									jcr:primaryType="nt:unstructured"
+									description="Heading 1"
+									tag="h1"/>
+								<default_h2
+									jcr:primaryType="nt:unstructured"
+									description="Heading 2"
+									tag="h2"/>
+								<default_h3
+									jcr:primaryType="nt:unstructured"
+									description="Heading 3"
+									tag="h3"/>
+								<default_h4
+									jcr:primaryType="nt:unstructured"
+									description="Heading 4"
+									tag="h4"/>
+								<default_h5
+									jcr:primaryType="nt:unstructured"
+									description="Heading 5"
+									tag="h5"/>
+								<default_h6
+									jcr:primaryType="nt:unstructured"
+									description="Heading 6"
+									tag="h6"/>
+								<default_blockquote
+									jcr:primaryType="nt:unstructured"
+									description="Quote"
+									tag="blockquote"/>
+								<default_pre
+									jcr:primaryType="nt:unstructured"
+									description="Preformatted"
+									tag="pre"/>
+							</formats>
+						</paraformat>
+						<justify
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<lists
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<links
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<image
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<findreplace
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<subsuperscript
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<spellcheck
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<styles
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<styles jcr:primaryType="nt:unstructured">
+								<orangetext
+									jcr:primaryType="nt:unstructured"
+									cssName="txt-color--orange"
+									text="Orange Text"/>
+							</styles>
+						</styles>
+						<table
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<misctools
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<specialCharsConfig jcr:primaryType="nt:unstructured">
+								<chars jcr:primaryType="nt:unstructured">
+									<copyright
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#169;"/>
+									<trademark
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#8482;"/>
+									<registered
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#174;"/>
+									<emDash
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#8212;"/>
+									<pound
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#163;"/>
+									<nbsp
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#160;"/>
+								</chars>
+							</specialCharsConfig>
+						</misctools>
+					</rtePlugins>
+					<uiSettings jcr:primaryType="nt:unstructured">
+						<cui jcr:primaryType="nt:unstructured">
+							<inline
+								jcr:primaryType="nt:unstructured"
+								toolbar="[format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,#image,findreplace#find,findreplace#replace,spellcheck#checktext,misctools#specialchars,misctools#sourceedit,#styles,#paraformat,table#table]">
+								<popovers jcr:primaryType="nt:unstructured">
+									<justify
+										jcr:primaryType="nt:unstructured"
+										items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+										ref="justify"/>
+									<lists
+										jcr:primaryType="nt:unstructured"
+										items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+										ref="lists"/>
+									<paraformat
+										jcr:primaryType="nt:unstructured"
+										items="paraformat:getFormats:paraformat-pulldown"
+										ref="paraformat"/>
+									<styles
+										jcr:primaryType="nt:unstructured"
+										items="styles:getStyles:styles-pulldown"
+										ref="styles"/>
+								</popovers>
+							</inline>
+						</cui>
+					</uiSettings>
+                </policy_1673950483667>
+                <policy_283528567792477
+                    cq:styleDefaultClasses="vida-container"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Campaign Blog Styles"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <rtePlugins jcr:primaryType="nt:unstructured">
+						<format
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<paraformat
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<formats jcr:primaryType="nt:unstructured">
+								<default_p
+									jcr:primaryType="nt:unstructured"
+									description="Paragraph"
+									tag="p"/>
+								<default_h1
+									jcr:primaryType="nt:unstructured"
+									description="Heading 1"
+									tag="h1"/>
+								<default_h2
+									jcr:primaryType="nt:unstructured"
+									description="Heading 2"
+									tag="h2"/>
+								<default_h3
+									jcr:primaryType="nt:unstructured"
+									description="Heading 3"
+									tag="h3"/>
+								<default_h4
+									jcr:primaryType="nt:unstructured"
+									description="Heading 4"
+									tag="h4"/>
+								<default_h5
+									jcr:primaryType="nt:unstructured"
+									description="Heading 5"
+									tag="h5"/>
+								<default_h6
+									jcr:primaryType="nt:unstructured"
+									description="Heading 6"
+									tag="h6"/>
+								<default_blockquote
+									jcr:primaryType="nt:unstructured"
+									description="Quote"
+									tag="blockquote"/>
+								<default_pre
+									jcr:primaryType="nt:unstructured"
+									description="Preformatted"
+									tag="pre"/>
+							</formats>
+						</paraformat>
+						<justify
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<lists
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<links
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<image
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<findreplace
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<subsuperscript
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<spellcheck
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<styles
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<styles jcr:primaryType="nt:unstructured">
+								<orangetext
+									jcr:primaryType="nt:unstructured"
+									cssName="txt-color--orange"
+									text="Orange Text"/>
+							</styles>
+						</styles>
+						<table
+							jcr:primaryType="nt:unstructured"
+							features="*"/>
+						<misctools
+							jcr:primaryType="nt:unstructured"
+							features="*">
+							<specialCharsConfig jcr:primaryType="nt:unstructured">
+								<chars jcr:primaryType="nt:unstructured">
+									<copyright
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#169;"/>
+									<trademark
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#8482;"/>
+									<registered
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#174;"/>
+									<emDash
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#8212;"/>
+									<pound
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#163;"/>
+									<nbsp
+										jcr:primaryType="nt:unstructured"
+										entity="&amp;#160;"/>
+								</chars>
+							</specialCharsConfig>
+						</misctools>
+					</rtePlugins>
+					<uiSettings jcr:primaryType="nt:unstructured">
+						<cui jcr:primaryType="nt:unstructured">
+							<inline
+								jcr:primaryType="nt:unstructured"
+								toolbar="[format#bold,format#italic,format#underline,#justify,#lists,subsuperscript#subscript,subsuperscript#superscript,links#modifylink,links#unlink,links#anchor,#image,findreplace#find,findreplace#replace,spellcheck#checktext,misctools#specialchars,misctools#sourceedit,#styles,#paraformat,table#table]">
+								<popovers jcr:primaryType="nt:unstructured">
+									<justify
+										jcr:primaryType="nt:unstructured"
+										items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+										ref="justify"/>
+									<lists
+										jcr:primaryType="nt:unstructured"
+										items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+										ref="lists"/>
+									<paraformat
+										jcr:primaryType="nt:unstructured"
+										items="paraformat:getFormats:paraformat-pulldown"
+										ref="paraformat"/>
+									<styles
+										jcr:primaryType="nt:unstructured"
+										items="styles:getStyles:styles-pulldown"
+										ref="styles"/>
+								</popovers>
+							</inline>
+						</cui>
+					</uiSettings>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="text-container"
+                                    cq:styleId="1695204510504"
+                                    cq:styleLabel="Text Container"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_283528567792477>
+            </richtext>
+            <carousel jcr:primaryType="nt:unstructured">
+                <policy_1687178755420
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hero Carousel"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    autopauseDisabled="false"
+                    autoplay="false"
+                    controlsPrepended="false"
+                    delay="5000">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0 jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="hero-carousel"
+                                    cq:styleId="1687178789217"
+                                    cq:styleLabel="Hero Carousel"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="hero-no-control"
+                                    cq:styleId="1697628415309"
+                                    cq:styleLabel="No Controls"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1687178755420>
+            </carousel>
+            <campaignpage jcr:primaryType="nt:unstructured">
+                <policy
+                    jcr:description="Includes the required client libraries."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Campaign Page"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[vida.campaign]"
+                    clientlibsJsHead="vida.dependencies">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                </policy>
+            </campaignpage>
+            <leadpage jcr:primaryType="nt:unstructured">
+                <policy
+                    jcr:description="Includes the required client libraries."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Lead Page"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[vida.lead]"
+                    clientlibsJsHead="vida.dependencies">
+                    <jcr:content
+                        jcr:mixinTypes="[cq:ReplicationStatus]"
+                        jcr:primaryType="nt:unstructured"/>
+                </policy>
+            </leadpage>
+            <buttonWarranty jcr:primaryType="nt:unstructured">
+                <policy_1697484463219
+                    jcr:lastModified="{Date}2023-10-17T00:59:18.382+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Button Warranty Policy"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Button Align"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="align-center"
+                                    cq:styleId="1697484476762"
+                                    cq:styleLabel="Center"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1697484463219>
+            </buttonWarranty>
+        </components>
+    </vida>
+    <rep:policy/>
+</jcr:root>

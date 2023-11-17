@@ -1,0 +1,8 @@
+{
+  "twitterAPIKeySecret":"gEtoDTtp69kIhEPTHrjrvy5d8ecO11ifwyhTiQwUS1aZLHtPR2",
+  "twitterEndPointTweets":"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=3",
+  "twitterEndPointToken":"https://api.twitter.com/oauth2/token",
+  "twitterAPIKey":"cVKr2D3Gchhf4xmFRb3ztC9nL",
+  "twitterJsonPath":"/content/dam/vida/socialfeed/twitter/tweets.json",
+  "twitterProfile":"twitterapi"
+}

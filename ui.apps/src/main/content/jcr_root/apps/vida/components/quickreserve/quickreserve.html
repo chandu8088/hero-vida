@@ -1,0 +1,118 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Quick Reserve Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        "quickReserveConfig": {
+            "title": "${properties.reservetitle @ context='scriptString'}",
+            "cityField": {
+              "label": "${properties.citylabel @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'cityLabelReqMsz' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "firstNameField": {
+              "label": "${properties.firstname @ context='scriptString'}",
+              "placeholder": "${properties.fnplchld @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'firstNameReqMsz' @ i18n,context='scriptString'}"
+                },
+                "minLength": {
+                  "value": 1,
+                  "message": "${'firstNameLeastMsz' @ i18n,context='scriptString'}"
+                },
+                "customValidation": {
+                  "message": "${'validfirstname' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "lastNameField": {
+              "label": "${properties.lastname @ context='scriptString'}",
+              "placeholder": "${properties.lnplchld @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'lastNameReqMsz' @ i18n,context='scriptString'}"
+                },
+				"minLength": {
+				  "value": 1,
+				  "message": "${'lastNameLeastMsz' @ i18n,context='scriptString'}"
+				},
+                "customValidation": {
+                  "message": "${'validlastname' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "mobileField": {
+              "id": "mobile",
+              "label": "${properties.phoneregister @ context='scriptString'}",
+              "placeholder": "${properties.phplchld @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'mobileReqMsz' @ i18n,context='scriptString'}"
+                },
+                "minLength": {
+                  "value": 10,
+                  "message": "${'minCharaterMsz' @ i18n,context='scriptString'}"
+                },
+                "maxLength": {
+                  "value": 10,
+                  "message": "${'maxCharaterMsz' @ i18n,context='scriptString'}"
+                },
+                "customValidation": {
+                  "message": "${'validmobilenumber' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "emailField": {
+              "label": "${properties.email @ context='scriptString'}",
+              "placeholder": "${properties.emailplaceholder @ context='scriptString'}",
+              "infoLabel": "${properties.emailinfolabel @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'emailReqMsz' @ i18n,context='scriptString'}"
+                },
+                "customValidation": {
+                  "message": "${'emailValidMsz' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "agreeTerms": {
+              "id": "${properties.quicktestid @ context='scriptString'}",
+              "agreeLabel": "${properties.agreelabel @ context='scriptString'}",
+              "terms": {
+                "label": "${properties.termsAndCondition @ context='scriptString'}",
+                "actionUrl": ""
+              },
+              "btnLabel": {
+                "agree": "${properties.agreebtnlabel @ context='scriptString'}",
+                "close": "${properties.closebtnlabel @ context='scriptString'}"
+              },
+              "validationRules": {
+                "required": {
+                  "message": "${'selectTermsMsz' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "paymentBtn": {
+              "label": "${properties.paymentbtnlabel @ context='scriptString'}"
+            },
+            "scooterInfo": {
+              "priceType": "${properties.pricetype @ context='scriptString'}",
+              "defaultCityState": "${properties.city @ context='scriptString'}",
+              "splitterChar": "${'splitChar' @ i18n,context='scriptString'}",
+              "product": {
+                "range": "${properties.productrange @ context='scriptString'}",
+                "topSpeed": "${properties.topspeed @ context='scriptString'}",
+                "acceleration": "${properties.acceleration @ context='scriptString'}",
+                "chargingTime": "${properties.chargingtime @ context='scriptString'}"
+              },
+              "colorSummaryLabel": "${properties.colorsummarylabel @ context='scriptString'}"
+            }
+          }
+    }); 
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+    <div data-component="QuickReserve" data-cmp-type="react" data-cmp-config="quickReserveConfig"></div>
+  </sly>

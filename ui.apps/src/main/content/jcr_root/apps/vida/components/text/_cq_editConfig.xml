@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        configPath="inplaceEditingConfig"
+        editorType="text">
+        <inplaceEditingConfig jcr:primaryType="nt:unstructured">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <findreplace
+                    jcr:primaryType="nt:unstructured"
+                    features="-"/>
+                <table
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <styles
+                    jcr:primaryType="nt:unstructured"
+                    features="*">
+                    <styles jcr:primaryType="nt:unstructured">
+                        <badge
+                            jcr:primaryType="nt:unstructured"
+                            cssName="badge badge-light"
+                            text="Badge Light"/>
+                        <formtitle
+                            jcr:primaryType="nt:unstructured"
+                            cssName="form-title"
+                            text="Form Title"/>
+                        <formsubtitle
+                            jcr:primaryType="nt:unstructured"
+                            cssName="form-subtitle"
+                            text="Form Subtitle"/>
+                        <figcaption
+                            jcr:primaryType="nt:unstructured"
+                            cssName="figcaption"
+                            text="Fig Caption"/>
+                        <blockquotetextbold
+                            jcr:primaryType="nt:unstructured"
+                            cssName="blockquote-text-bold"
+                            text="Blockquote Text Bold"/>
+                        <styledarrowlink
+                            jcr:primaryType="nt:unstructured"
+                            cssName="styled-arrow-link"
+                            text="Styled Arrow Link"/>
+                        <figcaptionsmall
+                            jcr:primaryType="nt:unstructured"
+                            cssName="figcaption-cite"
+                            text="Fig Caption Small Text"/>
+                        <lineseparator
+                            jcr:primaryType="nt:unstructured"
+                            cssName="text-separator"
+                            text="Line Separator"/>
+						<textpurple
+                            jcr:primaryType="nt:unstructured"
+                            cssName="text-primary"
+                            text="Text Purple"/>
+                    </styles>
+                </styles>			
+            </rtePlugins>
+            <uiSettings jcr:primaryType="nt:unstructured">
+                <cui jcr:primaryType="nt:unstructured">
+                    <inline
+                        jcr:primaryType="nt:unstructured"
+                        toolbar="[#format,#justify,#lists,links#modifylink,links#unlink,table#table,links#anchor,#styles,fullscreen#start,#paraformat,control#close,control#save]">
+                        <popovers jcr:primaryType="nt:unstructured">
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                items="styles:getStyles:styles-pulldown"
+                                ref="styles"/>
+                        </popovers>
+                    </inline>
+                    <dialogFullScreen
+                        jcr:primaryType="nt:unstructured"
+                        toolbar="[#format,#justify,#lists,links#modifylink,links#unlink,table#table,links#anchor,#styles,fullscreen#start,#paraformat,control#close,control#save]">
+                        <popovers jcr:primaryType="nt:unstructured">
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                items="paraformat:getFormats:paraformat-pulldown"
+                                ref="paraformat"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                items="styles:getStyles:styles-pulldown"
+                                ref="styles"/>
+                        </popovers>
+                    </dialogFullScreen>
+                </cui>
+            </uiSettings>
+        </inplaceEditingConfig>
+    </cq:inplaceEditing>
+</jcr:root>

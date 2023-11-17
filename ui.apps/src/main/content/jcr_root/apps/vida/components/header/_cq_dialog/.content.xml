@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[vida.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <header
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Header"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">											
+                                            <headerlogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Header logo"
+                                                name="./headerlogo"
+                                                rootPath="/content/dam/vida"/>
+                                            <alttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alt Text"
+                                                name="./alttext"/>
+                                            <mobileheaderlogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Mobile header logo"
+                                                name="./mobileheaderlogo"
+                                                rootPath="/content/dam/vida"/>
+                                            <logourl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Logo url"
+                                                name="./logourl"
+                                                rootPath="/content/vida"/>
+                                            <shownavigation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Show Navigation?"
+                                                name="./showNav"
+                                                text="Show Navigation?"
+                                                value="{Boolean}true"/>
+                                            <hideusericon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Hide User Icon?"
+                                                name="./hideUserIcon"
+                                                text="Hide User Icon?"
+                                                value="{Boolean}true"/>
+                                            <firstbuttonlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="First CTA label"
+                                                name="./firstbuttonlabel"/>
+                                            <firstbuttonlink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="First Button Link"
+                                                name="./firstbuttonlink"
+                                                rootPath="/content/vida"/>
+                                            <firstbuttonid
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="First CTA ID"
+                                                name="./firstbuttonid"/>
+                                            <secondbuttonlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Second CTA label"
+                                                name="./secondbuttonlabel"/>
+                                            <secondbuttonlink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Second CTA Link"
+                                                name="./secondbuttonlink"
+                                                rootPath="/content/vida"/>
+                                            <secondbuttonid
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Second CTA ID"
+                                                name="./secondbuttonid"/>
+                                            <logoutlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Logout Label"
+                                                name="./logoutlabel"/>
+                                            <navheading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Nav Heading"
+                                                name="./navheading"/>
+                                            <navheadingurl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Nav Heading URL"
+                                                name="./navheadingurl"
+                                                rootPath="/content/vida"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </header>
+                    <primarynaviagtions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Primary Navigations"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <addtextandlink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Click 'Add' to add primary navigation labels &amp; links"
+                                        fieldLabel="Primary Navigation Items">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            fieldLabel="Add link and images"
+                                            name="./primarynavigation">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Enter Text"
+                                                            name="./primarynavtext"
+                                                            required="{Boolean}true"/>
+                                                        <link
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Text Link"
+                                                            name="./primarynavtextlink"
+                                                            rootPath="/content/vida"/>
+                                                        <profilelinkcheckbox
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldLabel="Profile Link?"
+                                                            name="./profilelinkcheckbox"
+                                                            text="Profile Link?"
+                                                            value="{Boolean}true"/>
+                                                        <loginregisterlinkcheckbox
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldLabel="Login/ Register Link?"
+                                                            name="./loginregisterlinkcheckbox"
+                                                            text="Login/ Register Link?"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                        <granite:data jcr:primaryType="nt:unstructured"/>
+                                    </addtextandlink>
+                                </items>
+                            </columns>
+                        </items>
+                    </primarynaviagtions>
+                    <secondarynavigations
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Secondary Navigations"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <addtextandlink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Click 'Add' to add secondary navigation labels &amp; links"
+                                        fieldLabel="Secondary Navigation Items">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            fieldLabel="Add link and images"
+                                            name="./secondarynavigation">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Enter Text"
+                                                            name="./secondarynavtext"
+                                                            required="{Boolean}true"/>
+                                                        <link
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldLabel="Text Link"
+                                                            name="./secondarynavtextlink"
+                                                            rootPath="/content/vida"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                        <granite:data jcr:primaryType="nt:unstructured"/>
+                                    </addtextandlink>
+                                </items>
+                            </columns>
+                        </items>
+                    </secondarynavigations>
+                    <popup
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Leave Page Popup"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please provide Popup heading"
+                                                fieldLabel="Popup Heading"
+                                                name="./popupheading"/>
+                                            <primarybtnlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please provide Primary Button label"
+                                                fieldLabel="Primary Button Label"
+                                                name="./primarybtnlabel"/>
+                                            <secondarybtnlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please provide Secondary Button label"
+                                                fieldLabel="Secondary Button Label"
+                                                name="./secondarybtnlabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </popup>
+					<maintenance
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Maintenance"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+											<shownmaintenancebanner
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Show Maintenance Banner?"
+                                                name="./shownMaintenanceBanner"
+                                                text="Show Maintenance Banner?"
+                                                value="{Boolean}true"/>
+											<redirectmaintenancepage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Redirect Maintenance Page?"
+                                                name="./redirectMaintenancePage"
+                                                text="Redirect Maintenance Page?"
+                                                value="{Boolean}true"/>
+											<maintenancepageurl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Maintenance Page Url"
+                                                name="./maintenancePageUrl"
+                                                rootPath="/content/vida"/>
+											<maintenancemsz
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Maintenance message"
+                                                name="./maintenanceMsz"/>
+                                            
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </maintenance>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,66 @@
+<footer class="vida-footer bg-color--smoke-white" data-component="footer">
+  <div class="vida-footer__container vida-container">
+    <sly data-sly-list.title="${resource.getChildren}">
+      <sly data-sly-test="${title.name == 'footeritems'}">
+        <sly data-sly-list.choose="${title.getChildren}">
+          <div class="vida-footer__item-wrap">
+            <div class="vida-footer__item">
+              <h3 class="vida-footer__heading">${choose.heading}</h3>
+              <sly data-sly-list.subtitle="${choose.getChildren}">
+                <sly data-sly-test="${subtitle.name == 'footersubitem'}">
+                  <sly data-sly-list.subitem="${subtitle.getChildren}">
+                    <ul class="vida-footer__list">
+                      <sly data-sly-test="${subitem.newtab == '_blank'}">
+                        <li>
+                          <a href="${subitem.linkurl @extension = 'html',context = 'uri'}" rel="noopener noreferrer" target="${subitem.newtab}"  class="cta--anchor" data-link-position="Bottom" role="Link">${subitem.linktext}</a>
+                        </li>
+                      </sly>
+                      <sly data-sly-test="${subitem.newtab == '_self'}">
+                        <li>
+                          <a href="${subitem.linkurl @extension = 'html'}" target="${subitem.newtab}" class="cta--anchor" data-link-position="Bottom" role="Link">${subitem.linktext}</a>
+                        </li>
+                      </sly>
+                    </ul>
+					</sly>
+                </sly>
+              </sly>
+            </div>
+          </div>
+        </sly>
+      </sly>
+    </sly>
+  </div>
+  <div class="vida-footer__item-container vida-container">
+		<div class="vida-footer__item-container-inner">
+			<div class="vida-footer__item-container-left">
+				<h3 class="vida-footer__item-container-header left">${properties.socialheading}</h3>
+				<p class="vida-footer__item-container-desc left">${properties.socialdesc}</p>
+				<div class="vida-footer__social">
+					<sly data-sly-list.title="${resource.getChildren}">
+					  <sly data-sly-test="${title.name == 'socialmediaitems'}">
+						<sly data-sly-list.social="${title.getChildren}">
+						<a class="vida-footer__social-links" href="${social.socialmediaurl}" target="_blank" data-social-icon="${social.socialmediaicon}"><i class="icon-${social.socialmediaicon}"></i></a>
+						</sly>
+						</sly>
+					</sly>  
+				</div>
+			</div>
+			<div class="vida-footer__item-container-right">
+				<h3 class="vida-footer__item-container-header right">${properties.downloadheading}</h3>
+				<p class="vida-footer__item-container-desc right">${properties.downloaddesc}</p>
+				<div class="g-play">
+					<sly data-sly-list.title="${resource.getChildren}">
+					  <sly data-sly-test="${title.name == 'downloadappitem'}">
+						<sly data-sly-list.downloadapp="${title.getChildren}">
+						<a href="${downloadapp.downloadappurl}"	target="_blank" aa-data-attr="track_cta">
+						  <img loading="lazy" src="${downloadapp.downloadappiconpath}" alt="google-play">
+						</a>
+						</sly>
+						</sly>
+					</sly>
+				</div>
+			</div>
+		</div>
+		<div class="vida-footer__privacy-polices">${properties.copyright @ context = 'html'}</div>
+  </div>
+</footer>

@@ -1,0 +1,52 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Asset Banner Carousel Component"></div>
+<section class="vida-asset-banner-carousal" data-component="asset-banner-carousal" data-section-id="${properties.sectionid}">
+  <div class="vida-container vida-asset-banner-carousal__container" data-animation-wrapper="true">
+    <div class="vida-asset-banner-carousal__slider">
+	<sly data-sly-list.title="${resource.getChildren}">
+			<sly data-sly-test="${title.name == 'multibanner'}">
+				<sly data-sly-list.ban="${title.getChildren}">
+      <div class="vida-asset-banner-carousal__slide">
+	  <sly data-sly-test="${ban.variations == 'image'}">
+        <picture>
+          <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=ban.image}"></sly>
+	      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+	      <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+          <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${ban.imagealt}"
+            class="vida-asset-banner-carousal__media" data-animate="true" data-animation-name="zoom-out-img">
+        </picture>
+		</sly>
+		<sly data-sly-test="${ban.variations == 'video'}">
+		 <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=ban.video}"></sly>
+  	
+		
+        <div class="vida-video-player vida-asset-banner-carousal__media" data-component="video-player">
+          <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+            src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+        </div>
+		</sly>
+      </div>
+	  </sly>
+	  </sly>
+	  </sly>
+    </div>
+
+    <div class="vida-asset-banner-carousal__nav-container">
+	<sly data-sly-list.title="${resource.getChildren}">
+			<sly data-sly-test="${title.name == 'multiinfo'}">
+				<sly data-sly-list.info="${title.getChildren}">
+      <div class="vida-asset-banner-carousal__nav-controller">
+        <div class="vida-asset-banner-carousal__nav-controller-text">
+          <div class="vida-asset-banner-carousal__nav-controller-text-title">
+            <p>${info.title}</p>
+          </div>
+          <div class="vida-asset-banner-carousal__nav-controller-text-container">
+            ${info.description @ context = 'html'}
+          </div>
+        </div>
+      </div>
+      </sly>
+     </sly>
+	 </sly>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Underlined Header Component"></div>
+<sly data-sly-test.changeColor="${properties.changecolor ? 'vida-dashed-headers__orange-border' : 'vida-dashed-headers__black-border'}"/>
+<div data-section-id="${properties.sectionid}" class="vida-dashed-headers">
+    ${properties.headertext @ context = 'html'}
+    <span class="${changeColor}"></span>
+</div>

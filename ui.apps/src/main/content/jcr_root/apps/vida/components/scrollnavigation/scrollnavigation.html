@@ -1,0 +1,20 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Scroll Navigation Component"></div>
+<sly data-sly-test.chargingStyle="${properties.chargingstyle ? 'vida-scroll-navigation__wrapper--theme2' : 'vida-scroll-navigation__wrapper'}"/>
+<section class="vida-scroll-navigation" data-component="scroll-navigation">
+    <div class="${chargingStyle}">
+        <nav class="vida-scroll-navigation-container vida-container">
+		<sly data-sly-list.title="${resource.getChildren}">
+               <sly data-sly-test="${title.name == 'scrollnavigation'}">
+                  <sly data-sly-list.scroll="${title.getChildren}">
+				  <sly data-sly-test="${scrollList.index == 0}">
+            <a class="vida-scroll-navigation__links vida-scroll-navigation__links--active" data-navigation-id="${scroll.sectionid}" href="javascript:void(0);">${scroll.navigationtitle}</a>
+			</sly>
+			<sly data-sly-test="${scrollList.index >= 1}">
+            <a class="vida-scroll-navigation__links" data-navigation-id="${scroll.sectionid}" href="javascript:void(0);">${scroll.navigationtitle}</a>
+                  </sly>
+				  </sly>
+			  </sly>
+			</sly>
+        </nav>
+    </div>
+</section>

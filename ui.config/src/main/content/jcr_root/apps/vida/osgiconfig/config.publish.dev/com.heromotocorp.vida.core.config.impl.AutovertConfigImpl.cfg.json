@@ -1,0 +1,4 @@
+{
+  "authHeader":"$[env:AUTOVERT_CLIENTID]",
+  "autovertClientSecret":"$[env:AUTOVERT_CLIENT_SECRET]"
+}

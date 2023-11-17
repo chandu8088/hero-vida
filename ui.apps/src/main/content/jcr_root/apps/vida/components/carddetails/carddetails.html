@@ -1,0 +1,21 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Card Details Component"></div>
+
+<section class="vida-card-details">
+  <div class="vida-card-details__container" data-animation-wrapper="true">
+    <div class="vida-card-details__img">
+      <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.image}"></sly>
+          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealttext}" title="" class="vida-card-details__img-file"
+          data-animate="true" data-animation-name="zoom-out-img">
+      </picture>
+    </div>
+    <div class="vida-card-details__text-area" data-animate="true" data-animation-name="fade-in">
+      <h3 class="vida-card-details__text-area-title">${properties.title}</h3>
+      <p class="vida-card-details__text-area-text">
+        ${properties.description}
+      </p>
+    </div>
+  </div>
+</section>

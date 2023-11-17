@@ -1,0 +1,22 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="User Manual Image"></div>
+
+<sly data-sly-test.topBtnStyle="${properties.showbtntop ? 'vida-single-article__image--zoomin' : ''}"/>
+
+<section class="vida-single-article" data-component="single-article">
+	<div class="vida-single-article__title">
+    </div>
+	<div class="vida-single-article__image">
+		<sly data-sly-test="${properties.imagepath}">
+			<img loading='lazy' id="${properties.imageid}" src="${properties.imagepath}" alt="${properties.imagealt}" />
+			<sly data-sly-test="${properties.imagepath}">
+				<div class="vida-single-article__buttons">
+				<button class="${topBtnStyle}" data-image-id="#${properties.imageid @ context='scriptString'}">+</button>
+				<sly data-sly-test.topBtnStyle="${properties.showbtntop ? 'vida-single-article__image--zoomout' : ''}"/>
+				<button class="${topBtnStyle}" data-image-id="#${properties.imageid @ context='scriptString'}">-</button>
+				</div>
+			</sly>
+		</sly>
+	</div>
+	<div class="vida-single-article__text">
+    </div>
+</section>

@@ -1,0 +1,10 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Chat Bot Script Component"></div>
+
+<sly data-sly-use.model="com.heromotocorp.vida.core.models.PageModel"/>
+
+<script>
+var baseCoreURL = "${model.serverName @ context='uri'}";
+var communityEndpointURL = "${model.sfdcPartnerUrl @ context='uri'}";
+</script>
+
+${properties.script @ context='unsafe'}

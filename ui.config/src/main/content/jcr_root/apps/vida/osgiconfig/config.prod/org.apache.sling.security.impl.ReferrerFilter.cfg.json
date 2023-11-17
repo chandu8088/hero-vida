@@ -1,0 +1,19 @@
+{
+  "allow.hosts.regexp":[
+    "https://.*\\.adobe\\.com:443",
+    "https://.*\\.adobe\\.net:443",
+    "https://.*\\.workfront\\.com:443",
+    "https://.*\\.workfront-dev\\.com:443",
+    "https://.*\\.dev\\.workfront\\.tech:443"
+  ],
+  "filter.methods":[
+    "PUT",
+    "DELETE",
+    "COPY",
+    "MOVE"
+  ],
+  "allow.hosts":[
+    "*.ccavenue.com"
+  ],
+  "allow.empty":true
+}

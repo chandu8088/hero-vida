@@ -1,0 +1,566 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Personal Details Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.PersonalDetailsModel'}" />
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+        "profileConfig": {
+            "userProfileConfig": {
+                "title": "${properties.heading @ context='scriptString'}",
+                "firstNameField": {
+                    "label": "${properties.firstnamelabel @ context='scriptString'}",
+                    "placeholder": "${properties.firstnameph @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'firstNameReqMsz' @ i18n,context='scriptString'}"
+                        },
+                        minLength: {
+                            value: 1,
+                            message: "${'firstNameLeastMsz' @ i18n,context='scriptString'}"
+                        },
+                        maxLength: {
+                            value: 10,
+                            message: "${'firstNameMaxMsz' @ i18n,context='scriptString'}"
+                        },
+                        customValidation: {
+                            message: "${'firstNameCustomMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "lastNameField": {
+                    "label": "${properties.lastnamelabel @ context='scriptString'}",
+                    "placeholder": "${properties.lastnameph @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'lastNameReqMsz' @ i18n,context='scriptString'}"
+                        },
+						"minLength": {
+						  "value": 1,
+						  "message": "${'lastNameLeastMsz' @ i18n,context='scriptString'}"
+						},
+                        customValidation: {
+                            message: "${'lastNameCustomMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "phoneNumberField": {
+                    "label": "${properties.phonenumberlabel @ context='scriptString'}",
+                    "placeholder": "${properties.phonenumberph @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'phoneNumberReqMsz' @ i18n,context='scriptString'}"
+                        },
+                        "minLength": {
+                            "value": 10,
+                            "message": "${'minDigitMsz' @ i18n,context='scriptString'}"
+                        },
+                        "maxLength": {
+                            "value": 10,
+                            "message": "${'maxDigitMsz' @ i18n,context='scriptString'}"
+                        },
+                        "custom": {
+                            "message": "${'validphonenumber' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "emailField": {
+                    "label": "${properties.emaillabel @ context='scriptString'}",
+                    "placeholder": "${properties.emailph @ context='scriptString'}",
+                    "infoLabel": "${properties.emailinfolabel @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'emailReqMsz' @ i18n,context='scriptString'}"
+                        },
+                        customValidation: {
+                            message: "${'emailValidMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "cityField": {
+                    "label": "${properties.placelabel @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'cityReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "stateField": {
+                    "label": "${properties.statelabel @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'stateReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "countryField": {
+                    "label": "${properties.countrylabel @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'countryReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "pinCodeField": {
+                    "label": "${properties.pincodelabel @ context='scriptString'}",
+                    "placeholder": "${properties.pincodeph @ context='scriptString'}",
+                    "validationRules": {
+                        required: {
+                            message: "${'pincodeReqMsz' @ i18n,context='scriptString'}"
+                        },
+                        minLength: {
+                            value: 6,
+                            message: "${'pincodeMinMsz' @ i18n,context='scriptString'}"
+                        },
+                        custom: {
+                            noServiceMsg: "${'noServiceMsg' @ i18n,context='scriptString'}",
+                            noCityMatchMsg: "${'pincodeValidMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "cancelBtn": {
+                    "label": "${properties.cancelctalabel @ context='scriptString'}",
+                },
+                "saveBtn": {
+                    "label": "${properties.submitctalabel @ context='scriptString'}"
+                },
+                "editBtn": {
+                    "label": "${properties.editctalabel @ context='scriptString'}",
+                },
+                "logoutBtn": {
+                    "label": "${properties.logoutctalabel @ context='scriptString'}",
+                    "actionBtnURL": ""
+                },
+                "emailOtpConfig": {
+                    "verifyNowLabel": "${properties.verifyNowLabel @ context='scriptString'}",
+                    "otpLabel": "${properties.oTPLabel @ context='scriptString'}",
+                    "otpTitle": "${properties.otpTitle @ context='scriptString'}",
+                    "otpDescription": "${properties.verifyEmailDesc @ context='scriptString'}",
+                    "verifyBtn": {
+                        "label": "${properties.verifyBtnLabel @ context='scriptString'}"
+                    },
+                },
+                "mobileOtpConfig": {
+                    "notificationLabel": "${properties.notificationLabel @ context='scriptString'}",
+                    "verifyOTPtitle": "${properties.title @ context='scriptString'}",
+                    "message": "${properties.message @ context='scriptString'}",
+                    "changeNumberLabel": "${properties.changeNumberLabel @ context='scriptString'}",
+                    "otpLabel": "${properties.otpLabel @ context='scriptString'}",
+                    "resendLabel": "${properties.resendLabel @ context='scriptString'}",
+                    "timer": {
+                        "minutes": "${properties.timerminutes @ context='scriptString'}",
+                        "seconds": "${properties.timersec @ context='scriptString'}"
+                    },
+                    "verifyBtn": {
+                        "label": "${properties.verifyBtn @ context='scriptString'}"
+                    },
+                    "validationRules": {
+                        "required": {
+                            "message": "${'enterOTPMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "profilePicConfig": {
+                    "userImg": "${properties.userImg @ context='uri'}",
+                    "validationMsg": "${'validImageMsz' @ i18n,context='scriptString'}"
+                }
+            },
+
+            "userTestRideConfig": {
+                "bookingIdLabel": "${properties.bookingIdlabel @ context='scriptString'}",
+                "callLabel": "${properties.calllabel @ context='scriptString'}",
+                "dealershipLabel": "${properties.dealershiplabel @ context='scriptString'}",
+                "homeLabel": "${properties.homelabel @ context='scriptString'}",
+                "salesExecutiveLabel": "${properties.salesexecutivelabel @ context='scriptString'}",
+                "noAssigneeLabel": "${properties.noassigneelabel @ context='scriptString'}",
+                "cancelBtn": {
+                    "label": "${properties.cancelbtn @ context='scriptString'}"
+                },
+                "rescheduleBtn": {
+                    "label": "${properties.reschedulebtn @ context='scriptString'}"
+                },
+                "downloadBtn": {
+                    "label": "${properties.downloadbtn @ context='scriptString'}"
+                },
+                "feedbackBtn": {
+                    "label": "${properties.feedbackbtn @ context='scriptString'}"
+                },
+                "noRecordFound": {
+                    "title": "${properties.noresultslabel @ context='scriptString'}",
+                    "description": "${properties.noresultsdesc @ context='scriptString'}",
+                    "btnLabel": "${properties.noresultbtnlabel @ context='scriptString'}"
+                },
+                "scheduledLabel": "${properties.scheduledlabel @ context='scriptString'}",
+                "confirmedLabel": "${properties.confirmedlabel @ context='scriptString'}",
+                "startTestRideLabel": "${properties.starttestridelabel @ context='scriptString'}",
+                "endTestRideLabel": "${properties.endtestridelabel @ context='scriptString'}",
+                "cancelledLabel": "${properties.cancelledlabel @ context='scriptString'}",
+                "lapsedLabel": "${properties.lapsedLabel @ context='scriptString'}",
+                "completedLabel": "${properties.completedLabel @ context='scriptString'}"
+            },
+            "userLongTestRideConfig": {
+				"id": "LONG_TERM",
+                "bookingIdLabel": "${properties.lttrBookingIdlabel @ context='scriptString'}",
+                "callLabel": "${properties.lttrCalllabel @ context='scriptString'}",
+                "dealershipLabel": "${properties.lttrDealershiplabel @ context='scriptString'}",
+                "homeLabel": "${properties.lttrHomelabel @ context='scriptString'}",
+                "salesExecutiveLabel": "${properties.lttrSalesexecutivelabel @ context='scriptString'}",
+                "noAssigneeLabel": "${properties.lttrNoAssigneelabel @ context='scriptString'}",
+                "cancelBtn": {
+                    "label": "${properties.lttrCancelbtn @ context='scriptString'}"
+                },
+                "rescheduleBtn": {
+                    "label": "${properties.lttrReschedulebtn @ context='scriptString'}"
+                },
+                "downloadBtn": {
+                    "label": "${properties.lttrDownloadbtn @ context='scriptString'}"
+                },
+                "uploadDocBtn": {
+                    "label": "${properties.lttrUploadbtn @ context='scriptString'}"
+                },
+                "noRecordFound": {
+                    "title": "${properties.lttrNoResultslabel @ context='scriptString'}",
+                    "description": "${properties.lttrNoresultsdesc @ context='scriptString'}",
+                    "btnLabel": "${properties.lttrNoresultbtnlabel @ context='scriptString'}"
+                },
+                "scheduledLabel": "${properties.lttrScheduledlabel @ context='scriptString'}",
+                "paidLabel": "${properties.lttrPaidLabel @ context='scriptString'}",
+                "statusLabel": "${properties.lttrStatusLabel @ context='scriptString'}",
+                "confirmedLabel": "${properties.lttrConfirmedlabel @ context='scriptString'}",
+                "startTestRideLabel": "${properties.lttrStarttestridelabel @ context='scriptString'}",
+                "endTestRideLabel": "${properties.lttrEndtestridelabel @ context='scriptString'}",
+                "cancelledLabel": "${properties.lttrCancelledlabel @ context='scriptString'}",
+                "lapsedLabel": "${properties.lttrLapsedLabel @ context='scriptString'}",
+                "completedLabel": "${properties.lttrCompletedLabel @ context='scriptString'}"
+            },
+            "cancelLongTestDriveConfig": {
+                "title": "${properties.cancelLttrTitleLabel @ context='scriptString'}",
+                "message": "${properties.cancelLttrMsgLabel @ context='scriptString'}",
+                "yesBtn": {
+                    "label": "${properties.cancelLttrYesBtn @ context='scriptString'}"
+                },
+                "noBtn": {
+                    "label": "${properties.cancelLttrNoBtn @ context='scriptString'}"
+                }
+            },
+            "recentConfig": {
+                "videoid": "${properties.videoid @ context='scriptString'}",
+                "title": "${properties.recenttitle @ context='scriptString'}",
+                "communitytext": "${properties.communitytext @ context='scriptString'}",
+                "comminitylink": "${properties.communitylink @ context='scriptString'}",
+                "videonotfoundtxt": "${properties.videonotfoundtxt @ context='scriptString'}",
+                "videonotfounddesctext": "${properties.videonotfounddesctext @ context='scriptString'}",
+                "views": "${properties.views @ context='scriptString'}"
+            },
+            "cancelTestDriveConfig": {
+                "confirmLabel": "${properties.confirmlabel @ context='scriptString'}",
+                "helpLabel": "${properties.helplabel @ context='scriptString'}",
+                "selection": [{
+                    "label": "${properties.radiobutton1label @ context='scriptString'}",
+                    "value": "${properties.radiobutton1value @ context='scriptString'}"
+                }, {
+                    "label": "${properties.radiobutton2label @ context='scriptString'}",
+                    "value": "${properties.radiobutton2value @ context='scriptString'}"
+                }, {
+                    "label": "${properties.radiobutton3label @ context='scriptString'}",
+                    "value": "${properties.radiobutton3value @ context='scriptString'}"
+                }, {
+                    "label": "${properties.radiobutton4label @ context='scriptString'}",
+                    "value": "${properties.radiobutton4value @ context='scriptString'}"
+                }, {
+                    "label": "${properties.radiobutton5label @ context='scriptString'}",
+                    "value": "${properties.radiobutton5value @ context='scriptString'}"
+                }, {
+                    "label": "${properties.radiobutton6label @ context='scriptString'}",
+                    "value": "${properties.radiobutton6value @ context='scriptString'}"
+                }],
+                "reasonField": {
+                    "label": "${properties.reasonfieldlabel @ context='scriptString'}",
+                    "placeholder": "${properties.reasonfieldph @ context='scriptString'}",
+                    "validationRules": {
+                        "required": {
+                            "message": "${'commentReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "yesBtn": {
+                    "label": "${properties.yesbutton @ context='scriptString'}"
+                },
+                "noBtn": {
+                    "label": "${properties.nobutton @ context='scriptString'}"
+                }
+            },
+
+            "cancelOrderConfig": {
+				"useCancelRequest": ${properties.cancelorderrequest @ context='scriptString'},
+                "confirmLabel": "${properties.confirmcancellabel @ context='scriptString'}",
+                "refundInfo": "${properties.refundinfo @ context='scriptString'}",
+                "reasonField": {
+                    "label": "${properties.cancelreasonfieldlabel @ context='scriptString'}",
+                    "placeholder": "${properties.cancelreasonfieldph @ context='scriptString'}",
+                    "validationRules": {
+                        "required": {
+                            "message": "${'reasonReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "cancelBtn": {
+                    "label": "${properties.confirmcancelbtn @ context='scriptString'}"
+                },
+                "reasonOptions": {
+                    "options": [{
+                        "label": "${properties.cpradiobutton1label @ context='scriptString'}",
+                        "value": "Duplicate Order"
+                    }, {
+                        "label": "${properties.cpradiobutton2label @ context='scriptString'}",
+                        "value": "Want to change payment method"
+                    }, {
+                        "label": "${properties.cpradiobutton3label @ context='scriptString'}",
+                        "value": "Sourcing Payment Issue"
+                    }, {
+                        "label": "${properties.cpradiobutton4label @ context='scriptString'}",
+                        "value": "Change Of Mind"
+                    }, {
+                        "label": "${properties.cpradiobutton5label @ context='scriptString'}",
+                        "value": "Decided For Alternative Product"
+                    }, {
+                        "label": "${properties.cpradiobutton6label @ context='scriptString'}",
+                        "value": "Change/Combine Order"
+                    }],
+                    "validationRules": {
+                        "required": {
+                            "message": "${'reasonReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                }
+            },
+            "cancelPrebookingOrderConfig": {
+				"useCancelRequest": ${properties.cancelprebookingrequest @ context='scriptString'},
+                "confirmLabel": "${properties.cpconfirmcancellabel @ context='scriptString'}",
+                "refundInfo": "${properties.cprefundinfo @ context='scriptString'}",
+                "reasonField": {
+                    "label": "${properties.cpcancelreasonfieldlabel @ context='scriptString'}",
+                    "placeholder": "${properties.cpcancelreasonfieldph @ context='scriptString'}",
+                    "validationRules": {
+                        "required": {
+                            "message": "${'reasonReqMsz' @ i18n,context='scriptString'}"
+                        }
+                    }
+                },
+                "cancelBtn": {
+                    "label": "${properties.cpconfirmcancelbtn @ context='scriptString'}"
+                }
+            },
+            "myOrderConfig": {
+                "userOrder": {
+                    "title": "${properties.userordertitle @ context='scriptString'}",
+                    "noResultsLabel": "${properties.noorderslabel @ context='scriptString'}",
+                    "noRecordFound": {
+                        "title": "${properties.norecordOrderTitle @ context='scriptString'}",
+                        "description": "${properties.noRecordOrderDesc @ context='scriptString'}",
+                        "btnLabel": "${properties.buildOrderBtnLabel @ context='scriptString'}"
+                    },
+					"tooltipConfig": {
+						"info": "${properties.userordertooltip @ context='scriptString'}",
+						"infoPosition": "top",
+						"id": "paidAtDealer"
+					},
+                    "loadingOrdersTitle": "${properties.loadTitle @ context='scriptString'}",
+                    "bookingIdLabel": "${properties.orderbookingidlabel @ context='scriptString'}",
+					"exchangeApprovedInfo": "${properties.exchangeapproveinfo @ context='scriptString'}",
+                    "totalLabel": "${properties.totallabel @ context='scriptString'}",
+                    "dateLabel": "${properties.datelabel @ context='scriptString'}",
+                    "delivery": {
+                        "label": "${properties.deliverylabel @ context='scriptString'}",
+                        "info": "${properties.deliveryinfo @ context='scriptString'}"
+                    },
+                    "statusLabel": "${properties.statuslabel @ context='scriptString'}",
+                    "cancelBtn": {
+                        "label": "${properties.ordercancelbtn @ context='scriptString'}"
+                    },
+                    "purchaseBtn": {
+                        "label": "${properties.purchasebtn @ context='scriptString'}"
+                    },
+                    "isAadharVerificationRequired": "${properties.isAadharVerified @ context = 'scriptString'}",
+					"downloadInvoiceBtn": {
+						"label": "${properties.downloadInvoiceBtn @ context='scriptString'}",
+						"fileName": "${properties.downloadInvoiceFileName @ context='scriptString'}"
+					},
+					"downloadSalesQuotationBtn": {
+						"label": "${properties.downloadSalesBtn @ context='scriptString'}",
+						"fileName": "${properties.downloadSalesFileName @ context='scriptString'}"
+					},
+					"paymentBtn": {
+						"label": "${properties.paymentBtn @ context='scriptString'}"
+					},
+					"partialPaymentBtn": {
+						"label": "${properties.partialPaymentBtn @ context='scriptString'}"
+					},
+					"statusBtn": {
+						"loanLabel": "${properties.loanLabelBtn @ context='scriptString'}",
+						"LeaseLabel": "${properties.leaseLabelBtn @ context='scriptString'}"
+					},
+					"cancelLoanLeaseBtn": {
+						"loanLabel": "${properties.cancelLoanLabelBtn @ context='scriptString'}",
+						"LeaseLabel": "${properties.cancelLeaseLabelBtn @ context='scriptString'}"
+					},
+					"viewDetailLabel": "${properties.viewDetailLabel @ context='scriptString'}",
+					"viewLessDetailLabel": "${properties.viewLessDetailLabel @ context='scriptString'}",
+					"orderStatusDetails": [{
+						"id": "Draft",
+						"message": "${properties.orderDraftStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderDraftStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Booked",
+						"message": "${properties.orderBookedStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderBookedStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Credit Verified",
+						"message": "${properties.orderCreditVerifiedStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderCreditVerifiedStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Fulfilment",
+						"message": "${properties.orderFulfillmentStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderFulfillmentStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "KYC Done",
+						"message": "${properties.orderKycStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderKycStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Invoicing",
+						"message": "${properties.orderInvoicingStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderInvoicingStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Delivery",
+						"message": "${properties.orderDeliveryStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderDeliveryStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Closed",
+						"message": "${properties.orderClosedStatusDetailsMessage @ context='scriptString'}",
+						"status": "${properties.orderClosedStatusDetailsStatus @ context='scriptString'}"
+					}, {
+						"id": "Cancelled",
+						"message": "---",
+						"status": "${properties.orderCancelStatusDetailsStatus @ context='scriptString'}"
+					}],
+					"fameSubsidyRejectedReason": "${properties.fameSubsidyRejectedReason @ context='scriptString'}",
+					"preDeliveryMessage": "${properties.preDeliveryMessage @ context='scriptString'}",
+					"postDeliveryMessage": "${properties.postDeliveryMessage @ context='scriptString'}",
+					"emailVerificationMsg": "${properties.emailVerifyMessage @ context='scriptString'}",
+					"emailOtpConfig": {
+						"verifyNowLabel": "${properties.verifyNowTitle @ context='scriptString'}",
+						"otpLabel": "${properties.emailOTPLabel @ context='scriptString'}",
+						"otpTitle": "${properties.emailVerifyTitle @ context='scriptString'}",
+						"otpDescription": "${properties.otpDesc @ context='scriptString'}",
+						"verifyBtn": {
+							"label": "${properties.verifyBtnTitle @ context='scriptString'}"
+						},
+					},
+					"viewLoanLabel": "${properties.viewLoanLabel @ context='scriptString'}",
+					"viewLeaseLabel": "${properties.viewLeaseLabel @ context='scriptString'}",
+					"loanLeaseStatus": "${properties.loanLeaseLabel @ context='scriptString'}",
+					"inventoryAvailable": {
+						"value": "${properties.isAvailable @ context='scriptString'}",
+						"message": "${'inventoryAvailabilityMsz' @ i18n,context='scriptString'}"
+					},
+					"priorityEmailDomain": "${properties.emaildomain @ context='scriptString'}",
+				},
+				"cancelOrderPopup": {
+					"title":"${properties.cancelOrderTitle @ context='scriptString'}",
+					"description":"${properties.cancelOrderDesc @ context='scriptString'}",
+					"yesBtnLabel":"${properties.cancelOrderYesBtn @ context='scriptString'}",
+					"noBtnLabel":"${properties.cancelOrderNoBtn @ context='scriptString'}"
+				},
+				"purchaseTracker": {
+					"title": "${properties.purchaseTrackertitle @ context='scriptString'}",
+					"orderStatusConfig": [{
+						"id": 0,
+						"label": "${properties.ReservedStatusConfigLabel @ context='scriptString'}"
+					}, {
+						"id": 1,
+						"label": "${properties.PurchasedStatusConfigLabel @ context='scriptString'}"
+					}, {
+						"id": 2,
+						"label": "${properties.SubmitDocumentStatusConfigLabel @ context='scriptString'}"
+					}, {
+						"id": 3,
+						"label": "${properties.DocuemntVerifiedStatusConfigLabel @ context='scriptString'}"
+					}, {
+						"id": 4,
+						"label": "${properties.ShipmentandDeliveryStatusConfigLabel @ context='scriptString'}"
+					}],
+					"fameSubsidyRejectedReason": "${properties.purchaseTrackerFameSubsidyRejectedReason @ context='scriptString'}",
+					"uploadBtn": {
+						"label": "${properties.uploadButtonLabel @ context='scriptString'}"
+					},
+					"purchaseBtn": {
+						"label": "${properties.purchaseBtnLabel @ context='scriptString'}"
+					},
+					"userManualBtn": {
+						"label": "${properties.usermanualBtnLabel @ context='scriptString'}",
+						"url": "${author.usermanualBtnUrl @ context='uri', extension = 'html'}"
+					},
+					"trackBtn": {
+						"label": "${properties.trackBtnLabel @ context='scriptString'}"
+					}
+				},
+				"paymentInfo": {
+					"title": "${properties.paymentInfotitle @ context='scriptString'}",
+					"transactionIdLabel": "${properties.paymentInfotransactionIdLabel @ context='scriptString'}",
+					"purchaseLoanLabel": "${properties.purchaseLoanLabel @ context='scriptString'}",
+					"paidOnLabel": "${properties.paidLabel @ context='scriptString'}",
+					"status": "${properties.statusLabel @ context='scriptString'}",
+					"paidatDealer": "${properties.payDealerLabel @ context='scriptString'}",
+					"onlineTransaction": "${properties.onlineTransLabel @ context='scriptString'}",
+					"tooltipConfig": {
+						"info": "${properties.payInfoTooltip @ context='scriptString'}",
+						"infoPosition": "top",
+						"id": "paidAtDealer"
+					}
+				},
+				"customerDetails": {
+					"title": "${properties.customerDetailstitle @ context='scriptString'}"
+				},
+				"orderSummary": {
+					"title": "${properties.breakuptitle @ context='scriptString'}",
+					"basePriceLabel": "${properties.bkbasepricelabel @ context='scriptString'}",
+					"otherChargesLabel": "${properties.bkotherchargeslabel @ context='scriptString'}",
+					"addonsLabel": "${properties.bkaddonslabel @ context='scriptString'}",
+					"gstLabel": "${properties.bkgstlabel @ context='scriptString'}",
+					"subsidyLabel": "${properties.bksubsidylabel @ context='scriptString'}",
+					"prebookingPricePaidLabel": "${properties.bkprebookingpricepaidlabel @ context='scriptString'}",
+					"exchangeLabel": "${properties.exchangepricelabel @ context='scriptString'}",
+					"insuranceLabel": "${properties.bkinsurencelabel @ context='scriptString'}",
+					"orderTotalLabel": "${properties.summaryorderTotalLabel @ context='scriptString'}",
+					"configureLabel": "${properties.configureLabel @ context='scriptString'}",
+					"homeDeliveryLabel": "${properties.homedeliverylabel @ context='scriptString'}"
+				}
+			},
+			"navConfig": {
+				"myscooter": "${properties.myScooterLabel @ context='scriptString'}",
+				"myorders": "${properties.ordersLabel @ context='scriptString'}",
+				"shorttestrides": "${properties.testRidesLabel @ context='scriptString'}",
+				"longtestrides": "${properties.longTestRidesLabel @ context='scriptString'}",
+				"recents": "${properties.recentlabel @ context='scriptString'}",
+			},
+			"myscooterconfig": {
+				"title": "${properties.continueConfigTitle @ context='scriptString'}",
+				"configLabels": {
+					"dateLabel": "${properties.accessOnLabel @ context='scriptString'}",
+					"totalLabel": "${properties.totalLabel @ context='scriptString'}"
+				},
+				"noRecordFound": {
+					"title": "${properties.norecordTitle @ context='scriptString'}",
+					"description": "${properties.noRecordDesc @ context='scriptString'}",
+					"buildYourOwnBtn": "${properties.buildBtnLabel @ context='scriptString'}"
+				},
+				"btnLabels": {
+					"purchaseBtn": "${properties.purchaseBtnlabel @ context='scriptString'}",
+					"continueBtn": "${properties.continueBtnLabel @ context='scriptString'}",
+				},
+				"showOldPurchasePage": ${properties.enableOldPurchase @ context = 'scriptString'}
+			},
+		}
+    })
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+    <div data-component="UserProfile" data-cmp-type="react" data-cmp-config="profileConfig"></div>
+</sly>

@@ -1,0 +1,41 @@
+
+
+.vida-nominee-details {
+  &__container {
+    padding: 60px 0;
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__form-wrapper {
+    margin-top: 19px;
+  }
+
+  &__btn-container {
+    max-width: 400px;
+    min-width: 193px;
+    @include media(">=desktop") {
+      max-width: unset;
+      min-width: unset;
+      width: 50%;
+    }
+  }
+
+  &__details-wrapper {
+    width: 100%;
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__image-container {
+    display: none;
+    @include media(">=desktop") {
+      align-self: center;
+      display: block;
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Vertical Slider Component"></div>
+<sly data-sly-use.verticalSliderModel="${'com.heromotocorp.vida.core.models.VerticalSliderModel'}"/>
+<section class="vida-vertical-slider" data-component="vertical-slider" data-section-id="${properties.sectionid}">
+    <div class="vida-vertical-slider__wrapper">
+        <div class="vida-container vida-vertical-slider__container" data-animation-wrapper="true">
+            <div class="vida-vertical-slider__heading" data-animate="true" data-animation-name="zoom-out-txt">
+              ${properties.heading @context = 'html'}
+            </div>
+            <div class="vida-vertical-slider__tabs">
+                <div class="vida-vertical-slider__tabcontent">
+                    <sly data-sly-list.verticalSlider="${verticalSliderModel.verticalSlider}">
+                        <div id="${verticalSlider.id}" class="vida-vertical-slider__tabcontent-asset">
+						<sly data-sly-test="${verticalSlider.variations == 'image'}">
+                            <picture>
+	                                   <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=verticalSlider.image}"></sly>
+									   <sly data-sly-use.DMImageURLServiceMob="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=verticalSlider.fullScreenImageMob}"></sly>
+										  <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+										  <source srcset="${DMImageURLServiceMob.dMImagePathLink}" media="(min-width: 360px)">
+                                <img loading='lazy' src="${DMImageURLServiceMob.dMImagePathLink}" alt="${properties.imagealt}">
+                            </picture>
+						</sly>
+						<sly data-sly-test="${verticalSlider.variations == 'video'}">
+						<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=verticalSlider.fullScreenvideo}"></sly>
+						<sly data-sly-use.DMVideoURLServiceMob="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=verticalSlider.mobScreenVideo}"></sly>
+                            <div class="vida-vertical-slider__video-player" data-component="video-player">
+								<sly data-sly-test="${!verticalSlider.mobScreenVideo}">
+									<video class="vida-video-player__playback" autoplay playsinline
+										aria-label="video playback" src="${DMVideoURLService.dMVideoPathLink}"
+										muted loop>
+									</video>
+									</sly>
+									<sly data-sly-test="${verticalSlider.mobScreenVideo}">
+									<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+										src="" muted loop data-src-mobile="${DMVideoURLServiceMob.dMVideoPathLink}"
+										data-src-desktop="${DMVideoURLService.dMVideoPathLink}">
+									</video>
+								</sly>
+							</div>
+						</sly>
+                        </div>
+                    </sly>
+                </div>
+
+                <div class="vida-vertical-slider__tablinks">
+                    <sly data-sly-list.verticalSlider = "${verticalSliderModel.verticalSlider}">
+                    <div class="vida-vertical-slider__link" data-rel="${verticalSlider.id}">
+                        <h2>${verticalSlider.title}</h2>
+                        <p>${verticalSlider.desc}</p>
+                    </div>
+                </sly>
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

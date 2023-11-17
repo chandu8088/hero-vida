@@ -1,0 +1,5 @@
+{
+  "schedulername":"Social Media Scheduler",
+  "cronExpression":"$[env:SOCIAL_MEDIA_CRON_EXPRESSION]",
+  "isSocialMediaSchedulerEnabled" : "$[env:SOCIAL_MEDIA_SCHEDULER_ENABLED]"
+}

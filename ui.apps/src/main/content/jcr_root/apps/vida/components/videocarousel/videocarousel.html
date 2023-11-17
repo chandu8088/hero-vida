@@ -1,0 +1,31 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Video Carousel Component"></div>
+<sly data-sly-use.videoCarousel="${'com.heromotocorp.vida.core.models.VideoCarouselModel'}" />
+<section class="vida-video-carosuel" data-component="video-carosuel">
+  <div class="vida-video-carosuel__wrapper">
+    <div class="vida-video-carosuel__container vida-container">
+		<div class="tns-controls"> 
+			<div class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+			</div>
+			<div class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+			</div>
+		</div>
+		<div class="vida-video-carosuel__slider">
+			<sly data-sly-list.items="${videoCarousel.videopaths}">
+			  <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=items.videoPath}"/>
+			  <sly data-sly-test="${items.isExternalBtnURL}">
+				<div class="vida-video-carosuel__slider-card">
+				  <iframe class="vida-video-player__playback" width="auto" height="500" src="${items.videoPath}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			  </sly>
+			  <sly data-sly-test="${!items.isExternalBtnURL}">
+				<div class="vida-video-carosuel__slider-card">
+				  <div class="vida-video-player vida-asset-banner__media" data-component="video-player">
+					<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback" src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+				  </div>
+				</div>
+			  </sly>
+			</sly>
+		</div>
+    </div>
+  </div>
+</section>

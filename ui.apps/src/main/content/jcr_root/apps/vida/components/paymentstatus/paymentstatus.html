@@ -1,0 +1,120 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Payment Status Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "paymentStatusConfig": {
+      "paymentSuccess": {
+        "title": "${properties.pstitle @ context='scriptString'}!",
+       	"successMessage": "You have successfully booked your VIDA",
+		"pendingMessage": "We are processing your booking for VIDA",
+        "orderDetails": {
+          "message": "${properties.psorderdetailsmessage @ context='scriptString'} ",
+          "subText": "${properties.psorderdetailssubtext @ context='scriptString'} "
+        },
+        "launchDetails": {
+          "message": "${properties.pslaunchdetailsmessage @ context='scriptString'}",
+          "subText": "${properties.pslaunchdetailssubtext @ context='scriptString'}",
+		  "trackDeliveryLabel": "${properties.pslaunchdetailstrackdeliverylabel @ context='scriptString'}",
+		  "info": "${properties.pslaunchdetailsinfo @ context='scriptString'}"
+        },
+        "disclaimer": {
+          "subText": "${properties.psdisclaimersubtext @ context='scriptString'}"
+        }
+      },
+      "paymentPending": {
+        "title": "${properties.pptitle @ context='scriptString'}",
+        "message": "${properties.ppmessage @ context='scriptString'} ",
+        "orderDetails": {
+          "message": "${properties.psoderdetailsmessage @ context='scriptString'} ",
+          "subText": "${properties.psoderdetailssubtext @ context='scriptString'}<a href=''> ${properties.psgetdirections @ context='scriptString'}</a>",
+        },
+        "confirmationDetails": {
+          "title": "${properties.psconfirmationtitle @ context='scriptString'}",
+          "message": "${properties.psconfirmationmessage @ context='scriptString'}",
+		  "trackDeliveryLabel": "${properties.pstrackyourdelivery @ context='scriptString'}",
+          "info": "${properties.psconfirmationinfo @ context='scriptString'}"
+        }
+      },
+      "paymentFailure": {
+        "title": "${properties.paymentfailuretitle @ context='scriptString'}",
+		"imageUrl": "${properties.imgUrl @ extension = 'html', context='uri'}",
+        "message": "${properties.paymentfailuremessage @ context='scriptString'}",
+        "retryPaymentBtn": {
+          "label": "${properties.retrypaymentbuttonlabel @ context='scriptString'}",
+		  "actionUrl": "/profile.html"
+        },
+          "helpLink": {
+            "helpLabel": "${properties.helpLabel @ context='scriptString'}",
+			"chatLabel": "${properties.chatLabel @ context='scriptString'}"
+          }
+      },
+      "documentSection": {
+        "title": "${properties.dstitle @ context='scriptString'}",
+        "message": "${properties.dsmessage @ context='scriptString'}",
+      
+        "inspectionDetails": {
+            "title": "Where would you prefer to get your exchange inspection?",
+            "message": "We will reach out to you for the same within 1-2 working days.",
+            "atHome": {
+                "label": "At home",
+                "id": "home"
+            },
+            "atCenter": {
+                "label": "At Vida center",
+                "id": "hero-center"
+            }
+        },
+        
+        
+        "nomineeInfo": {
+          "title": "${properties.dsnomineeinfotittle @ context='scriptString'}",
+          "message": "${properties.dsnomineeinfomessage @ context='scriptString'}",
+          "processingTime": "${properties.dsnomineeinfoprocessingtime @ context='scriptString'}"
+        },
+        "uploadDocumentInfo": {
+          "title": "${properties.dsuploaddocumentnfotittle @ context='scriptString'}",
+          "documentsList": "${properties.dsuploaddocumentlist @ context='scriptString'}",
+          "processingTime": "${properties.dsuploaddocumentprocessingtime @ context='scriptString'}"
+        },
+        "primaryBtn": {
+          "label": "${properties.dsprimarybtnlabel @ context='scriptString'}",
+          "actionUrl": "${properties.dsprimarybtnactionurl @ context='uri', extension = 'html'}"
+        },
+        "secondaryBtn": {
+          "label": "${properties.dssecondarybtnlabel @ context='scriptString'}"
+        },
+        "confirmationPopUp": {
+          "title": "${properties.dsconfirmationpopuptittle @ context='scriptString'}",
+          "message": "${properties.dsconfirmationpopupmessage @ context='scriptString'}",
+          "primaryBtn": {
+            "label": "${properties.dsconfirmationprimarybtnlabel @ context='scriptString'}"
+          },
+          "secondaryBtn": {
+            "label": "${properties.dsconfirmationsecondarybtnlabel @ context='scriptString'}",
+            "actionUrl": ""
+          }
+        }
+      },
+				"outStandingPaymentSuccess": {
+					"title": "${properties.outstandingpaymenttitle @ context='scriptString'}",
+					"successMessage": "${properties.outstandingpaymentmsz @ context='scriptString'}",
+					"orderDetails": {
+						"message": "${properties.outstandingorderdetailsmsz @ context='scriptString'}",
+						"subText": "${properties.outstandingorderdetailssubtext @ context='scriptString'}"
+					},
+					"launchDetails": {
+						"message": "${properties.outstandinglaunchdetailsmsz @ context='scriptString'}",
+						"subText": "${properties.outstandinglaunchdetailssubtext @ context='scriptString'}",
+						"trackDeliveryLabel": "${properties.outstandinglaunchdetailslabel @ context='scriptString'}",
+						"info": "${properties.outstandinglaunchdetailsinfo @ context='scriptString'}"
+					},
+					"disclaimer": {
+						"subText": "${properties.outstandingdisclaimersubtext @ context='scriptString'}"
+					}
+				}
+    }
+  })
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="BookingPaymentStatus" data-cmp-type="react" data-cmp-config="paymentStatusConfig"></div>
+</sly>

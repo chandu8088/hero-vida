@@ -1,0 +1,45 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Hotspot Component"></div>
+<sly data-sly-use.model="${'com.heromotocorp.vida.core.models.HotspotModel'}" />
+<div class="vida-ec-hotspot" data-animation-wrapper="true">
+    <div class="vida-ec-hotspot__heading" data-animate="true" data-animation-name="zoom-out-txt">
+        ${properties.title @ context = 'html'}
+    </div>
+    <div class="vida-ec-hotspot__content">
+      <div class="vida-ec-hotspot__media">
+        <picture class="vida-ec-hotspot__media-asset">
+          <source srcset="${properties.image}"
+              media="(min-width:1024px)">
+          <source srcset="${properties.image}"
+              media="(min-width: 360px)">
+          <img src="${properties.image}" alt="${properties.imgalttext}">
+        </picture>
+      </div>
+      <div class="vida-ec-hotspot__item-wrapper">
+        <sly data-sly-list.item = "${model.items}">
+        <div class="vida-ec-hotspot__item ${itemList.index == 2 || itemList.index == 3 ? 'vida-ec-hotspot__item--reverse' : ''}">
+          <div class="vida-ec-hotspot__item-position">
+          </div>
+          <div class="vida-ec-hotspot__card">
+            <div class="vida-ec-hotspot__card-media">
+              <picture class="vida-ec-hotspot__card-media-asset">
+                <source srcset="${item.imagepath}"
+                    media="(min-width:1024px)">
+                <source srcset="${item.imagepath}"
+                    media="(min-width: 360px)">
+                <img src="${item.imagepath}" alt="${item.imagealttext}">
+              </picture>
+            </div>
+            <div class="vida-ec-hotspot__card-content">
+              <div class="vida-ec-hotspot__card-heading">
+                ${item.itemTitle @ context = 'html'}
+              </div>
+              <div class="vida-ec-hotspot__card-description">
+                ${item.itemDesc @ context = 'html'}
+              </div>
+            </div>
+          </div>
+        </div>
+        </sly>
+      </div>
+    </div>
+  </div>

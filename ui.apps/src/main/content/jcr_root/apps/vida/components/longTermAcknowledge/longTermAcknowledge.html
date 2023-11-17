@@ -1,0 +1,21 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Long Term Test Ride Acknowledgement Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveLongTermConfig": {
+    	"backgroundImg": "${properties.longTermAcknowledgeBgImg @ context='scriptString'}",
+        "lttrAcknowledgement": {
+			"title": "${properties.longTermSuccessTitle @ context='scriptString'}",
+			"titleErr": "${properties.longTermErrorTitle @ context='scriptString'}",
+			"LTTRMessage": "${properties.longTermSuccessMsg @ context='scriptString'}",
+			"LTTRMessageErr": "${properties.longTermErrorMsg @ context='scriptString'}",
+			"btnText": "${properties.profileBtnLabel @ context='scriptString'}",
+			"btnTextErr": "${properties.testRideBtnLabel @ context='scriptString'}",
+			"info": "${properties.longTermAcknowledgeInfo @ context='scriptString'}"
+        }
+      }
+    });
+  </script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="TestDriveLongTermNew" data-cmp-type="react" data-cmp-config="testDriveLongTermConfig"></div>
+</sly>

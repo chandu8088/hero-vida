@@ -1,0 +1,19 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Advantage Terms & Condition Component"></div>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "advTerms": {
+        "popupId": "${properties.advantageid @ context='scriptString'}",
+		"agreeLabel": "${properties.advagreelabel @ context='scriptString'}",
+		"terms": {
+			"label": "${properties.advtnclabel @ context='scriptString'}",
+			"actionUrl": ""
+		},
+		"btnLabel":{
+			"close": "${properties.advclosebtnlabel @ context='scriptString'}"
+		}
+      }
+    });
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="TermsAndConditionsPopup" data-cmp-type="react" data-cmp-config="advTerms"></div>
+</sly>

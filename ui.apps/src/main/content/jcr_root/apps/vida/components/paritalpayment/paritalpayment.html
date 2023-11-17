@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Parital Payment Component"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "partialPaymentConfig": {
+		"paymentInputField": {
+			"label": "${properties.paymentinputlabel @ context='scriptString'}",
+			"id": "partial_payment_amount",
+			"name": "partial_payment_amount",
+			"placeholder": "${properties.paymentinputph @ context='scriptString'}"
+		},
+		"submitBtn": "${properties.makepaybtnlabel @ context='scriptString'}",
+		"helpTextQuestion": "${properties.helptext @ context='scriptString'}",
+		"helpTextChat": "${properties.chattext @ context='scriptString'}",
+		"partialInfoPrimary": "${properties.primaryinfo @ context='scriptString'}",
+		"partialInfoSecondary": "${properties.secondaryinfo @ context='scriptString'}",
+		"extimatedDeliveryTime": "${properties.estimatedtimetext @ context='scriptString'}",
+		"inputBoxErrors": {
+			"minimum": "${'minAmountMsg' @ i18n,context='scriptString'}",
+			"maximum": "${'maxAmountMsg' @ i18n,context='scriptString'}",
+			"equals": "${'sameAmountMsg' @ i18n,context='scriptString'}"
+		}
+	 }
+  });
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="PartialPayment" data-cmp-type="react" data-cmp-config="partialPaymentConfig"></div>
+ </sly>

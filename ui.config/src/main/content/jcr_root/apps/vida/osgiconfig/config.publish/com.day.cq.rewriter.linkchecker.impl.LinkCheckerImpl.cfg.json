@@ -1,0 +1,15 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "service.special_link_patterns":[
+    ""
+  ],
+  "service.special_link_prefix":[
+    "javascript:",
+    "data:",
+    "mailto:",
+    "#",
+    "<!--",
+    "${",
+    "tel:"
+  ]
+}

@@ -1,0 +1,113 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Billing Shipping Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "deliveryConfig": {
+      "billingShippingConfig": {
+        "title": "${properties.bstitle @ context='scriptString'}",
+        "billingAddress": {
+          "title": "${properties.bsbillingaddresstitle @ context='scriptString'}",
+          "message": "${properties.bsbillingaddressmessage @ context='scriptString'}"
+        },
+        "shippingAddress": {
+          "title": "${properties.bsshippingaddresstitle @ context='scriptString'}s",
+          "message": "${properties.bsshippingaddressmessage @ context='scriptString'}",
+          "confirmAddressField": {
+            "label": "${properties.bsshippingaddresconfirm @ context='scriptString'}"
+          }
+        },
+        "addressLine1Field": {
+          "label": "${properties.addressline1label @ context='scriptString'}",
+          "placeholder": "${properties.addressline1placeholder @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${'addressLine1ReqMsz' @ i18n,context='scriptString'}"
+            }
+          }
+        },
+        "addressLine2Field": {
+          "label": "${properties.addressline2label @ context='scriptString'}",
+          "placeholder": "${properties.addressline2placeholder @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${'addressLine2ReqMsz' @ i18n,context='scriptString'}"
+            }
+          }
+        },
+        "landmarkField": {
+          "label": "${properties.bslandmark @ context='scriptString'}",
+          "placeholder": "${properties.bslandmarkph @ context='scriptString'}"
+        },
+        "pinCodeField": {
+          "label": "${properties.bspincode @ context='scriptString'}",
+          "placeholder": "${properties.bspincodeph @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${'pinCodeReqMsz' @ i18n,context='scriptString'}"
+            },
+            "customValidation": {
+              "noServiceMsg": "${'noServiceMsg' @ i18n,context='scriptString'}",
+              "noCityMatchMsg": "${'noCityMatchMsg' @ i18n,context='scriptString'}",
+            },
+            "minLength": {
+              "value": 6,
+              "message": "${'pinCodeMinCharaterMsz' @ i18n,context='scriptString'}"
+            }
+          }
+        },
+        "cityField": {
+          "label": "${properties.bscity @ context='scriptString'}"
+        },
+        "stateField": {
+          "label": "${properties.bsstate @ context='scriptString'}"
+        },
+        "notificationBanner": {
+          "label": "${properties.bsnotificationbannerlabel @ context='scriptString'}",
+          "info": "${properties.bsnotificationbannerinfo @ context='scriptString'}"
+        }
+      },
+      "deliveryStatusConfig": {
+        "statuses": [{
+          "id": 0,
+          "label": "${properties.bsconfiglabel @ context='scriptString'}"
+        },
+        {
+          "id": 1,
+          "label": "${properties.bsownerdhiplabel @ context='scriptString'}"
+        },
+        {
+          "id": 2,
+          "label": "${properties.bsdeliverydetailslabel @ context='scriptString'}"
+        },
+        {
+          "id": 3,
+          "label": {
+				"payment": "${properties.bspaymentlabel @ context='scriptString'}",
+				"loan": "${properties.bsLoanlabel @ context='scriptString'}",
+				"lease": "${properties.bsLeaselabel @ context='scriptString'}"
+			}
+        }
+        ],
+        "saveBtn": {
+          "label": "${properties.bssavecontinuelabel @ context='scriptString'}"
+        },
+        "paymentBtn": {
+          "label": "${properties.bsmakepaymentlabel @ context='scriptString'}"
+        },
+        "centrePayBtn": {
+          "label": "${properties.bsceterpaylabel @ context='scriptString'}"
+        },
+        "helpLink": {
+						"helpLabel": "${properties.bshelptextlabel @ context='scriptString'}",
+						"chatLabel": "${properties.bschatwithusabel @ context='scriptString'}"
+        },
+		"applyBtn": {
+			"label": "${properties.bsApplyBtn @ context='scriptString'}"
+		}
+      }
+    }
+  });  
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="DeliveryDetails" data-cmp-type="react" data-cmp-config="deliveryConfig"></div>
+</sly>

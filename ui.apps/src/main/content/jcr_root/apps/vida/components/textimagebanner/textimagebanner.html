@@ -1,0 +1,18 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Text Image Banner Component" ></div>
+<div class="vida-text-image-banner">
+    <div class="vida-container vida-text-image-banner__container">
+      <div class="vida-text-image-banner__image" style="background-image: url('${properties.image @ context='uri'}');">
+        <div class="vida-text-image-banner__content">
+          <div class="vida-text-image-banner__title">
+            <p>${properties.title}</p>
+          </div>
+          <div class="vida-text-image-banner__description">
+            <p>${properties.desc}</p>
+          </div>
+          <div class="vida-text-image-banner__cta">
+            <a href="${properties.btnurl @ extension = 'html'}" class="btn btn--lg btn--primary cta--anchor" role="Button" data-link-position="Bottom">${properties.btnlabel}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,212 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Delivery Tracker Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+    "deliveryTrackerConfig": {
+      "title": "${properties.title @ context='scriptString'}",
+      "backBtn": {
+          "label": "${properties.btnlabel @ context='scriptString'}"
+        },
+      "userOrder": {
+            "title": "${properties.titleuserorder @ context='scriptString'}",
+            "noResultsLabel": "${properties.noResultsLabel @ context='scriptString'}",
+            "bookingIdLabel": "${properties.bookingIdLabel @ context='scriptString'}",
+            "totalLabel": "${properties.totalLabel @ context='scriptString'}",
+            "dateLabel": "${properties.dateLabel @ context='scriptString'}",
+            "delivery": {
+              "label": "${properties.deliverylabel @ context='scriptString'}",
+              "info": "${properties.deliveryinfo @ context='scriptString'}"
+            },
+            "statusLabel": "${properties.statusLabel @ context='scriptString'}",
+            "cancelBtn": {
+              "label": "${properties.cancelBtn @ context='scriptString'}"
+            },
+            "purchaseBtn": {
+              "label": "${properties.purchaseBtn @ context='scriptString'}"
+            },
+            "downloadInvoiceBtn": {
+              "label": "${properties.downloadInvoiceBtn @ context='scriptString'}",
+              "fileName": "${properties.downloadInvoiceFileName @ context='scriptString'}"
+            },
+			"paymentBtn": {
+              "label": "${properties.paymentBtn @ context='scriptString'}"
+            },
+            "viewDetailLabel": "${properties.viewDetailLabel @ context='scriptString'}",
+            "orderStatusDetails": [{
+              "id": "Draft",
+              "message": "${properties.draftmessage @ context='scriptString'}",
+              "status": "${properties.draftstatus @ context='scriptString'}"
+            },
+            {
+              "id": "Booked",
+              "message": "${properties.bookedmessage @ context='scriptString'}",
+              "status": "${properties.bookedstatus @ context='scriptString'}"
+            },
+            {
+              "id": "Credit Verified",
+              "message": "${properties.creditverifiedmessage @ context='scriptString'}",
+              "status": "${properties.creditverifiedstatus @ context='scriptString'}"
+            },
+            {
+              "id": "Fulfilment",
+              "message": "${properties.fullfillmentmessage @ context='scriptString'}",
+              "status": "${properties.fullfillmentstatus @ context='scriptString'}"
+            },
+            {
+              "id": "KYC Done",
+              "message": "${properties.kycmessage @ context='scriptString'}",
+              "status": "${properties.kycstatus @ context='scriptString'}"
+            },
+            {
+              "id": "Invoicing",
+              "message": "${properties.invoicingmessage @ context='scriptString'}",
+              "status": "${properties.invoicingstatus @ context='scriptString'}"
+            },
+            {
+              "id": "Delivery",
+              "message": "${properties.deliverymessage @ context='scriptString'}",
+              "status": "${properties.deliverystatus @ context='scriptString'}"
+            },
+            {
+              "id": "Closed",
+              "message": "${properties.closedmessage @ context='scriptString'}",
+              "status": "${properties.closedstatus @ context='scriptString'}"
+            }],
+            "fameSubsidyRejectedReason": "${properties.fameSubsidyRejectedReason @ context='scriptString'}",
+          },
+		"purchaseTracker": {
+          "title": "${properties.purchasetrackertitle @ context='scriptString'}",
+          "orderStatusConfig": [{
+              "id": 0,
+              "label": "${properties.orderstatusonelabel @ context='scriptString'}"
+          }, {
+              "id": 1,
+              "label": "${properties.orderstatustwolabel @ context='scriptString'}"
+          }, {
+              "id": 2,
+              "label": "${properties.orderstatusthreelabel @ context='scriptString'}"
+          }, {
+              "id": 3,
+              "label": "${properties.orderstatusfourlabel @ context='scriptString'}"
+          }, {
+              "id": 4,
+              "label": "${properties.orderstatusfivelabel @ context='scriptString'}"
+          }],
+          "fameSubsidyRejectedReason": "${properties.famesubsidyrejectedreasonlabel @ context='scriptString'}",
+          "uploadBtn": {
+              "label": "${properties.uploaddocumentlabel @ context='scriptString'}"
+          },
+          "purchaseBtn": {
+              "label": "${properties.purchasebtnlabel @ context='scriptString'}"
+          }, "userManualBtn": {
+              "label": "${properties.usermanualbtnlabel @ context='scriptString'}",
+              "url": "${properties.ownermanualurl @ context='scriptString'}"
+          },
+          "trackBtn": {
+              "label": "${properties.trackbtnlabel @ context='scriptString'}"
+          },
+      },
+      "deliveryTracker": {
+        "title": "${properties.deliverytrackertitle @ context='scriptString'}",
+        "vehicleAllocation": {
+          "label": "${properties.vehicleAllocationlabel @ context='scriptString'}"
+        },
+        "vehicleCustomisation": {
+          "label": "${properties.vehicleCustomisationlabel @ context='scriptString'}",
+          "msg": "${properties.vehicleCustomisationmsg @ context='scriptString'}"
+        },
+        "rtoProcess": {
+          "label": "${properties.rtoProcesslabel @ context='scriptString'}",
+          "msg": "${properties.rtoProcessmsg @ context='scriptString'}"
+        },
+        "readyForDelivery": {
+          "label": "${properties.readyForDeliveryLabel @ context='scriptString'}"
+        },
+        "delivery": {
+          "label": "${properties.deliverytrackerdeliverylabel @ context='scriptString'}",
+          "msg": "${properties.deliverytrackerdeliverymsg @ context='scriptString'}"
+        },
+
+        "deliveryPriority": {
+          "title": "${properties.deliveryPriorityTitle @ context='scriptString'}",
+          "experienceCenter": {
+            "label": "${properties.experienceCenterlabel @ context='scriptString'}",
+            "addressLabel": "${properties.addressLabel @ context='scriptString'}",
+            "dateField": {
+              "label": "${properties.dateField @ context='scriptString'}",
+              "validationRules": {
+							  "required": {
+								  "message": "${'dateReqMsz' @ i18n,context='scriptString'}"
+							  }
+						  }
+            },
+            "confirmBtn": {
+              "label": "${properties.confirmBtnLabel @ context='scriptString'}"
+            }
+          },
+          "onsite": {
+            "label": "${properties.onsitelabel @ context='scriptString'}",
+            "addressLabel": "${properties.onsiteaddressLabel @ context='scriptString'}",
+            "dateField": {
+              "label": "${properties.onsitedateField @ context='scriptString'}",
+              "validationRules": {
+							  "required": {
+								  "message": "${'dateReqMsz' @ i18n,context='scriptString'}"
+							  }
+						  }
+            },
+            "timeField": {
+              "label": "${properties.onsitetimeField @ context='scriptString'}",
+              "validationRules": {
+							  "required": {
+								  "message": "${'timeReqMsz' @ i18n,context='scriptString'}"
+							  }
+						  }
+            },
+            "scheduleDeliveyBtn": {
+              "label": "${properties.onsitescheduleDeliveyBtn @ context='scriptString'}"
+            }
+          }
+        }
+      },
+      "RTODetails": {
+        "title": "${properties.rtotitle @ context='scriptString'}",
+        "registrationNameLabel": "${properties.registrationNameLabel @ context='scriptString'}",
+        "vehicleTypeLabel": "${properties.vehicleTypeLabel @ context='scriptString'}",
+        "vehicleColorLabel": "${properties.vehicleColorLabel @ context='scriptString'}",
+        "vehicleNameLabel": "${properties.vehicleNameLabel @ context='scriptString'}",
+        "registrationNumberLabel": "${properties.registrationNumberLabel @ context='scriptString'}",
+        "registrationCertificateBtn": {
+          "label": "${properties.registrationCertificateBtn @ context='scriptString'}"
+        }
+      },
+      "paymentInfo": {
+        "title": "${properties.paymentInfotitle @ context='scriptString'}",
+        "transactionIdLabel": "${properties.transactionIdLabel @ context='scriptString'}",
+        "purchaseLoanLabel": "${properties.purchaseLoanLabel @ context='scriptString'}",
+        "paidOnLabel": "${properties.paidOnLabel @ context='scriptString'}"
+      },
+      "customerDetails": {
+        "title": "${properties.customerDetailsTitle @ context='scriptString'}"
+      },
+      "orderSummary": {
+        "title": "${properties.breakuptitle @ context='scriptString'}",
+        "basePriceLabel": "${properties.bkbasepricelabel @ context='scriptString'}",
+        "otherChargesLabel": "${properties.bkotherchargeslabel @ context='scriptString'}",
+        "addonsLabel": "${properties.bkaddonslabel @ context='scriptString'}",
+        "gstLabel": "${properties.bkgstlabel @ context='scriptString'}",
+        "subsidyLabel": "${properties.bksubsidylabel @ context='scriptString'}",
+        "prebookingPricePaidLabel": "${properties.bkprebookingpricepaidlabel @ context='scriptString'}",
+        "exchangeLabel": "${properties.exchangepricelabel @ context='scriptString'}",
+        "insuranceLabel": "${properties.bkinsurencelabel @ context='scriptString'}",
+        "orderTotalLabel": "${properties.summaryorderTotalLabel @ context='scriptString'}",
+        "configureLabel": "${properties.configureLabel @ context='scriptString'}",
+        "homeDeliveryLabel": "${properties.homedeliveryLabel @ context='scriptString'}"
+      }
+    }
+  });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="DeliveryTrack" data-cmp-type="react" data-cmp-config="deliveryTrackerConfig"></div>
+  </sly>
+  

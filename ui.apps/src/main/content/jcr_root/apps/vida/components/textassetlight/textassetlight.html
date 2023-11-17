@@ -1,0 +1,49 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Text Asset Light Component"></div>
+
+<section class="vida-text-asset-light" data-section-id="${properties.sectionid}">
+  <div class="vida-container" data-animation-wrapper="true">
+    <sly data-sly-test="${properties.heading}">
+    <div class="vida-text-asset-light__title-container" data-animate="true" data-animation-name="slide-right">
+      ${properties.heading @ context = 'html'}
+    </div>
+  </sly>
+    <div class="vida-text-asset-light__item-container">
+      <div class="vida-text-asset-light__item">
+        <div class="vida-text-asset-light__asset-container">
+          <sly data-sly-test="${properties.itemType == 'picture'}">
+          <picture>
+			<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.imagepath}"></sly>
+			 <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+			  <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+            <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealttext}"
+              class="vida-text-asset-light__asset" data-animate="true" data-animation-name="zoom-out-img">
+          </picture>
+        </sly>
+        
+          <sly data-sly-test="${properties.itemType == 'video'}">
+       
+         <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=properties.videopath}"></sly>
+  
+          <div class="vida-video-player vida-text-asset-light-asset" data-component="video-player">
+            <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+              src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+          </div>
+          </sly>
+        </div>
+
+        <div class="vida-text-asset-light__content-wrapper" data-animate="true" data-animation-name="fade-in">
+          <div class="vida-text-asset-light__item-title-wrapper">
+            ${properties.subheading @ context = 'html'}
+          </div>
+          <sly data-sly-test="${properties.description}">
+          <div class="vida-text-asset-light__item-content">
+            <p>
+              ${properties.description}
+            </p>
+          </div>
+        </sly>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

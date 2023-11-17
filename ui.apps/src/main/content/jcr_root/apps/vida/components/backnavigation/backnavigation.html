@@ -1,0 +1,9 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Back Navigation Component"></div>
+<sly data-sly-use.cmp="com.heromotocorp.vida.core.models.BackNavigationModel"/>
+<div class="vida-listing-back">
+	<sly data-sly-test="${!currentPage.properties.hidebacknav}">
+		<span class="vida-listing-back__link">
+		<a href="${cmp.backNavPath @ extension='html'}"><span class="vida-listing-back__arrow"></span>${properties.backbtn}</a>
+		</span>
+	</sly>
+</div>

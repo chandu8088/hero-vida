@@ -1,0 +1,16 @@
+.vida-session-popup {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+
+  &--text {
+    padding: 0 40px 20px;
+  }
+
+  &--buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    padding: 0 40px 5px;
+  }
+}

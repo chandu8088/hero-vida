@@ -1,0 +1,15 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Column Component"></div>
+<sly data-sly-test.twoColumns="${properties.variations == 'two' ? 'two-columns' : ''}"/>
+<div class="vida-list-items">
+  <div class="listing panelcontainer">
+	<ul class="vida-list-items__container-content ${twoColumns}" id="${properties.sectionid}">
+      <sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'textfields'}">
+            <sly data-sly-list.items="${title.getChildren}">
+                <li class="two-column">${items.textpoints @ context = 'html'}</li>
+            </sly>
+          </sly>
+      </sly>
+	</ul>
+  </div>
+</div>

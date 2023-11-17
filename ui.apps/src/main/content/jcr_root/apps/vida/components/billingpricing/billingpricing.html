@@ -1,0 +1,143 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Billing Pricing Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "billingPricingConfig": {
+      "billingDetails": {
+        "title": "${properties.bdtitle @ context='scriptString'}",
+        "fields": {
+          "nameField": {
+            "label": "${properties.bdnamelabel @ context='scriptString'}"
+          },
+          "emailField": {
+            "label": "${properties.bdemaillabel @ context='scriptString'}"
+          },
+          "phoneNumberField": {
+            "label": "${properties.bdphonenumberlabel @ context='scriptString'}"
+          },
+          "aadharNumberField": {
+            "label": "${properties.bdaddharnumber @ context='scriptString'}"
+          },
+          "gstNumberField": {
+            "label": "${properties.bdgstnumber @ context='scriptString'}"
+          },
+          "companyNameField": {
+            "label": "${properties.bdcompanyname @ context='scriptString'}"
+          },
+          "companyEmailField": {
+            "label": "${properties.bdcompanyemail @ context='scriptString'}"
+          },
+          "billingAddressField": {
+            "label": "${properties.bdbillingaddress @ context='scriptString'}"
+          },
+          "shippingAddressField": {
+            "label": "${properties.bdshippingaddress @ context='scriptString'}"
+          }
+        }
+      },
+      "pricingConfig": {
+        "title": "${properties.ptitle @ context='scriptString'}",
+        "basePriceLabel": "${properties.pbasepricelabel @ context='scriptString'}",
+        "configureLabel": "${properties.pconfiglabel @ context='scriptString'}",
+        "otherChargesLabel": "${properties.pdotherchargeslabel @ context='scriptString'}",
+        "addonsLabel": "${properties.pdaddonslabel @ context='scriptString'}",
+        "exchangeLabel": "Exchange",
+        "gstLabel": "${properties.pgstlabel @ context='scriptString'}",
+        "subsidyLabel": "${properties.psubsidylabel @ context='scriptString'}",
+        "prebookingPricePaidLabel":"${properties.prebookingpricepaidlabel @ context='scriptString'}",
+        "deliveryMessage": "${properties.pdeliverymessage @ context='scriptString'}"
+      },
+	  "optBuyBackConfig": {
+		"checkBoxLabel": "${properties.optchecklabel @ context='scriptString'}",
+		"optBuyBackSubtext": "${properties.optsubtext @ context='scriptString'}",
+		"agreeTerms": {
+			"id": "${properties.optbackid @ context='scriptString'}",
+			"agreeLabel": "${properties.optagreelabel @ context='scriptString'}",
+			"terms": {
+                "label": "${properties.opttermscondition @ context='scriptString'}",
+                "actionUrl": ""
+			},
+			"btnLabel":{
+                "agree": "${properties.agreebtnlabel @ context='scriptString'}",
+                "close": "${properties.closebtnlabel @ context='scriptString'}"
+			},
+	    },
+	  },
+      "paymentOption": {
+        "fullPayment": {
+          "title": "${properties.fullpaymenttitle @ context='scriptString'}",
+          "onlinePaymentLabel": "${properties.onlinepaymentlabel @ context='scriptString'}",
+          "payBtn": {
+            "label": "${properties.paymentbuttonlabel @ context='scriptString'}"
+          },
+          "cashPaymentLabel": "${properties.cashpaymentlabel @ context='scriptString'}",
+          "cashInfo": "${properties.cashinfo @ context='scriptString'}",
+          "centerLabel": "${properties.fpcentrelabel @ context='scriptString'}",
+          "disclaimer": "${properties.fpdisclaimer @ context='scriptString'}"
+        },
+        "loan": {
+          "title": "${properties.loantitle @ context='scriptString'}",
+          "viewOfferBtn": {
+            "label": "${properties.viewbuttonlabel @ context='scriptString'}",
+          },
+          "applyOfferBtn": {
+            "label": "${properties.loanapplyofferbuttonlabel @ context='scriptString'}"
+          }
+        },
+        "lease": {
+          "title": "${properties.leasetitle @ context='scriptString'}",
+          "viewOfferBtn": {
+            "label": "${properties.leaseviewbutton @ context='scriptString'}",
+          },
+          "applyOfferBtn": {
+            "label": "${properties.leaseapplyofferbuttonlabel @ context='scriptString'}"
+          }
+        }
+      },
+      "deliveryStatusConfig": {
+        "statuses": [{
+          "id": 0,
+          "label": "${properties.bpconfiglabel @ context='scriptString'}"
+        },
+        {
+          "id": 1,
+          "label": "${properties.bpownerdhiplabel @ context='scriptString'}"
+        },
+        {
+          "id": 2,
+          "label": "${properties.bpdeliverydetailslabel @ context='scriptString'}"
+        },
+        {
+          "id": 3,
+          "label": {
+				"payment": "${properties.bppaymentlabel @ context='scriptString'}",
+				"loan": "${properties.bsLoanlabel @ context='scriptString'}",
+				"lease": "${properties.bsLeaselabel @ context='scriptString'}"
+			}
+        }
+        ],
+        "saveBtn": {
+          "label": "${properties.bpsavecontinuelabel @ context='scriptString'}"
+        },
+        "paymentBtn": {
+          "label": "${properties.bpmakepaymentlabel @ context='scriptString'}"
+        },
+        "centrePayBtn": {
+          "label": "${properties.bpceterpaylabel @ context='scriptString'}"
+        },
+		"helpLink": {
+						"helpLabel": "${properties.bphelptextlabel @ context='scriptString'}",
+						"chatLabel": "${properties.bpchatwithusabel @ context='scriptString'}"
+					},
+					"applyBtn": {
+						"label": "${properties.bsApplyBtn @ context='scriptString'}"
+					}
+      },
+      "infoBox": "${properties.infoBox @ context='scriptString'}"
+    }
+    
+  })
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="BillingPricingDetails" data-cmp-type="react" data-cmp-config="billingPricingConfig"></div>
+</sly>

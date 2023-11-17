@@ -1,0 +1,64 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Document Upload Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "uploadDocumentsConfig": {
+        "title": "${properties.title @ context='scriptString'}",
+        "documents": [
+          {
+            "id": "SELF_IMAGE",
+            "title": "${properties.titlePersonal @ context='scriptString'}",
+            "text": "${properties.textPersonal @ context='scriptString'}",
+            "description": "${properties.descriptionPersonal @ context='scriptString'}",
+            "disclaimer": "${properties.disclaimerPersonal @ context='scriptString'}"
+          },
+          {
+            "id": "INSURANCE_COPY",
+            "title": "${properties.titleinsurance @ context='scriptString'}",
+            "text": "${properties.textinsurance @ context='scriptString'}",
+            "description": "${properties.descriptioninsurance @ context='scriptString'}",
+            "disclaimer": "${properties.disclaimerinsurance @ context='scriptString'}"
+          }
+        ],
+        "addressProof": {
+          "id": "ADDRESS_PROOF",
+          "title": "${properties.titleaddress @ context='scriptString'}",
+          "subTitle": "${properties.subTitle @ context='scriptString'}",
+          "name": "addressProofType",
+          "disclaimer": "${properties.disclaimeraddress @ context='scriptString'}",
+          "addressHead": "${properties.addressHead @ context='scriptString'}",
+          "selectPlaceholder": "${properties.selectPlaceholder @ context='scriptString'}",
+          "uploadLabel": "${properties.uploadLabel @ context='scriptString'}",
+          "addressProofType": {
+            "label": "${properties.selectlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${properties.message @ context='scriptString'}"
+              }
+            },
+          },
+          "messages": {
+            "error": "${properties.addresserror @ context='scriptString'}",
+            "success": "${properties.addresssuccess @ context='scriptString'}"
+          }
+        },
+        "messages": {
+          "error": "${properties.error @ context='scriptString'}",
+          "success": "${properties.success @ context='scriptString'}",
+          "fileFormatText": "${properties.fileFormatText @ context='scriptString'}"
+        },
+        "actions": {
+          "primary": "${properties.primary @ context='scriptString'}",
+          "secondary": "${properties.secondary @ context='scriptString'}"
+        },
+        "finalSubmission": {
+          "primary": "${properties.finalSubmissionProfile @ context='scriptString'}",
+          "success": "${properties.finalSubmissionSuccess @ context='scriptString'}"
+        },
+        "isPanAvailable": ${properties.ispanavailable @ context='scriptString'}
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="UploadDocuments" data-cmp-type="react" data-cmp-config="uploadDocumentsConfig"></div>
+  </sly>

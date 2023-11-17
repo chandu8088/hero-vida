@@ -1,0 +1,34 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Advanced Accordion Component"></div>
+
+<sly data-sly-use.AccordionModel="${'com.heromotocorp.vida.core.models.AdvancedAccordionModel'}"/>
+<section class="vida-advanced-accordion" data-component="advanced-accordion" data-section-id="${properties.sectionid}">
+    <div class="vida-advanced-accordion__container vida-container" data-animation-wrapper="true">
+        <div class="vida-advanced-accordion__heading" data-animate="true" data-animation-name="zoom-out-txt">
+            ${properties.title @ context = 'html'}
+        </div>
+        <div class="vida-advanced-accordion__description txt-color--solid-grey" data-animate="true"
+            data-animation-name="fade-in" data-animation-delay="0.2">
+            ${properties.subtitle @ context = 'html'}
+        </div>
+        <div class="vida-advanced-accordion__wrapper">
+		<sly data-sly-list.accordion="${AccordionModel.advanced}">
+            <div class="vida-advanced-accordion__item" data-animate="true" data-animation-name="slide-right" data-animation-delay="${accordion.delaytime}" data-animation-scroller-start="100%">
+                <div class="vida-advanced-accordion__item-header">
+                    <div class="vida-advanced-accordion__title-wrapper">
+                        <i class="${accordion.accordionicon}"></i>
+                        <div class="vida-advanced-accordion__title">
+                            ${accordion.heading}
+                        </div>
+                    </div>
+                    <div class="vida-advanced-accordion__indicator">
+                        <i class="icon-plus"></i>
+                    </div>
+                </div>
+                <div class="vida-advanced-accordion__item-body">
+                    ${accordion.description @ context = 'html'}
+                </div>
+            </div>
+			</sly>
+         </div>
+    </div>
+</section>

@@ -1,0 +1,122 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Long Term Test Ride Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveLongTermConfig": {
+    	"backgroundImg": "${properties.longTermFormBackgroundImg @ context='scriptString'}",
+        "schedulePickUp": {
+          "scheduleTitle": "${properties.scheduleTitle @ context='scriptString'}",
+          "rescheduleTitle": "${properties.rescheduleTitle @ context='scriptString'}",
+          "mapIcon": "${properties.mapIconImagePath @ context='scriptString'}",
+		  "phoneIcon": "${properties.phoneIconImagePath @ context='scriptString'}",
+          "locationOptionField": {
+            "label": "${properties.optionLabel @ context='scriptString'}",
+            "optionOne": "${properties.selfPickRadio @ context='scriptString'}",
+            "optionTwo": "${properties.deliverHomeRadio @ context='scriptString'}"
+          },
+          "modelVariantField": {
+            "label": "${properties.modalVariant @ context='scriptString'}",
+            "message": "${'modalVariantLongTermMsz' @ i18n,context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message":"${'modalVariantLongTermReqMsz' @ i18n,context='scriptString'}"  
+              }
+            }
+          },
+          "rentDurationField": {
+            "label": "${properties.rentDuration @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'rentDurationLongTermReqMsz' @ i18n,context='scriptString'}" 
+              }
+            }
+          },
+          "pickupLocationField": { 
+            "label": "${properties.pickupLocation @ context='scriptString'}", 
+            "validationRules": {
+              "required": {
+                "message": "${'pickupLocationLongTermReqMsz' @ i18n,context='scriptString'}"  
+              }
+            }
+          },
+          "pickupDateFieldInfo": {
+            "label": "${properties.pickUpDate @ context='scriptString'}", 
+            "validationRules": {
+              "required": {
+                "message": "${'pickUpDateLongTermReqMsz'  @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "pickupTimeSlotField": {
+            "label": "${properties.pickupTimeSlot @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'pickupTimeSlotLongTermReqMsz'  @ i18n,context='scriptString'}" 
+              },
+              "custom": {
+                "message": "${'pickupTimeSlotLongTermNA'  @ i18n,context='scriptString'}" 
+              }
+            }
+          },
+          "addressField": {
+            "label": "${properties.addressField @ context='scriptString'}",
+            "placeholder": "${properties.addressph @ context='scriptString'}", 
+            "validationRules": {
+              "required": {
+                "message": "${'addressReqMsz'  @ i18n,context='scriptString'}"  
+              }
+            }
+          },
+          "buildingField": {
+            "label": "${properties.buildingField @ context='scriptString'}", 
+            "placeholder": "${properties.buildingph @ context='scriptString'}",  
+            "validationRules": {
+              "required": {
+                "message": "${'buildingReqMsz'  @ i18n,context='scriptString'}"  
+              }
+            }
+          },
+          "landmarkField": {
+              "label": "${properties.landmarkField @ context='scriptString'}",
+              "placeholder": "${properties.landmarkph @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'landmarkReqMsz'  @ i18n,context='scriptString'}"
+                }
+              }
+            },
+          "pinCodeField": {
+            "label": "${properties.pinCodeField @ context='scriptString'}",   
+            "placeholder": "${properties.pinCodeph @ context='scriptString'}",  
+            "validationRules": {
+              "required": {
+                "message": "${'pinCodeReqMsz'  @ i18n,context='scriptString'}"   
+              }, 
+              "custom": {
+                "noServiceMsg": "${'noServiceMsg'  @ i18n,context='scriptString'}",
+                "noCityMatchMsg": "${'noCityMatchMsg'  @ i18n,context='scriptString'}", 
+                "noBranchMsg": "${'noBranchMsg'  @ i18n,context='scriptString'}" 
+              }
+            }
+          },
+          "information": {
+            "label": "${properties.informationLabel @ context='scriptString'}", 
+            "message": "${'longTermScheduleInfoMsg'  @ i18n,context='scriptString'}" 
+          },
+          "payableAmount": {
+            "label": "${properties.payableAmount @ context='scriptString'}", 
+            "message": "${'payableAmountMsgLongTerm'  @ i18n,context='scriptString'}" 
+          },
+          "submitBtn": {
+            "label": "${properties.submitBtn @ context='scriptString'}"
+          },
+          "rescheduleSubmitBtn": {
+            "label": "${properties.rescheduleSubmitBtn @ context='scriptString'}"  
+          }
+        }
+      }
+    });
+  </script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="TestDriveLongTerm" data-cmp-type="react" data-cmp-config="testDriveLongTermConfig"></div>
+</sly>

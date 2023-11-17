@@ -1,0 +1,25 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Tab Component"></div>
+<sly data-sly-use.tabmodel="${'com.heromotocorp.vida.core.models.TabModel'}"/>
+<div class="vida-tabs" data-component="tabs" data-section-id="${properties.sectionid}">
+<ul class="vida-tabs__tab-list">
+    <sly data-sly-list.tab = "${tabmodel.tabs}">
+		<li class="vida-tabs__tab-item ${tabList.first?'vida-tabs__tab-item--active':''}" data-rel="tab${tabList.index}">
+			<a href="javascript:void(0);" class="vida-tabs__tab-item-title cta--anchor" role="Button" data-link-position="Middle">
+				<i class="${tab.iconType}"></i>
+				<span>${tab.label}</span>
+			</a>
+		</li>
+    </sly>
+	</ul>
+<sly data-sly-list.tab = "${tabmodel.tabs}">
+	<div class="vida-tabs__tab-panel ${tabList.first?'vida-tabs__tab-panel--active':''}" id="tab${tabList.index}">
+		<sly data-sly-test="${!tab.hidelabel}">
+			<h3 class="vida-tabs__tab-panel-title">${tab.label}</h3>
+		</sly>
+		<accordion><sly data-sly-resource="${tabList.index @ resourceType='vida/components/container',decorationTagName='div'}"
+                  data-sly-test="${(wcmmode.edit || wcmmode.disabled)}"></sly></accordion>
+	</div>
+</sly>
+</div>
+
+

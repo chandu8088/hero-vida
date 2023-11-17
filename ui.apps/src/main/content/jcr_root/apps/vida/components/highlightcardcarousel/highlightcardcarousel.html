@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Highlight Card Carousel Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.HighlightCardCarouselModel'}" />
+
+<section class="vida-highlight-card-carousel" data-component="highlight-card-carousel"data-section-id="${properties.sectionid}">
+    <div class="vida-highlight-card-carousel__wrapper">
+        <div class="vida-highlight-card-carousel__container vida-container" data-animation-wrapper="true">
+            <div class="vida-highlight-card-carousel__heading" data-animate="true" data-animation-name="slide-right">
+                <p>${properties.componentheading @context = 'html'}</p>
+            </div>
+            <div class="vida-highlight-card-carousel__slider">
+                <div class="vida-highlight-card-carousel__slides">
+                    <sly data-sly-list.items="${author.items}">
+                        <div class="vida-highlight-card-carousel__item">
+                            <div class="vida-highlight-card-carousel__card">
+                                <img class="vida-highlight-card-carousel__card-asset"
+                                    src="${items.imagepath}" alt="${items.alttext}">
+                                <h2 class="vida-highlight-card-carousel__card__heading">${items.heading}</h2>
+                                <p class="vida-highlight-card-carousel__card-asset__description">${items.description}
+                                </p>
+                            </div>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

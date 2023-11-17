@@ -1,0 +1,19 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Article Component"></div>
+<section class="Changemakerswrap page-section  ptb60 clearfix text-center" id="${properties.sectionId}">
+  <div class="container">
+	${properties.title @ context = 'html'}
+	<div class="slider way-slider">
+		<sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'articles'}">
+            <sly data-sly-list.items="${title.getChildren}">
+                <div>
+                    <center><img src="${items.articleimagepath}" class="img-fluid" alt="${items.articleimagealttext}"/></center>
+                    ${items.articledesc @ context = 'html'}
+                    <p><a href="${items.knowmorelink}">${items.knowmorelabel}</a></p>
+                </div>
+			</sly>
+          </sly>
+          </sly>
+	</div>
+  </div>
+</section>

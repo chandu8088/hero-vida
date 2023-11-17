@@ -1,0 +1,51 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder"
+	data-emptytext="New Hero Banner"></div>
+<sly data-sly-test="${!wcmmode.edit}">
+<sly data-sly-test.applyStyle="${properties.applyadvstyle ? 'vida-hero-simple-banner-trapezoid' : ''}"/>
+<sly data-sly-test.applyBatteryStyle="${properties.applybatterystyle ? 'battery' : ''}"/>
+<sly data-sly-test.applyBatteryWarrantyStyle="${properties.applybatterywarrantystyle ? 'vida-hero-simple-banner__battery-variant' : ''}"/>
+<sly data-sly-test.offerStyle="${properties.applyoffertyle ? 'skewed text-right' : ''}"/>
+<sly data-sly-test.offerrightStyle="${properties.applyoffertyle ? 'vida-hero-simple-banner__container-right' : ''}"/>
+<sly data-sly-test.textLeftStyle="${properties.lefttext ? '-text-left' : ''}"/>
+<sly data-sly-test.textRightStyle="${properties.righttext ? '-text-right' : ''}"/>
+<div class="vida-hero-simple-banner ${applyStyle} ${applyBatteryWarrantyStyle}">
+  <sly data-sly-test="${properties.bannerurl}">
+  <a class="vida-hero-banner__container-link" href="${properties.bannerurl @ context='uri', extension = 'html'}" >
+  </sly>
+	<div class="vida-hero-simple-banner__asset">
+  		<sly data-sly-test="${properties.variations == 'video'}">
+		<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=properties.fullScreenvideo}"></sly>
+		<sly data-sly-use.DMVideoURLServiceMob="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=properties.mobScreenVideo}"></sly>
+			<div data-component="video-player">
+			  <video 
+				class="vida-video-player__playback" 
+				aria-label="video playback" 
+				data-src-mobile="${DMVideoURLServiceMob.dMVideoPathLink}"
+				data-src-desktop="${DMVideoURLService.dMVideoPathLink}"
+				src=""
+				muted loop autoplay playsinline 
+				>
+			  </video>
+			</div>
+		</sly>
+		<sly data-sly-test="${properties.variations == 'image'}">
+			<picture>
+			  <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.fullScreenimage}"></sly>
+			  <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:360px)">
+			  <img class="vida-hero-simple-banner__asset-image" src="${DMImageURLService.dMImagePathLink}" alt="${properties.imagealt}" />
+			</picture>
+		</sly>
+	</div>
+  <div class="vida-container vida-hero-simple-banner__container ${offerrightStyle} ${applyBatteryStyle}">
+	<div data-sly-test="${properties.heading}" class="vida-hero-simple-banner__title${textRightStyle}${textLeftStyle} ${offerStyle}">
+		${properties.heading @context='html'}
+		<div class="vida-hero-simple-banner__title-terms">${properties.tnctext}</div>
+	</div>
+  </div>
+  <sly data-sly-test="${properties.bannerurl}">
+   </a>
+  </sly>
+</div>
+</sly>

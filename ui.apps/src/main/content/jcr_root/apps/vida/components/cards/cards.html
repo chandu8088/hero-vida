@@ -1,0 +1,18 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Cards Component"></div>
+<div class="vida-card-banner">
+    <div class="vida-card-banner__wrapper">
+	  <div class="vida-card-banner__container" id="${properties.sectionId}">
+        <sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'carddetail'}">
+            <sly data-sly-list.items="${title.getChildren}">
+                <div class="vida-card-banner__item">
+                  <img class="vida-full-screen-video__asset-image" src="${items.cardbgimage}" alt="${items.cardbgimagealttext}"/>
+                  ${items.cardtitle @ context = 'html'}
+                  <a class="btn btn--primary" href="#${items.sectionid}">${items.cardbtnlabel}</a>
+                </div>
+            </sly>
+          </sly>
+        </sly>
+      </div>
+    </div>
+</div>

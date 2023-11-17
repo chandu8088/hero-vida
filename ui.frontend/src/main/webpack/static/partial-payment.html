@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Partial Payment</title>
+	<meta charset="UTF-8" />
+	<meta name="template" content="page-content" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Meta Property for Analytics Datalayer -->
+	<meta property="pageCategory" content="Booking" />
+	<meta property="pageName" content="Booking:Completed" />
+	<meta property="country" content="India" />
+	<meta property="language" content="en" />
+	<meta property="isErrorPage" content="false" />
+	<meta property="errorCode" content="404" />
+	<meta property="errorDescription" content="Page Not Found" />
+
+	<link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+	<script>
+		const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+		if (!sessionCookieExist) {
+			window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+		}
+	</script>
+	<%= htmlWebpackPlugin.options.custom %>
+		<script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+			async></script>
+</head>
+
+<body>
+	<header></header>
+	<div data-component="Notification" data-cmp-type="react"></div>
+	<script>
+		window.appConfig = Object.assign(window.appConfig || {}, {
+			"partialPaymentConfig": {
+                "paymentInputField": {
+                    "label": "Enter the amount you want to pay",
+                    "id": "partial_payment_amount",
+                    "name": "partial_payment_amount",
+                    "placeholder": "Enter"
+                },
+                "submitBtn": "Make Payment",
+                "helpTextQuestion": "Having Trouble ? ",
+                "helpTextChat": "Chat With Us",
+                "partialInfoPrimary": "Partial Info 1 : Kindly finish this within 3-5 working days MAXAMOUNT to ensure timely delivery.Kindly finish this within 3-5 working days to ensure timely delivery. MINIMUMAMOUNT",
+                "partialInfoSecondary": "Partial Info 2 : Kindly finish this within 3-5 MAXAMOUNT working days to ensure timely MINIMUMAMOUNT delivery.Kindly finish this within 3-5 working days to ensure timely delivery.",
+                "extimatedDeliveryTime": "Estimated Delivery time 2 months",
+                "inputBoxErrors": {
+                    "minimum": "Please enter minimum Rs MINIMUMAMOUNT",
+                    "maximum": "Please enter less then total outstanding value Rs MAXAMOUNT",
+					"equals": "Please enter Rs TOTALAMOUNT i.e  total outstanding value"
+                }
+			}
+		});  
+	</script>
+	<div data-component="PartialPayment" data-cmp-type="react" data-cmp-config="partialPaymentConfig"></div>
+	<footer></footer>
+</body>
+
+</html>

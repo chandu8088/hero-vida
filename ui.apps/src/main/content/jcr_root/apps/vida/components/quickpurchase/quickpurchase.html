@@ -1,0 +1,179 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Quick Purchase Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        "quickPurchaseConfig": {
+			"scooterColorCheck": {					
+				"title": "${properties.colorConfirmTitle @ context='scriptString'}",
+				"description": "${properties.colorConfirmDesc @ context='scriptString'}",
+				"yesBtn": {
+					"label": "${properties.colorYesBtnLabel @ context='scriptString'}"
+				},
+				"noBtn": {
+					"label": "${properties.colorNoBtnLabel @ context='scriptString'}"
+				}
+			},
+			"submitWaitingMessage": "${properties.submitWaitMsg @ context='scriptString'}",
+			"otpConfig": {
+			  "verifyOTPtitle": "${properties.title @ context='scriptString'}",
+			  "verifyMobileNumbertitle": "${properties.mobileTitle @ context='scriptString'}",
+			  "verifyEmailtitle": "${properties.emailTitle @ context='scriptString'}",
+			  "message": "${properties.message @ context='scriptString'}",
+			  "emailVerifyMessage": {
+				"messageOne": "${'emailVerifyFirstMsz' @ i18n,context='scriptString'}",
+				"messageTwo": "${'emailVerifySecondMsz' @ i18n,context='scriptString'}"
+			  },
+			  "changeNumberLabel": "${properties.changeNumberLabel @ context='scriptString'}",
+			  "otpLabel": "${properties.otpLabel @ context='scriptString'}",
+			  "resendLabel": "${properties.resendLabel @ context='scriptString'}",
+			  "timer": {
+				"minutes": ${properties.timerminutes @ context='scriptString'},
+				"seconds": ${properties.timersec @ context='scriptString'}
+			  },
+			  "verifyBtn": {
+				"label": "${properties.verifyBtn @ context='scriptString'}"
+			  },
+			  "emailVerifyBtns": {
+				"sendOTPLabel": "${properties.sendOtpBtn @ context='scriptString'}",
+				"cancelEmailVerifyLabel": "${properties.cancelEmailLabel @ context='scriptString'}"
+			  },
+			  "validationRules": {
+				required: {
+				  message: "${'enterOTPMsz' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"title": "${properties.purchaseTitle @ context='scriptString'}",
+			"errorMessagesSkipped": ["${properties.purchaseErrorMsg @ context='scriptString'}"],
+			"cityField": {
+			  "label": "${properties.citylabel @ context='scriptString'}",
+			  "validationRules": {
+				"required": {
+				  "message": "${'cityLabelReqMsz' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"notificationField": {
+				"label": "${properties.checkboxlabel @ context='scriptString'}",
+				"message": "${properties.checkboxdescription @ context='scriptString'}"
+			},
+			"stateField": {
+				"id": "state",
+				"label": "${properties.statelabel @ context='scriptString'}",
+				"placeholder": "${properties.statelabelph @ context='scriptString'}",
+				"validationRules": {
+					"required": {
+						"message": "${'stateReqMsz' @ i18n,context='scriptString'}"
+					}
+				}
+			},
+			"genericConfig": {
+			  "stepLabel": "Step",
+			  "nonDealerSelectedError": "${'selectDealerReqMsz' @ i18n,context='scriptString'}",
+			  "noDealerAvailableError": "${'availableDealerMsz' @ i18n,context='scriptString'}",
+			  "dealersLoadingMsg": "${properties.loadingmessage @ context='scriptString'}"
+			},
+			"firstNameField": {
+			  "label": "${properties.firstname @ context='scriptString'}",
+			  "placeholder": "${properties.fnplchld @ context='scriptString'}",
+			  "validationRules": {
+				"required": {
+				  "message": "${'firstNameReqMsz' @ i18n,context='scriptString'}"
+				},
+				"minLength": {
+				  "value": 1,
+				  "message": "${'firstNameLeastMsz' @ i18n,context='scriptString'}"
+				},
+				"customValidation": {
+				  "message": "${'validfirstname' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"lastNameField": {
+			  "label": "${properties.lastname @ context='scriptString'}",
+			  "placeholder": "${properties.lnplchld @ context='scriptString'}",
+			  "validationRules": {
+				"required": {
+				  "message": "${'lastNameReqMsz' @ i18n,context='scriptString'}"
+				},
+				"minLength": {
+				  "value": 1,
+				  "message": "${'lastNameLeastMsz' @ i18n,context='scriptString'}"
+				},
+				"customValidation": {
+				  "message": "${'validlastname' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"mobileField": {
+			  "id": "mobile",
+			  "label": "Mobile Number",
+			  "placeholder": "Enter Mobile Number",
+			  "validationRules": {
+				"required": {
+				  "message": "${'mobileReqMsz' @ i18n,context='scriptString'}"
+				},
+				"minLength": {
+				  "value": 10,
+				  "message": "${'minCharaterMsz' @ i18n,context='scriptString'}"
+				},
+				"maxLength": {
+				  "value": 10,
+				  "message": "${'maxCharaterMsz' @ i18n,context='scriptString'}"
+				},
+				"customValidation": {
+				  "message": "${'validmobilenumber' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"emailField": {
+			  "label": "${properties.emaillabel @ context='scriptString'}",
+			  "placeholder": "${properties.emailplaceholder @ context='scriptString'}",
+			  "infoLabel": "${properties.emailinfolabel @ context='scriptString'}",
+			  "validationRules": {
+				"required": {
+				  "message": "${'emailReqMsz' @ i18n,context='scriptString'}"
+				},
+				"customValidation": {
+				  "message": "${'emailValidMsz' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"agreeTerms": {
+			  "id": "${properties.quicktestid @ context='scriptString'}",
+			  "agreeLabel": "${properties.agreelabel @ context='scriptString'}",
+			  "terms": {
+				"label": "${properties.termsAndCondition @ context='scriptString'}",
+				"actionUrl": ""
+			  },
+			  "btnLabel": {
+				"agree": "${properties.agreebtnlabel @ context='scriptString'}",
+				"close": "${properties.closebtnlabel @ context='scriptString'}"
+			  },
+			  "validationRules": {
+				"required": {
+				  "message": "${'selectTermsMsz' @ i18n,context='scriptString'}"
+				}
+			  }
+			},
+			"paymentBtn": {
+			  "label": "${properties.paymentbtnlabel @ context='scriptString'}"
+			},
+			"scooterInfo": {
+			  "priceType": "${properties.pricetype @ context='scriptString'}",
+			  "defaultCityState": "${properties.city @ context='scriptString'}",
+			  "splitterChar": "${'splitChar' @ i18n,context='scriptString'}",
+			  "product": {
+				"range": "${properties.productrange @ context='scriptString'}",
+				"topSpeed": "${properties.topspeed @ context='scriptString'}",
+				"acceleration": "${properties.acceleration @ context='scriptString'}",
+				"chargingTime": "${properties.chargingtime @ context='scriptString'}"
+			  },
+			  "colorSummaryLabel": "${properties.colorsummarylabel @ context='scriptString'}"
+			}
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+    <div data-component="QuickPurchase" data-cmp-type="react" data-cmp-config="quickPurchaseConfig"></div>
+  </sly>

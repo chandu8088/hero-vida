@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Static Product Specifications"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[vida.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <primary
+                                granite:class="cq-dialog-field-showhide-multival"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Product Specifications">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./staticspecifications">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <heading
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Please enter specification heading"
+                                            fieldLabel="Specification Heading"
+                                            name="./specificationheading"
+                                            required="{Boolean}true"/>
+                                        <enablenumeric
+                                            granite:class="cq-dialog-enable-numeric"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            name="./enablenumeric"
+                                            text="Check to enter numeric field"
+                                            value="true"/>
+                                        <datanumeric
+                                            granite:class="enable-numeric"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldDescription="Please enter specification data numeric value"
+                                            fieldLabel="Specification Data Numeric"
+                                            min="{Long}1"
+                                            name="./datanumeric"
+                                            required="{Boolean}true"
+                                            step="{Long}1"/>
+                                        <datadecimal
+                                            granite:class="enable-decimal"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldDescription="Please enter specification data numeric or decimal value"
+                                            fieldLabel="Specification Data Decimal"
+                                            min="{Double}0.1"
+                                            name="./datadecimal"
+                                            required="{Boolean}true"
+                                            step="{Double}0.1"/>
+                                        <dataunit
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Please enter specification data unit"
+                                            fieldLabel="Specification Data Unit"
+                                            name="./dataunit"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                            </primary>
+                        </items>
+                    </column>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

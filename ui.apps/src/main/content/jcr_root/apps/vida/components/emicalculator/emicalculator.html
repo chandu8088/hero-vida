@@ -1,0 +1,43 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="EMI Calculator Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+	window.appConfig = Object.assign(window.appConfig || {}, {
+		"EmiCalculatorConfig": {
+        	"genericConfig": {
+            	"submitBtn": "${properties.submitbtnlabel @ context='scriptString'}",
+                "disclaimer2": "${properties.disclaimer @ context='scriptString'}",
+				"disclaimer2Btn": "${properties.disclaimerbtnlabel @ context='scriptString'}"
+            },
+            "cityField": {
+            	"label": "${properties.citylabel @ context='scriptString'}",
+                "name": "city",
+                "validationRules": {
+                	"required": {
+                        "message": "${'cityLabelReqMsz' @ i18n,context='scriptString'}"
+                    }
+                }
+            },
+            "scooterInfo": {
+            	"priceType": "${properties.pricetype @ context='scriptString'}",
+                "defaultCityState": "${properties.city @ context='scriptString'}",
+                "splitterChar": "${'splitChar' @ i18n,context='scriptString'}",
+                "product": {
+                    "range": "${properties.productrange @ context='scriptString'}",
+                    "topSpeed": "${properties.topspeed @ context='scriptString'}",
+                    "acceleration": "${properties.acceleration @ context='scriptString'}",
+                    "chargingTime": "${properties.chargingtime @ context='scriptString'}"
+                },
+                "colorSummaryLabel": "${properties.colorsummarylabel @ context='scriptString'}",
+				"tooltipConfig": {
+					"info": "${properties.tooltiptext @ context='scriptString'}",
+					"infoPosition": "top",
+					"id": "effective-price"
+				},
+        	},
+		}
+	});
+
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="EmiCalculator" data-cmp-type="react" data-cmp-config="EmiCalculatorConfig"></div>
+</sly>

@@ -1,0 +1,12 @@
+#
+# This file contains the list of virtual hosts (or domain names) that the dispatcher
+# will handle.
+#
+# By default, it includes the default list of virtual hosts.
+#
+
+$include "./default_virtualhosts.any"
+"dev.vidaworld.com"
+"stage.vidaworld.com"
+"beta.vidaworld.com"
+"www.vidaworld.com"

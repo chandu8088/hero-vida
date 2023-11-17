@@ -1,0 +1,40 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Product Details Component"></div>
+<sly data-sly-use.productdetail="${'com.heromotocorp.vida.core.models.ProductDetailsModel'}"/>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "productDetails": {
+      "productHeading": "${properties.pdproductheading @ context='scriptString'}",
+      "priceLabel": "${properties.pdpricetitle @ context='scriptString'}",
+      "selectedProductSku": "${properties.pdselectedproductsku @ context='scriptString'}",
+      "selectedVariantSku": "${properties.pdselectedvariantsku @ context='scriptString'}",
+      "selectedCityId": "${properties.city @ context='uri'}",
+      "showPrice": "${properties.pdshowprice @ context='scriptString'}",
+      "primaryBtn": {
+        "label": "${properties.pdprimarybtn @ context='scriptString'}",
+        "actionUrl": "${productdetail.pdprimarybtnurl @ extension = 'html', context='uri'}"
+      },
+      "secondaryBtn": {
+        "label": "${properties.pdsecondarybtn @ context='scriptString'}",
+        "actionUrl": "${productdetail.pdsecondarybtnurl @ extension = 'html', context='uri'}"
+      },
+      "performance": {
+        "topSpeed": "${properties.pdtopspeed @ context='scriptString'}",
+        "range": "${properties.pdrange @ context='scriptString'}",
+        "chargingTime": "${properties.pdchargingtime @ context='scriptString'}"
+      },
+      
+      "one3DConfig":{
+          "packageDivId":"one3dProductDetails",
+          "packageUrl": "https://poc.one3d.in/hero_360_staging/",
+          "packagePath": "one3d/assets/VIDA/one3d_functions.min.js",
+          "variant": "COUPE"
+        }
+
+      
+      
+    }
+  })
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="ProductDetails" data-cmp-type="react" data-cmp-config="productDetails"></div>
+</sly>

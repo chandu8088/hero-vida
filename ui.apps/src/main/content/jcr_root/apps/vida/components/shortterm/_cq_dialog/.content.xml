@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Short Term Test Ride"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <scheduleappointment
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Schedule Appointment"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <backgroungimg
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Background Image path"
+                                                name="./backgroundImg"
+                                                rootPath="/content/dam/vida"/>
+                                            <scheduleappointmentheading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Schedule appointment heading"
+                                                name="./scheduleappointmentheading"
+                                                required="{Boolean}true"
+                                                value="Schedule Appointment"/>
+                                            <rescheduleappointmentheading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Reschedule appointment heading"
+                                                name="./rescheduleappointmentheading"
+                                                required="{Boolean}true"
+                                                value="Reschedule Appointment"/>
+                                            <selectdefaulttext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Default Vida Centre Text"
+                                                name="./selectdefaulttext"
+                                                value="Select Centre"/>
+                                           <mapIconImagePath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Map Icon Image Path"
+                                                name="./mapIconImagePath"
+                                                rootPath="/content/dam/vida"/>
+                                           <phoneIconImagePath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Phone Icone Image Path"
+                                                name="./phoneIconImagePath"
+                                                rootPath="/content/dam/vida"/>
+                                            <scheduleappointmentsummary
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Schedule appointment label"
+                                                name="./scheduleappointmentlabel"
+                                                required="{Boolean}true"
+                                                value="Where would you like to take the test ride?"/>
+                                            <nearbyvidacentre
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Nearby vida centre label"
+                                                name="./nearbyvidacentre"
+                                                required="{Boolean}true"
+                                                value="Nearby Vida Centre"/>
+                                            <athome
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="At home label"
+                                                name="./athome"
+                                                required="{Boolean}true"
+                                                value="At Home"/>
+                                            <modelvariantfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Model Variant Label"
+                                                name="./modelvariantfieldlabel"
+                                                required="{Boolean}true"
+                                                value=" Model Variant"/>
+                                            <vidacentrefieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Vida Centre Field Label"
+                                                name="./vidacentrefieldlabel"
+                                                required="{Boolean}true"
+                                                value="Vida centre"/>
+                                            <addressfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address field label"
+                                                name="./addressfieldlabel"
+                                                required="{Boolean}true"
+                                                value="Address"/>
+                                            <addressfieldph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address field place holder"
+                                                name="./addressfieldph"
+                                                required="{Boolean}true"
+                                                value="Enter address"/>
+                                            <buildingfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Building field label"
+                                                name="./buildingfieldlabel"
+                                                required="{Boolean}true"
+                                                value="Building"/>
+                                            <buildingfieldlph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Building field placeholder"
+                                                name="./buildingfieldlph"
+                                                required="{Boolean}true"
+                                                value="Enter House, Flat, Floor no, Building name"/>
+                                            <pincodefieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Pin code field label"
+                                                name="./pincodefieldlabel"
+                                                required="{Boolean}true"
+                                                value="Pin Code"/>
+                                            <pincodefieldph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Pin code field placeholder"
+                                                name="./pincodefieldph"
+                                                required="{Boolean}true"
+                                                value="Enter PIN Code"/>
+                                            <bookingavailabletilldays
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Booking available till days"
+                                                name="./bookingavailabletilldays"
+                                                required="{Boolean}true"/>
+                                            <datefieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Date Field Label"
+                                                name="./datefieldlabel"
+                                                required="{Boolean}true"
+                                                value="Date"/>
+                                            <timefieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Time Field Label"
+                                                name="./timefieldlabel"
+                                                required="{Boolean}true"
+                                                value="Time"/>
+                                            <booktestridectalabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Next cta label"
+                                                name="./booktestridectalabel"
+                                                required="{Boolean}true"
+                                                value="Book Test Ride"/>
+                                            <reschedulesubmitbtn
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Reschedule Submit Label"
+                                                name="./reschedulesubmitbtn"
+                                                required="{Boolean}true"
+                                                value="Reschedule"/>
+											<homedisabled
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												fieldLabel="Disable at home page?"
+												name="./homedisabled"
+												text="Disable at home page?"
+												uncheckedValue="false"
+												value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </scheduleappointment>
+                    <congratulations
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Congratulations"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <congratulationsheading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Congratulations Heading"
+                                                name="./congratulationsheading"
+                                                required="{Boolean}true"
+                                                value="Congratulations!"/>
+                                            <congratulationssummary
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Congratulations Summary"
+                                                name="./congratulationssummary"
+                                                required="{Boolean}true"
+                                                value="You have successfully booked test ride."/>
+                                            <reschedulemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Reschedule Message"
+                                                name="./reschedulemessage"
+                                                required="{Boolean}true"
+                                                value="You have successfully rescheduled your test drive."/>
+                                            <congratulationsdescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Congratulations Description"
+                                                name="./congratulationsdescription"
+                                                required="{Boolean}true"/>
+                                            <gotohomectalabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="CTA Label"
+                                                name="./gotohomectalabel"
+                                                required="{Boolean}true"
+                                                value="Go to home"/>
+                                            <buylaterlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Buy Later Label"
+                                                name="./buylaterlabel"
+                                                value="When are you planning to buy VIDA V1?!"/>
+                                            <firstoption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="First Option Label"
+                                                name="./firstoption"
+                                                value="Within next 7 days"/>
+                                            <secondoption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Second Option Label"
+                                                name="./secondoption"
+                                                value="Within next 15 days"/>
+                                            <thirdoption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Third Option Label"
+                                                name="./thirdoption"
+                                                value="Within 1 month"/>
+                                            <forthoption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Forth Option Label"
+                                                name="./forthoption"
+                                                value="After 1 month"/>
+                                            <buylaterctalabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Buy Later Confirm CTA Label"
+                                                name="./buylaterctalabel"
+                                                value="Confirm"/>
+                                            <buylaterconfirmmsg
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Buy Later Confirm Message"
+                                                name="./buylaterconfirmmsg"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </congratulations>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

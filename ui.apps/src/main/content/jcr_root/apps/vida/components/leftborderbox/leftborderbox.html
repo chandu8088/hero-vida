@@ -1,0 +1,10 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Left Border Box Component"></div>
+<sly data-sly-list.title="${resource.getChildren}">
+  <sly data-sly-test="${title.name == 'leftbordertext'}">
+	<sly data-sly-list.items="${title.getChildren}">
+		<div class="left-border">
+		  ${items.boxtext @ context = 'html'}
+		</div>
+	</sly>
+  </sly>
+</sly>

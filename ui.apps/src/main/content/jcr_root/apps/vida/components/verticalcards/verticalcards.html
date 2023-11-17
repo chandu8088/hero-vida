@@ -1,0 +1,34 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Vertical Cards Component"></div>
+<sly data-sly-use.verticalCardsModel="${'com.heromotocorp.vida.core.models.VerticalSliderModel'}" />
+<section class="vida-vertical-cards" data-component="vertical-cards">
+    <div class="vida-vertical-cards__wrapper">
+        <div class="vida-vertical-cards__container" data-animation-wrapper="true">
+            <div class="vida-vertical-cards__heading" data-animate="true" data-animation-name="zoom-out-txt">
+                ${properties.heading @ context = 'html'}
+            </div>
+            <div class="vida-vertical-cards__slider">
+                <sly data-sly-list.title="${resource.getChildren}">
+                    <sly data-sly-test="${title.name == 'verticalCards'}">
+                        <sly data-sly-list.cards="${title.getChildren}">
+                            <div class="vida-vertical-cards__slider-item">
+                                <div class="vida-vertical-cards__slider-card">
+                                    <picture>
+	                                   <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=cards.image}"></sly>
+										  <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+										  <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                                        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealt}" data-animate="true"
+                                            data-animation-name="zoom-out-img">
+                                    </picture>
+                                    <div class="vida-vertical-cards__slider-content">
+                                        <h2 class="vida-vertical-cards__slider-heading">${cards.title}</h2>
+                                        <p class="vida-vertical-cards__slider-description">${cards.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </sly>
+                    </sly>
+                </sly>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Tabs"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tabs"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+											<sectionid
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+												fieldDescription="Fill for in page navigation purpose"
+												fieldLabel="Section Id"
+												name="./sectionid"/>
+                                            <tabs
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                validation="multifield-max-6">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./tabs">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <well
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <label
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldLabel="Label"
+                                                                    name="./label"/>
+																<hidelabel
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+																	fieldLabel="Hide Label?"
+																	name="./hidelabel"
+																	text="Hide Label?"
+																	uncheckedValue="false"
+																	value="{Boolean}true"/>
+                                                                <iconType
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                    fieldLabel="Select Icon"
+                                                                    name="./iconType">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <iconcolorswatch
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Color Swatch"
+                                                                            value="icon-color-swatch"/>
+                                                                        <iconscooter
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Scooter"
+                                                                            value="icon-scooter"/>
+                                                                        <iconwallet
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Wallet"
+                                                                            value="icon-wallet"/>
+                                                                        <iconcog
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Cog"
+                                                                            value="icon-cog"/>
+                                                                        <icon-ightningbolt
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Lighting Bolt"
+                                                                            value="icon-lightning-bolt"/>
+                                                                        <iconlocation
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Location"
+                                                                            value="icon-location-marker"/>
+                                                                        <iconrupee
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Rupee"
+                                                                            value="icon-rupee"/>
+                                                                    </items>
+                                                                </iconType>
+                                                            </items>
+                                                        </well>
+                                                    </items>
+                                                </field>
+                                            </tabs>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tabs>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

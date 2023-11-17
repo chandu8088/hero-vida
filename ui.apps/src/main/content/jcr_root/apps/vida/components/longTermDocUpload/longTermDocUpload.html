@@ -1,0 +1,76 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Long Term Document Upload Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveUploadConfig": {
+        "title": "${properties.longTermDocUploadTitle @ context='scriptString'}",
+        "subTitle": "${properties.longTermDocUploadSubTitle @ context='scriptString'}",
+        "backgroundImg": "${properties.longTermDocUploadbackgroundImg @ context='uri'}",
+        "redirectMessage": "${properties.longTermDocUploadRedMsg @ context='scriptString'}", 
+        "documents": [
+          {
+            "id": "DLFRONT",
+            "fieldName":"front_key",
+            "title": "${properties.documentFrontTitle @ context='scriptString'}",
+            "text": "${properties.documentFrontText @ context='scriptString'}",
+            "description": "${properties.documentFrontDesc @ context='scriptString'}",
+            "disclaimer": "${properties.documentFrontDisclaimer @ context='scriptString'}",
+            "uploadButtonText":"${properties.frontUploadButtonText @ context='scriptString'}",
+          },
+          {
+            "id": "DLBACK",
+            "fieldName":"back_key",
+            "text": "${properties.documentBackText @ context='scriptString'}",
+            "description": "${properties.documentBackDesc @ context='scriptString'}",
+            "disclaimer": "${properties.documentBackDisclaimer @ context='scriptString'}",
+            "uploadButtonText":"${properties.backUploadButtonText @ context='scriptString'}"
+          }
+        ],
+        "actions": {
+          "primary": "${properties.primarySubmit @ context='scriptString'}",
+          "troubleShootText": "${properties.troubleShootText @ context='scriptString'}",
+          "troubleShootAction": "${properties.troubleShootAction @ context='scriptString'}"
+        },
+        "emergencyNumberField": {
+          "id": "emergencyNumber",
+          "label": "${properties.emergencyNumberLabel @ context='scriptString'}",
+          "placeholder": "${properties.mobileph @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${'emergencyNoReqMsz' @ i18n,context='scriptString'}"
+            },
+            "minLength": {
+              "value": 10,
+              "message": "${'minCharaterMsz' @ i18n,context='scriptString'}"
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "${'maxCharaterMsz' @ i18n,context='scriptString'}"
+            },
+            "customValidation": {
+              "message": "${'validMobileNumber' @ i18n,context='scriptString'}"
+            }
+          }
+        },
+          "relationField": {
+            "label": "${properties.relationFieldLabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'RelationReqMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "messages": {
+            "error": "${'validDocError' @ i18n,context='scriptString'}",
+            "success": "${'validDocUploadSuccess' @ i18n,context='scriptString'}",
+            "finalSuccess": "${'finalSuccessMsz' @ i18n,context='scriptString'}",
+            "fileFormatText": "${'fileFormatErrorMsz' @ i18n,context='scriptString'}"
+          },
+          "actions": {
+            "primary": "${properties.primaryBtn @ context='scriptString'}"
+          }
+      }
+    });
+  </script>
+<div data-component="Spinner" data-cmp-type="react"></div>
+<div data-component="TestDriveUpload" data-cmp-type="react" data-cmp-config="testDriveUploadConfig"></div>

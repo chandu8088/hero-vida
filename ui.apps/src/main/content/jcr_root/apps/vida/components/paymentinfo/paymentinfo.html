@@ -1,0 +1,81 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Payment Info Component"></div>
+
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "paymentInfoConfig": {
+        "selectedCityId":"${properties.picity @ context='scriptString'}",
+        "selectedVariantSku": "${properties.piselectedvariantsku @ context='scriptString'}",
+        "heading": "${properties.pipaymentinfoheading @ context='scriptString'}",
+        "subHeading": "${properties.pipaymentinfosubheading @ context='scriptString'}",
+        "loanPurchaseLabel": "${properties.piloanpurchaselabel @ context='scriptString'}",
+        "leasePurchaseLabel":"${properties.pileasepurchaselabel @ context='scriptString'}",
+        "fullPaymentLabel":"${properties.pifullpaymentlabel @ context='scriptString'}",
+        "startingPriceLabel":"${properties.pistartingpricelabel @ context='scriptString'}",
+        "startingEmiLabel":"${properties.pistartingemilabel @ context='scriptString'}",
+        "knowMoreLabel": "${properties.piknowmorelabel @ context='scriptString'}",
+		"subsctiptionPlanConfig": {
+          "planCard":{
+            "planCardTitle": "${properties.piplancardtitle @ context='scriptString'}",
+            "planCardDesc": "${properties.piplancarddesc @ context='scriptString'}",
+            "planCardLink": "${properties.picompareplansbtn @ context='scriptString'}"
+          },
+          "planCardPopup":{
+            "planCardPopupTitle": "${properties.piplanpopuptitle @ context='scriptString'}",
+            "standardPlan":{
+              "standardPlanLabel": "${properties.pistandardlabel @ context='scriptString'}",
+              "standardPlanDesc": "${properties.pistandarddesc @ context='scriptString'}",
+              "chargerLabel":"${properties.pichargerlabel @ context='scriptString'}",
+              "batteryLabel":"${properties.pibatterylabel @ context='scriptString'}",
+              "vehicleLabel":"${properties.pivehiclelabel @ context='scriptString'}"
+            }
+          }
+        },
+        "fullPayment": {
+        	"title": "${properties.fullpaytitle @ context='scriptString'}",
+            "headline": "${properties.fullpayheadline @ context='scriptString'}",
+            "description": "${properties.fullpaydesc @ context='scriptString'}",
+            "paymentStepsConfig": [{
+              "id": 0,
+			   "icon": "scooter",
+              "label": "${properties.firststeplabel @ context='scriptString'}",
+              "message": "${properties.firststepmessage @ context='scriptString'}",
+            },
+            {
+              "id": 1,
+			  "icon": "scooter",
+              "label": "${properties.secondsteplabel @ context='scriptString'}",
+              "message": "${properties.secondstepmessage @ context='scriptString'}",
+            },
+            {
+              "id": 2,
+			  "icon": "wallet",
+              "label": "${properties.thirdsteplabel @ context='scriptString'}",
+              "message": "${properties.thirdstepmessage @ context='scriptString'}",
+            },
+            {
+              "id": 3,
+			  "icon": "color-swatch",
+              "label": "${properties.fourthsteplabel @ context='scriptString'}",
+              "message": "${properties.fourthstepmessage @ context='scriptString'}",
+            },
+            {
+              "id": 4,
+			  "icon": "credit-card",
+              "label": "${properties.fifthsteplabel @ context='scriptString'}",
+              "message": "${properties.fifthstepmessage @ context='scriptString'}",
+            },
+            {
+              "id": 5,
+			  "icon": "truck",
+              "label": "${properties.sixthsteplabel @ context='scriptString'}",
+              "message": "${properties.sixthstepmessage @ context='scriptString'}",
+            }
+            ],
+            "reserveBtnLabel": "${properties.reservebtnlabel @ context='scriptString'}",
+        }
+	}
+    });
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="PaymentInfo" data-cmp-type="react" data-cmp-config="paymentInfoConfig"></div>
+</sly>

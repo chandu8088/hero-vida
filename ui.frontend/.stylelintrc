@@ -1,0 +1,39 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "declaration-property-value-disallowed-list": null,
+    "property-no-vendor-prefix": [
+      true, {
+        "ignoreProperties": ["box-orient", "animation", "backface-visibility"]
+      }
+    ],
+    "value-no-vendor-prefix": [
+      true, {
+        "ignoreValues": ["box"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true, {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "selector-no-vendor-prefix": [
+      true, {
+        "ignoreSelectors": ["::-webkit-input-placeholder", "/-moz-.*/"]
+      }
+    ],
+    "selector-class-pattern": null,
+    "selector-max-compound-selectors": 5,
+    "selector-no-qualifying-type": null,
+    "scss/at-import-partial-extension-blacklist": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/percent-placeholder-pattern": null,
+    "max-nesting-depth": [7, {
+      "ignore": ["blockless-at-rules", "pseudo-classes"]
+    }],
+    "scss/at-mixin-pattern": null,
+    "string-quotes": "double"
+  }
+}

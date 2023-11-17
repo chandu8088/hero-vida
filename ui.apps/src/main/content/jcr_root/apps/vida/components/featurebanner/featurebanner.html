@@ -1,0 +1,61 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Feature Banner Component"></div>
+
+<div data-sly-use.cmp="com.heromotocorp.vida.core.models.FeatureBanner">
+<section class="vida-feature-banner" data-component="feature-banner" data-section-id="${properties.sectionid}" id="${properties.sectionid}">
+    <div class="vida-feature-banner__wrapper${cmp.variations @ context='html'}">
+            <div class="vida-feature-banner__slider-container">
+                <div class="vida-feature-banner__slider-slidenav">
+                <ul class="vida-feature-banner__slider-controls" id="customize-controls" aria-label="Carousel Navigation"
+                                tabindex="0">
+                                <li class="vida-feature-banner__slider-controls-prev" data-controls="prev" aria-controls="customize"
+                                    tabindex="-1">
+                                    <i class="icon-arrow"></i>
+                                </li>
+                                <li class="vida-feature-banner__slider-controls-next" data-controls="next" aria-controls="customize"
+                                    tabindex="-1">
+                                    <i class="icon-arrow"></i>
+                                </li>
+                                <div class="vida-feature-banner__slider-controls-index"></div>
+                                </ul>
+                </div>
+				
+                <div class="vida-feature-banner__slider-slides">
+				<sly data-sly-list.featurebanner="${cmp.featurebanner}">
+                    
+                        <div class="vida-feature-banner__slider-item">
+                                <div class="vida-feature-banner__content">
+                                    <div class="vida-feature-banner__heading">
+                                        ${featurebanner.valueMap.title @ context='html'}
+                                    </div>
+                                    <div class="vida-feature-banner__card-asset__description">${featurebanner.valueMap.description}
+                                    </div>
+                                </div>
+                                <div class="vida-feature-banner__contentimages">
+                                 <sly data-sly-test="${featurebanner.valueMap.typeVariations == 'image'}">
+								   <picture>
+									  <source srcset="${featurebanner.valueMap.imagepath}" media="(min-width: 1024px)">
+									  <source srcset="${featurebanner.valueMap.fullScreenImageMob}" media="(min-width: 360px)">
+									  <img src="${featurebanner.valueMap.fullScreenImageMob}" class="vida-feature-banner__card-asset" alt="${featurebanner.valueMap.imagealt}">
+								   </picture>
+								</sly>
+								<sly data-sly-test="${featurebanner.valueMap.typeVariations == 'video'}">
+								   <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+									  @ videoDamPath=featurebanner.valueMap.fullScreenvideo}"></sly>
+								   <sly data-sly-use.DMVideoURLServiceMob="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+									  @ videoDamPath=featurebanner.valueMap.mobScreenVideo}"></sly>
+								   <div class="vida-feature-banner__video-player" data-component="video-player">
+									  <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+										 src="" muted loop data-src-mobile="${DMVideoURLServiceMob.dMVideoPathLink}"
+										 data-src-desktop="${DMVideoURLService.dMVideoPathLink}">
+									  </video>
+								   </div>
+								</sly>
+						
+                                </div>
+                        </div>
+                 
+                    </sly>                    
+                </div>
+            </div>
+    </div>
+</section>

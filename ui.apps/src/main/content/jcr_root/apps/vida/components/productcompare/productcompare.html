@@ -1,0 +1,91 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Product Compare Component"></div>
+<sly data-sly-use.productcompare="${'com.heromotocorp.vida.core.models.ProductCompareModel'}"/>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "compareModel": {
+        "title":"${properties.compareheading @ context = 'scriptString'}",
+        "tagLine":"${properties.tagline @ context='scriptString'}",
+        "selectedCityId":"${properties.pcselectedcity @ context='scriptString'}",
+        "splitterChar": "~",
+        "CompareLinkText": "${properties.pccomparetext @ context='scriptString'}",
+        "specs":{
+          "priceTag":"${properties.pricetag @ context='scriptString'}",
+          "range":"${properties.pcrange @ context='scriptString'}",
+          "topSpeed":"${properties.pctopspeed @ context='scriptString'}",
+          "chargeDuration":"${properties.pcchargingtime @ context='scriptString'}",
+          "pickUp":"${properties.pcaccelerator @ context='scriptString'}",
+		  "ridingModes":"${properties.pcridemodes @ context='scriptString'}",
+          "seatingType": "${properties.pcseattype @ context='scriptString'}"
+        },
+        "tooltipConfig": {
+			"info": "${properties.tooltiptext @ context='scriptString'}",
+			"infoPosition": "top",
+			"id": "effective-price"
+		},
+        "selectedProduct":[
+            {
+              "productSku":"${properties.firstproductsku @ context='scriptString'}",
+              "variantSku":"${properties.firstvariantsku @ context='scriptString'}",
+              "hoverImg":"${properties.firsthoverimg @ context='scriptString'}",
+              "isVideo" : ${properties.firstisvideo @ context='scriptString'},
+              "baseImg":"${properties.firstbaseimg @ context='scriptString'}",
+              "imageAltText":"${properties.firstimgalttext @ context='scriptString'}"
+            },
+            {
+              "productSku":"${properties.secondproductsku @ context='scriptString'}",
+              "variantSku":"${properties.secondvariantsku @ context='scriptString'}",
+              "hoverImg":"${properties.secondhoverimg @ context='scriptString'}",
+              "isVideo" : ${properties.secondisvideo @ context='scriptString'},
+              "baseImg":"${properties.secondbaseimg @ context='scriptString'}",
+              "imageAltText":"${properties.secondimgalttext @ context='scriptString'}"
+            }
+          ],
+        "bookTestDrive": "${properties.pcbookdrivebtn @ context='scriptString'}",
+        "downloadBrochure":{
+          "label":"${properties.downloadlabel @ context='scriptString'}",
+          "url":"${properties.downloadpdf @ context='scriptString'}"
+        },
+        "configure": "${properties.pcconfigurebtn @ context='scriptString'}",
+		"priceBreakup":"${properties.pricebreakuplabel @ context='scriptString'}"
+      }
+    });
+</script>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+	  "priceBreakupConfig":{
+          "splitterChar": "${'splitChar' @ i18n,context='scriptString'}",
+		  "breakupLinksText":{
+			"hideBreakup": "${properties.hidebreakupbtn @ context='scriptString'}",
+			"viewBreakup": "${properties.viewbreakupbtn @ context='scriptString'}"
+		  },
+		  "mainBreakupText": {
+			"heading": "${properties.effectivelabel @ context='scriptString'}",
+			"description":"${productcompare.effectivedesc @ context='scriptString'}",
+			"priceLocationText": "${properties.pricingheadline @ context='scriptString'}",
+			"gstText": "${productcompare.taxDescription @ context='scriptString'}"
+		  },
+		  "showroomText":{
+			"heading":"${properties.exshowroomlabel @ context='scriptString'}",
+			"description":"${productcompare.exshowroomdesc @ context='scriptString'}"
+		  },
+		  "chargerText":{
+			"heading":"${properties.portablechargerlabel @ context='scriptString'}"
+		  },
+		  "fameSubsidyText":{
+			"heading":"${properties.fameincentivelabel @ context='scriptString'}",
+			"description":"${productcompare.fameincentivedesc @ context='scriptString'}"
+		  },
+		  "stateSubsidyText":{
+			"potentialNotification":"${properties.potentialnotify @ context='scriptString'}",
+			"heading":"${properties.statesubsidylabel @ context='scriptString'}",
+			"description":"${productcompare.statesubsidydesc @ context='scriptString'}"
+		  },
+		  "defaultCityId": "${properties.defaultcity @ context='scriptString'}",
+		  "defaultVariantSkus": ["${properties.defaultfirstvariantsku @ context='scriptString'}","${properties.defaultsecondvariantsku @ context='scriptString'}"],
+	  }
+      });
+  </script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="CompareModel" data-cmp-type="react" data-cmp-config="compareModel" data-section-id="${properties.sectionid}" id="${properties.sectionid}"></div>
+<div data-component="PriceBreakup" data-cmp-type="react" data-cmp-config="priceBreakupConfig"></div>
+</sly>

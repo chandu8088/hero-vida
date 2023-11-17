@@ -1,0 +1,44 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Rounded Carousel Component"></div>
+<section class="vida-rounded-carousel" data-component="rounded-carousel">
+    <div class="vida-rounded-carousel__wrapper">
+        <div class="vida-rounded-carousel__title-container">
+            <div class="vida-rounded-carousel__heading" data-animate="true" data-animation-name="zoom-out-txt">
+                <p>${properties.title @ context = 'html'}</p>
+            </div>
+            <div class="vida-rounded-carousel__description txt-color--solid-grey" data-animate="true" data-animation-name="fade-in" data-animation-delay="0.2">
+                <p>${properties.subtitle @ context = 'html'}</p>
+            </div>
+        </div>
+        <div class="vida-rounded-carousel__slider-container">
+            <div class="vida-rounded-carousel__slider-slides">
+			<sly data-sly-list.title="${resource.getChildren}">
+                <sly data-sly-test="${title.name == 'multiimage'}">
+                    <sly data-sly-list.choose="${title.getChildren}">
+                <div class="vida-rounded-carousel__slider-item">
+                    <div class="vida-rounded-carousel__slider-item-card">
+                        <picture>
+                        <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=choose.image}"></sly>
+                            <img src="${DMImageURLService.dMImagePathLink}" alt="${choose.imagealttext}" data-animate="true" data-animation-name="zoom-out-img" />
+                        </picture>
+                        <h2 class="vida-rounded-carousel__slider-item-card-heading">${choose.heading}</h2>
+                        <p class="vida-banner-carousel__slider-item-card-description"> ${choose.description @ context = 'html'}</p>
+                    </div>
+                </div>
+                </sly>
+               </sly>
+              </sly>
+            </div>
+            <ul class="vida-rounded-carousel__slider-controls" id="customize-rounded-controls"
+                aria-label="Carousel Navigation" tabindex="0">
+                <li class="vida-rounded-carousel__slider-controls-prev" data-controls="prev" aria-controls="customize"
+                    tabindex="-1">
+                    <i class="icon-arrow"></i>
+                </li>
+                <li class="vida-rounded-carousel__slider-controls-next" data-controls="next" aria-controls="customize"
+                    tabindex="-1">
+                    <i class="icon-arrow"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

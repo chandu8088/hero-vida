@@ -1,0 +1,6 @@
+{
+    "instagramAccountId":"17841404111152649",
+    "instagramAccessToken":"EAAD4d4HiVd8BAN2SC3vf2xIJAZAUAueEG00LmmrWZCHHNXiLFiHR3SGNFjNcAa4GUeGKrJQZBk95VXq3ZAC3R2PZBeENA9QuPfBemgTc6xJTmj4efzhIijxE33EAb02uxIlsPDGRetae2qvbT2qDbYrdeLRvii4FlEzj6e884r1qzfPJzKvLK",
+    "instagramUrl": "https://graph.facebook.com/v7.0/%s/media?fields=id,media_url,permalink&limit=3&access_token=%s",
+    "instaGramJsonPath": "/content/dam/vida/socialfeed/instagram/instagram.json"
+}

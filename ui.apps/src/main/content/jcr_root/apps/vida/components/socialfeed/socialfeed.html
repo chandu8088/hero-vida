@@ -1,0 +1,87 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Social Feed Component"></div>
+<div data-sly-use.model="com.heromotocorp.vida.core.models.SocialFeedModel">
+<section class="vida-social-feed" data-component="social-feed">
+    <div class="vida-container">
+      <div class="vida-social-feed__heading-wrapper">
+        <p class="vida-social-feed__heading" data-animate="true" data-animation-name="zoom-out-txt">${'socialfeed' @ i18n}</p>
+      </div>
+      <div class="vida-social-feed__tab-list">
+        <a class="vida-social-feed__tab-item vida-social-feed__tab-item--active" data-rel="tab1" data-animate="true" href="javascript:void(0);"
+        data-animation-name="fade-in">
+          <i class="icon-instagram"></i>
+          <p class="vida-social-feed__tab-item-title">${'instagram' @ i18n}</p>
+        </a>
+        <a class="vida-social-feed__tab-item" data-rel="tab2" data-animate="true" href="javascript:void(0);"
+        data-animation-name="fade-in">
+          <i class="icon-youtube"></i>
+          <p class="vida-social-feed__tab-item-title">${'youtube' @ i18n}</p>
+        </a>
+        <a class="vida-social-feed__tab-item" data-rel="tab3" data-animate="true" href="javascript:void(0);"
+        data-animation-name="fade-in">
+          <i class="icon-twitter"></i>
+          <p class="vida-social-feed__tab-item-title">${'twitter' @ i18n}</p>
+        </a>
+      </div>
+    </div>
+    <div class="vida-social-feed__tab-panel">
+      <div class="vida-social-feed__panel-item vida-social-feed__panel-item--active" id="tab1">
+        <div class="vida-social-feed__insta">
+          <sly data-sly-list.insta = "${model.insta}">
+          <div class="vida-social-feed__card">
+            <div class="vida-social-feed__insta-card">
+              <a href="${insta.url}">
+                <picture>
+					<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=insta.mediaUrl}"></sly>
+			          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+			          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                  <img loading='lazy' src="${DMImageURLService.imageforWidth360}"alt="instagram-image"
+                    class="vida-social-feed__insta-asset" data-animate="true" data-animation-name="zoom-out-img"
+                   >
+                </picture>
+              </a>
+            </div>
+          </div>
+        </sly>
+        </div>
+      </div>
+      <div class="vida-social-feed__panel-item" id="tab2">
+  
+        <div class="vida-social-feed__youtube">
+          <sly data-sly-list.youtube = "${model.youtube}">
+          <div class="vida-social-feed__card">
+            <div class="vida-social-feed__youtube-card">
+              <div class="vida-social-feed__youtube-card-video">
+                <iframe width="516" height="315" src="${youtube.videoId}"
+                  title="YouTube video player" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+              </div>
+              <div class="vida-social-feed__youtube-card-content" data-animate="true" data-animation-name="fade-in" data-animation-scroller-start="100%">
+                <div class="vida-social-feed__youtube-card-content-title">
+                  <p>${youtube.title}</p>
+                </div>
+                <div class="vida-social-feed__youtube-card-content-text">
+                  <p>${youtube.desc}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </sly>
+        </div>
+      </div>
+      <div class="vida-social-feed__panel-item" id="tab3">
+        <div class="vida-social-feed__twitter">
+          <sly data-sly-list.twitter = "${model.twitterText}">
+          <div class="vida-social-feed__card">
+            <a href="${twitter.url}" class="vida-social-feed__twitter-card">
+              <span data-animate="true" data-animation-name="zoom-out-txt" data-animation-scale="1.2" data-animation-scroller-start="100%">
+                "${twitter.text}"
+              </span>
+            </a>
+          </div>
+          </sly>
+          </div>
+          </sly>  
+        </div>
+      </div>
+    
+  </section>
+</div>

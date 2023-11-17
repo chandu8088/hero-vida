@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Billing Shipping"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <billingshipping
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Billing &amp; Shipping Deatils"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bstitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                name="./bstitle"
+                                                required="{Boolean}true"
+                                                value="Billing &amp; shipping details"/>
+                                            <bsbillingaddresstitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Billing Address"
+                                                name="./bsbillingaddresstitle"
+                                                required="{Boolean}true"
+                                                value="Billing Address"/>
+                                            <bsbillingaddressmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Billing Address Message"
+                                                name="./bsbillingaddressmessage"
+                                                required="{Boolean}true"
+                                                value="This address will be your RTO Address!"/>
+                                            <bsshippingaddresstitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Shipping Address"
+                                                name="./bsshippingaddresstitle"
+                                                required="{Boolean}true"
+                                                value="Shipping Address"/>
+                                            <bsshippingaddressmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Billing Address"
+                                                name="./bsshippingaddressmessage"
+                                                required="{Boolean}true"
+                                                value="We will check if your address is eligible for shipping, else you will need to pickup your vehicle from an experience centre."/>
+                                            <bsshippingaddresconfirm
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Shipping Address Confirm"
+                                                name="./bsshippingaddresconfirm"
+                                                required="{Boolean}true"
+                                                value="Shipping address same as the billing adress"/>
+                                            <addressline1label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address Line1 Label"
+                                                name="./addressline1label"
+                                                required="{Boolean}true"
+                                                value="Address Line 1"/>
+                                            <addressline1placeholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address Line1 Label"
+                                                name="./addressline1placeholder"
+                                                required="{Boolean}true"
+                                                value="Building &amp; street name"/>
+                                            <addressline2label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address Line2 Label"
+                                                name="./addressline2label"
+                                                required="{Boolean}true"
+                                                value="Address Line 2"/>
+                                            <addressline2placeholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Address Line2 Label"
+                                                name="./addressline2placeholder"
+                                                required="{Boolean}true"
+                                                value="Area"/>
+                                            <bslandmark
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Landmark Label"
+                                                name="./bslandmark"
+                                                required="{Boolean}true"
+                                                value="Landmark"/>
+                                            <bslandmarkph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Landamark placeholder"
+                                                name="./bslandmarkph"
+                                                required="{Boolean}true"
+                                                value="Near..."/>
+                                            <bspincode
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Pincode Label"
+                                                name="./bspincode"
+                                                required="{Boolean}true"
+                                                value="PIN code"/>
+                                            <bspincodeph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="PIN code placeholder"
+                                                name="./bspincodeph"
+                                                required="{Boolean}true"
+                                                value="------"/>
+                                            <bscity
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="City Label"
+                                                name="./bscity"
+                                                required="{Boolean}true"
+                                                value="City"/>
+                                            <bsstate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="State Label"
+                                                name="./bsstate"
+                                                required="{Boolean}true"
+                                                value="State"/>
+                                            <bsnotificationbannerlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Notification Label"
+                                                name="./bsnotificationbannerlabel"
+                                                required="{Boolean}true"
+                                                value="Please Note"/>
+                                            <bsnotificationbannerinfo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Notification info"
+                                                name="./bsnotificationbannerinfo"
+                                                required="{Boolean}true"
+                                                value="You will have to submit verification documents after payment ( Pasport size photo, Aadhar Card,  Pan card, Address proof)Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </billingshipping>
+                    <deliverystatus
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Delivery Status"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <bsconfiglabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Configure Label"
+                                                name="./bsconfiglabel"
+                                                required="{Boolean}true"
+                                                value="Configure"/>
+                                            <bsownerdhiplabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Ownership Label"
+                                                name="./bsownerdhiplabel"
+                                                required="{Boolean}true"
+                                                value="Owenrship"/>
+                                            <bsdeliverydetailslabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Delivery Details Label"
+                                                name="./bsdeliverydetailslabel"
+                                                required="{Boolean}true"
+                                                value="Delivery Details"/>
+                                            <bspaymentlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Payment Label"
+                                                name="./bspaymentlabel"
+                                                required="{Boolean}true"
+                                                value="Payment"/>
+                                            <bsLoanlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Loan Label"
+                                                name="./bsLoanlabel"/>
+                                            <bsLeaselabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Lease Label"
+                                                name="./bsLeaselabel"/>
+                                            <bssavecontinuelabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Save &amp; Continue Label"
+                                                name="./bssavecontinuelabel"
+                                                required="{Boolean}true"
+                                                value="Save &amp; Continue"/>
+                                            <bshelptextlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Help Text Label"
+                                                name="./bshelptextlabel"
+                                                required="{Boolean}true"
+                                                value="Trouble booking?"/>
+                                            <bschatwithusabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Configure Title"
+                                                name="./bschatwithusabel"
+                                                required="{Boolean}true"
+                                                value="Chat with us"/>
+                                            <bsApplyBtn
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Apply Button Label"
+                                                name="./bsApplyBtn"/>
+                                            <bpmakepaymentlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Make Payment Label"
+                                                name="./bsmakepaymentlabel"
+                                                required="{Boolean}true"
+                                                value="Make Payment"/>
+                                            <bpceterpaylabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Pay at Centre Label"
+                                                name="./bsceterpaylabel"
+                                                required="{Boolean}true"
+                                                value="Pay at Centre"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </deliverystatus>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

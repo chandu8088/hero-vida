@@ -1,0 +1,81 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Maps Component"></div>
+<!-- Default Mode -->
+<sly data-sly-test="${properties.variations == 'default'}">
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "locationFinderConfig": {
+        "defaultLocationId": "${properties.city @ context='scriptString'}",
+        "title": "${properties.title @ context='scriptString'}",
+		"subtitle": "${properties.subTitle @ context='scriptString'}",
+        "mode": "${properties.variations @ context='scriptString'}",
+        "locations": [{
+          "id": "chargingStations",
+          "label": "${properties.chargingStation @ context='scriptString'}",
+          "count": 0
+        }, {
+          "id": "serviceCenter",
+          "label": "${properties.serviceCenter @ context='scriptString'}",
+          "count": 0
+        }, {
+          "id": "experienceCenter",
+          "label": "${properties.experienceCenter @ context='scriptString'}",
+          "count": 0
+        }]
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="LocationFinder" data-cmp-type="react" data-cmp-config="locationFinderConfig"></div>
+  </sly>
+</sly>
+<!-- Charging Mode -->
+<sly data-sly-test="${properties.variations == 'chargingStations'}">
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "chargingStationsLocatorConfig": {
+        "mode": "${properties.variations @ context='scriptString'}",
+        "defaultLocationId": "${properties.city @ context='scriptString'}",
+        "title": "${properties.textCharging @ context='scriptString'}",
+		"googleNavigateLabel": "${properties.navigatelabel @ context='scriptString'}",
+        "locations": [{
+          "id": "chargingStations",
+          "label": "${properties.chargingStationPage @ context='scriptString'}",
+        }]
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+    <div data-section-id="${properties.sectionid}" data-component="LocationFinder" data-cmp-type="react"
+      data-cmp-config="chargingStationsLocatorConfig"></div>
+  </sly>
+</sly>
+<!-- Experience Center Mode -->
+<sly data-sly-test="${properties.variations == 'experienceCenter'}">
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "experienceCenterLocatorConfig": {
+        "mode": "${properties.variations @ context='scriptString'}",
+        "defaultLocationId": "${properties.city @ context='scriptString'}",
+        "title": "${properties.textExpCenter @ context='scriptString'}"
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  <div data-component="LocationFinder" data-cmp-type="react" data-cmp-config="experienceCenterLocatorConfig"></div>
+</sly>
+</sly>
+<!-- Service Center Mode -->
+<sly data-sly-test="${properties.variations == 'serviceCenter'}">
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "serviceCenterLocatorConfig": {
+        "mode": "${properties.variations @ context='scriptString'}",
+        "defaultLocationId": "${properties.city @ context='scriptString'}",
+        "title": "${properties.textServiceCenter @ context='scriptString'}"
+      }
+    });
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  <div data-section-id="${properties.sectionid}" data-component="LocationFinder" data-cmp-type="react" data-cmp-config="serviceCenterLocatorConfig"></div>
+</sly>
+</sly>

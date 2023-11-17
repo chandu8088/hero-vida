@@ -1,0 +1,107 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Asset Collage Component"></div>
+<section class="vida-asset-collage" data-animation-wrapper="true" data-section-id="${properties.sectionid}">
+             <div class="vida-container">
+			   <sly data-sly-test="${properties.title != null}">
+                <div class="vida-asset-collage__main-heading" data-animate="true" data-animation-name="zoom-out-txt">
+                  ${properties.title @ context = 'html'}
+                 </div>
+			   </sly>
+			   <sly data-sly-test="${properties.subtitle != null}">
+                <div class="vida-asset-collage__main-description" data-animate="true"
+                      data-animation-name="fade-in" data-animation-delay="0.2">
+                  <p>${properties.subtitle}</p>
+                </div>
+			   </sly>
+            </div>
+    <div class="vida-asset-collage__wrapper">
+        <div class="vida-asset-collage__two-image">
+            <div class="vida-asset-collage__media">
+			<sly data-sly-test="${properties.variationsone == 'image'}">
+                <picture class="vida-asset-collage__picture">
+                   <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.assetoneimage}"></sly>
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width: 360px)">
+                    <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.assetoneimagealt}"
+                        class="vida-asset-collage__asset">
+                </picture>
+				</sly>
+				<sly data-sly-test="${properties.variationsone == 'video'}">
+			 <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=properties.assetonevideo}"></sly>
+  		
+                <div class="vida-video-player vida-asset-collage__asset" data-component="video-player">
+                 <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+				 src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+
+                
+                 </div>
+				 </sly>
+                <div class="vida-asset-collage__content">
+                    <div class="vida-asset-collage__heading">
+                        <h2>${properties.assetonetitle}</h2>
+                    </div>
+					<sly data-sly-test="${properties.checkboxone == '_blank'}">
+                    <div class="vida-asset-collage__description">
+                        ${properties.assetonedesc @ context = 'html'}
+                    </div>
+					</sly>
+                </div>
+            </div>
+            <div class="vida-asset-collage__media">
+			<sly data-sly-test="${properties.variationstwo == 'image'}">
+                <picture class="vida-asset-collage__picture">
+                    <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.assettwoimage}"></sly>
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width: 360px)">
+                    <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.assettwoimagealt}"
+                        class="vida-asset-collage__asset">
+                </picture>
+				</sly>
+				<sly data-sly-test="${properties.variationstwo == 'video'}">
+                <div class="vida-video-player vida-asset-collage__asset" data-component="video-player">
+                    <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+                    src="${properties.assettwovideo}" muted></video>
+                </div>
+				</sly>
+                <div class="vida-asset-collage__content">
+                    <div class="vida-asset-collage__heading">
+                        <h2>${properties.assettwotitle}</h2>
+                    </div>
+					<sly data-sly-test="${properties.checkboxtwo == '_blank'}">
+                    <div class="vida-asset-collage__description">
+                        ${properties.assettwodesc @ context = 'html'}
+                    </div>
+					</sly>
+                </div>
+            </div>
+        </div>
+        <div class="vida-asset-collage__one-image">
+            <div class="vida-asset-collage__media">
+			<sly data-sly-test="${properties.variations == 'image'}">
+                <picture class="vida-asset-collage__picture">
+                    <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.assetimage}"></sly>
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+				      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width: 360px)">
+                    <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.assetimagealt}"
+                        class="vida-asset-collage__asset">
+                </picture>
+				</sly>
+				<sly data-sly-test="${properties.variations == 'video'}">
+                <div class="vida-video-player vida-asset-collage__asset" data-component="video-player">
+                    <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+                    src="${properties.assetvideo}" muted></video>
+                </div>
+				</sly>
+                <div class="vida-asset-collage__content">
+                    <div class="vida-asset-collage__heading">
+                        <h2>${properties.assettitle}</h2>
+                    </div>
+					<sly data-sly-test="${properties.checkbox == '_blank'}">
+                    <div class="vida-asset-collage__description">
+                        ${properties.assetdesc @ context = 'html'}
+                    </div>
+					</sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

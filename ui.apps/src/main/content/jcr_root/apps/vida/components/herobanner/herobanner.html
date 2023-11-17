@@ -1,0 +1,86 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder"
+	data-emptytext="Hero Banner"></div>
+<sly data-sly-test="${!wcmmode.edit}">
+<sly data-sly-test.applyStyle="${properties.applystyle == 'select' ? '' : properties.applystyle}"/>
+<sly data-sly-test.applyMobileStyle="${properties.applymobilestyle ? 'vida-hero-banner__extended-title' : ''}"/>
+<sly data-sly-test.addBannerSections="${properties.addbannersections ? 'vida-hero-banner-four-section' : ''}"/>
+<sly data-sly-test.addWhiteText="${properties.applywhitecolor ? 'txt-color--white' : 'vida-hero-banner__title'}"/>
+<div class="vida-hero-banner">
+  <sly data-sly-test="${properties.bannerurl}">
+  <a class="vida-hero-banner__container-link" href="${properties.bannerurl @ context='uri', extension = 'html'}" style="text-decoration: none;">
+  </sly>
+  <div class="vida-hero-banner__asset">
+  		<sly data-sly-test="${properties.variations == 'video'}">
+		<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=properties.fullScreenvideo}"></sly>
+		<sly data-sly-use.DMVideoURLServiceMob="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=properties.mobScreenVideo}"></sly>
+			<div data-component="video-player">
+			  <video 
+				class="vida-video-player__playback" 
+				aria-label="video playback" 
+				data-src-mobile="${DMVideoURLServiceMob.dMVideoPathLink}"
+				data-src-desktop="${DMVideoURLService.dMVideoPathLink}"
+				src=""
+				muted loop autoplay playsinline 
+				>
+			  </video>
+			</div>
+		</sly>
+	<sly data-sly-test="${properties.variations == 'image'}">
+		<picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.fullScreenimage}"></sly>
+		<sly data-sly-use.DMImageURLServiceMob="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.fullScreenImageMob}"></sly>
+		  <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:768px)">
+		  <source srcset="${DMImageURLServiceMob.dMImagePathLink}" media="(min-width: 360px)">
+		  <img class="vida-hero-banner__asset-image" src="${DMImageURLServiceMob.dMImagePathLink}" alt="${properties.imagealt}" />
+		</picture>
+	</sly>
+  </div>
+  <div class="vida-container vida-hero-banner__container ${applyStyle} ${addBannerSections}">
+    <sly data-sly-test="${!properties.addfoursections}">
+	<div data-sly-test="${properties.heading}" class="${addWhiteText} ${applyMobileStyle}">
+		${properties.heading @context='html'}
+		<div class="vida-hero-banner__title-list">
+		   <ul>
+            <sly data-sly-list.title="${resource.getChildren}">
+              <sly data-sly-test="${title.name == 'subpoints'}">
+                <sly data-sly-list.items="${title.getChildren}">
+                    <sly data-sly-test="${items.iconimgpath && items.subtext}">
+                      <li><img src="${items.iconimgpath}" alt="${items.iconimgalttext}">${items.subtext @context='html'}</li>
+                    </sly>
+                </sly>
+              </sly>
+            </sly>
+           </ul>
+		</div>
+		<sly data-sly-test="${properties.tnctext}">
+			<div class="vida-hero-banner__title-terms">${properties.tnctext}</div>
+		</sly>
+		<sly data-sly-test="${properties.emicallabel && properties.emicalurl}">
+			<a href="${properties.emicalurl @ context='uri', extension = 'html'}" class="btn btn--primary full-width">${properties.emicallabel}</a>
+		</sly>
+	</div>
+	</sly>
+    <sly data-sly-test="${properties.addbannersections}">
+    <div class="vida-hero-banner__body">
+	 <sly data-sly-list.title="${resource.getChildren}">
+	  <sly data-sly-test="${title.name == 'bannersections'}">
+		<sly data-sly-list.items="${title.getChildren}">
+		  <div class="vida-hero-banner-four-section__body__boxes">
+			<img class="vida-hero-banner-four-section__body__boxes--img" src="${items.sectioniconimgpath}" alt="${items.sectioniconimgalttext}"/>
+			<div>
+			  ${items.sectiontext @context='html'}
+			</div>
+		  </div>
+		</sly>
+	   </sly>
+	  </sly>
+    </div>
+	</sly>
+  </div>
+  <sly data-sly-test="${properties.bannerurl}">
+  </a>
+  </sly>
+</div>
+</sly>

@@ -1,0 +1,35 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Video Banner Component"></div>
+<div class="vida-video-banner" data-component="video-player">
+    <div class="vida-video-banner__container vida-container">
+    
+        
+<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+	@ videoDamPath=properties.video}"></sly>
+
+		<sly data-sly-test="${properties.showcontrols && properties.playloopvideo}">
+        	<video class="vida-video-player__playback" autoplay loop playsinline aria-label="video playback" muted controls>
+		</sly>
+		<sly data-sly-test="${properties.showcontrols && !properties.playloopvideo}">
+        	<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback" muted controls>
+		</sly>
+		<sly data-sly-test="${!properties.showcontrols && properties.playloopvideo}">
+        	<video class="vida-video-player__playback" autoplay loop playsinline aria-label="video playback" muted>
+		</sly>
+		<sly data-sly-test="${!properties.showcontrols && !properties.playloopvideo}">
+        	<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback" muted>
+		</sly>
+            <source src="${DMVideoURLService.dMVideoPathLink}" type="video/mp4"> 
+        </video>
+        <div data-section-id="vida-video-player__audio-control" class="vida-video-player__mute">
+            <!-- <img class="vida-video-player__mute-icon" src="/apps/vida/clientlibs/clientlib-site/resources/images/svg/mute.svg"/>
+            <img class="vida-video-player__unmute-icon vida-video-player__icon--active" 
+			src="/apps/vida/clientlibs/clientlib-site/resources/images/svg/flag.svg"/> -->
+            <span class="vida-video-player__mute-icon">
+                <i class="icon-volume-up"></i>
+            </span>
+            <span class="vida-video-player__unmute-icon vida-video-player__icon--active">
+                <i class="icon-volume-off"></i>
+            </span>
+        </div>
+    </div>
+</div>

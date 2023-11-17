@@ -1,0 +1,705 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Purchase Configurator Component"></div>
+
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "purchaseConfiguratorConfig": {
+      "scooterInfo": {
+        "product": {
+          "range": "${properties.pcproductrange @ context='scriptString'}",
+          "topSpeed": "${properties.pctopspeed @ context='scriptString'}",
+          "acceleration": "${properties.pcacceleration @ context='scriptString'}",
+          "chargingTime": "${properties.pcchargingtime @ context='scriptString'}"
+        },
+        "colorSummaryLabel": "${properties.pccolorsummarylabel @ context='scriptString'}"
+      },
+	  "exchangePolicyDetails": {
+          "tradeInPlan": {
+            "title": "${properties.tradeplantitle @ context='scriptString'}",
+            "yesBtn": {
+              "label": "${'yesLabel' @ i18n,context='scriptString'}"
+            },
+            "noBtn": {
+              "label": "${'noLabel' @ i18n,context='scriptString'}"
+            },
+			"confirmation": {
+              "title": "${properties.tradeConfirmTitle @ context='scriptString'}",
+              "description": "${properties.tradeConfirmationDesc @ context='scriptString'}",
+              "okBtn": {
+                "label": "${properties.tradeOkBtn @ context='scriptString'}"
+              }
+            }
+          },
+          "exchangePolicy": {
+            "title": "${properties.exchangepolicytitle @ context='scriptString'}",
+            "description": "${properties.exchangepolicydesc @ context='scriptString'}",
+            "poweredByImg": "${properties.exchangepolicyPoweredByImg @ context='uri'}",
+            "orderStatusConfig": [{
+              "id": 0,
+              "label": "${properties.firstorderlabel @ context='scriptString'}",
+              "message": "${properties.firstordermessage @ context='scriptString'}",
+            },
+            {
+              "id": 1,
+              "label": "${properties.secondorderlabel @ context='scriptString'}",
+              "message": "${properties.secondordermessage @ context='scriptString'}",
+            },
+            {
+              "id": 2,
+              "label": "${properties.thirdorderlabel @ context='scriptString'}",
+              "message": "${properties.thirdordermessage @ context='scriptString'}",
+            },
+            {
+              "id": 3,
+              "label": "${properties.fourthorderlabel @ context='scriptString'}",
+              "message": "${properties.fourthordermessage @ context='scriptString'}",
+            },
+            {
+              "id": 4,
+              "label": "${properties.fifthorderlabel @ context='scriptString'}",
+              "message": "${properties.fifthordermessage @ context='scriptString'}",
+            }
+            ],
+            "vehiclePurchaseDetails": {
+              "stepTitle": "Step 1 of 3",
+              "title": "${properties.purchasetitle @ context='scriptString'}",
+              "vehicleMakeField": {
+                "id": "vehiclemaking",
+                "label": "${properties.makinglabel @ context='scriptString'}",
+                "name":"vehicle_make",
+                "options": [{
+
+                	 "label": "${'selectLabel' @ i18n,context='scriptString'}",
+
+                      "value": ""
+
+                  }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectBrandReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "vehicleModelField": {
+                "id": "vehiclemodel",
+                "label": "${properties.maodellabel @ context='scriptString'}",
+                "name":"vehicle_model",
+                "options": [{
+                	 "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                      "value": ""
+
+                  }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectModelReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "vehicleTypeField": {
+                "id": "vehicletype",
+                "label": "${properties.vehicletypelabel @ context='scriptString'}",
+                "name":"vehicle_type",
+                "options": [{
+
+                	 "label": "${'selectLabel' @ i18n,context='scriptString'}",
+
+                      "value": ""
+
+                  }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectTypeReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "ccField": {
+                "id": "cctype",
+                "label": "${properties.cclabel @ context='scriptString'}",
+                "name": "vehicle_cc",
+                "options": [{
+                	 "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                      "value": ""
+
+                  }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectCCReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "purchaseMonthField": {
+                  "id": "purchaseMonth",
+                  "name": "purchase_month",
+                  "label": "${properties.purchaseMonthFieldLabel @ context='scriptString'}",
+                  "options": [{
+					"label": "${'monthMsz' @ i18n,context='scriptString'}",
+					"value": ""
+                  }],
+                  "validationRules": {
+                    "required": {
+                      "message": "${'selectMonthMsz' @ i18n,context='scriptString'}"
+                    }
+                  }
+                },
+                "purchaseYearField": {
+                    "id": "purchaseYear",
+                    "name": "purchase_year",
+                    "label": "Purchase Year",
+                    "limit": "20",
+                    "options": [{
+                      "label": "${'yearMsz' @ i18n,context='scriptString'}",
+                      "value": ""
+                    }],
+                    "validationRules": {
+                      "required": {
+                        "message": "${'selectYearMsz' @ i18n,context='scriptString'}"
+                      }
+                    }
+                  },
+              "cityField": {
+                "label": "${properties.purchasecitylabel @ context='scriptString'}",
+                "name": "purchase_city",
+                "validationRules": {
+                  "required": {
+                    "message": "${'cityLabelReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "stateField": {
+                "label": "${properties.statelabel @ context='scriptString'}",
+                "name": "purchase_state",
+                "validationRules": {
+                  "required": {
+                    "message": "${'stateReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              }
+            },
+            "ownershipDetails": {
+              "stepTitle": "Step 2 of 3",
+              "title": "${properties.ownershipdetailstitle @ context='scriptString'}",
+              "registrationNumberField": {
+                "id": "registrationNumber",
+                "label": "${properties.registrationlabel @ context='scriptString'}",
+                "name": "register_number",
+                "placeholder": "${properties.registrationph @ context='scriptString'}",
+                "validationRules": {
+                  "required": {
+                    "message": "${'ownershipNumReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "numberField": {
+                "id": "registrationNumber",
+                "label": "${properties.ownernumberlabel @ context='scriptString'}",
+                "name": "number_of_owner",
+                "options": [{
+                  "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                    "value": ""
+                },
+                {
+                  "label": "${'oneLabel' @ i18n,context='scriptString'}",
+                    "value": "1st"
+                },
+                {
+                  "label": "${'twoLabel' @ i18n,context='scriptString'}",
+                    "value": "2nd"
+                },
+                {
+                  "label": "${'othersLabel' @ i18n,context='scriptString'}",
+                    "value": "others"
+                }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectOwnershipNumReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "ownershipField": {
+                "id": "ownershiptype",
+                "label": "${properties.ownertypelabel @ context='scriptString'}",
+                "name": "ownership_type",
+                "options": [{
+                  "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                    "value": ""
+                },
+                {
+                  "label": "${'ownLabel' @ i18n,context='scriptString'}",
+                    "value": "Self owned"
+                },
+                {
+                  "label": "${'loanLeaseLabel' @ i18n,context='scriptString'}",
+                    "value": "Loan/Lease"
+                }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectOwnershipTypeReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "insuranceValidityField": {
+                "id": "insurancevalidity",
+                "label": "${properties.insurancevalidlabel @ context='scriptString'}",
+                "name": "insurance_validity",
+                "placeholder": "${properties.insurancevalidph @ context='scriptString'}",
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectInsuranceDateValidMsz' @ i18n,context='scriptString'}"
+                  }
+                },
+				"invalidRules": {
+				  "required": {
+					"message": "${'insuranceValidityRulesMsz' @ i18n,context='scriptString'}"
+				  }
+				}
+              },
+              "manufactureYearField": {
+                "id": "manufactureyear",
+                "label": "Manufacturing Year",
+                "name": "year_mfg",
+                "limit": "20",
+                "options": [{
+                    "label": "${'yearMsz' @ i18n,context='scriptString'}",
+                      "value": ""
+                  }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectYearMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "manufactureMonthField": {
+                  "id": "manuFactureMonth",
+                  "label": "Manufacturing Month & Year",
+                  "name": "month_mfg",
+                  "options": [{
+                    "label": "${'monthMsz' @ i18n,context='scriptString'}",
+                      "value": ""
+                  }],
+                  "validationRules": {
+                    "required": {
+                      "message": "${'selectMonthMsz' @ i18n,context='scriptString'}"
+                    }
+                  }
+                },
+              "challanInfo":{
+                "id": "challanInfo",
+                "name": "challan_info",
+                "label": "${properties.paidchallanslabel @ context='scriptString'}",
+                "confirmation" : {
+                    "title": "${properties.challanConfirmationTitle @ context='scriptString'}",
+                    "description": "${properties.challanConfirmationDesc @ context='scriptString'}",
+                    "okBtn": {
+                      "label": "${properties.challanOkBtn @ context='scriptString'}"
+                    }
+                  }
+              },
+			  "hypothecationInfo": {
+				"id": "hypothecationInfo",
+				"name": "hypothecation_info",
+				"label": "${properties.hypothecationinfolabel @ context='scriptString'}",
+				"confirmation": {
+				  "title": "${properties.hypoConfirmTitle @ context='scriptString'}",
+				  "description": "${properties.hypoConfirmationDesc @ context='scriptString'}",
+				  "okBtn": {
+					"label": "${properties.hypoOkBtn @ context='scriptString'}"
+				  }
+				}
+			  },
+			  "manufacturePurchaseCheck": {
+				"message": "${'manuFacturePurchaseErrorMsz' @ i18n,context='scriptString'}"
+			  }
+            },
+            "vehicleConditionDetails": {
+              "stepTitle": "Step 3 of 3",
+              "title": "${properties.vehicleconditiontitle @ context='scriptString'}",
+			  "networkError": "${'networkErrorMsz' @ i18n,context='scriptString'}",
+              "rateConditionDetails": {
+                "id": "rateCondition",
+                "label": "${properties.rateconditionlabel @ context='scriptString'}",
+                "name":"rate_the_condition",
+                "options": [{
+                  "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                    "value": ""
+                },
+                {
+                  "label": "${'excellentLabel' @ i18n,context='scriptString'}",
+                    "value": "Excellent"
+                },
+                {
+                  "label": "${'veryGoodLabel' @ i18n,context='scriptString'}",
+                    "value": "Very Good"
+                },
+                {
+                  "label": "${'goodLabel' @ i18n,context='scriptString'}",
+                    "value": "Good"
+                },
+                {
+                  "label": "${'fairLabel' @ i18n,context='scriptString'}",
+                    "value": "Fair"
+                },
+                {
+                  "label": "${'poorLabel' @ i18n,context='scriptString'}",
+                    "value": "Poor"
+                }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'rateReqMsz' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "distanceDetails": {
+                "id": "distanceDetails",
+                "label": "${properties.distancedetailslabel @ context='scriptString'}",
+                "name": "kms_run",
+                "options": [{
+                  "label": "${'selectLabel' @ i18n,context='scriptString'}",
+                    "value": ""
+                },
+                {
+                  "label": "0-20K",
+                    "value": "0-20K"
+                },
+                {
+                  "label": "20-40K",
+                    "value": "20-40K"
+                },
+                {
+                  "label": "40-60K",
+                    "value": "40-60K"
+                }],
+                "validationRules": {
+                  "required": {
+                    "message": "${'selectLabel' @ i18n,context='scriptString'}"
+                  }
+                }
+              },
+              "issuesListDetails": [
+                {"label" : "${properties.firstissuelabel @ context='scriptString'}",
+                "value": "body_part"
+                },
+                { "label" :"${properties.secondissuelabel @ context='scriptString'}",
+                "value": "starting"
+              },
+                { "label" :"${properties.thirdissuelabel @ context='scriptString'}",
+                "value": "smoke"
+              },
+                { "label" :"${properties.fourthissuelabel @ context='scriptString'}",
+                "value": "light_indicator"
+              },
+                { "label" :"${properties.fifthissuelabel @ context='scriptString'}",
+                "value": "front_tyre"
+              },
+                { "label" : "${properties.sixthissuelabel @ context='scriptString'}",
+                "value": "rear_tyre"
+              }
+              ]
+            },
+            "exchangeOfferDetails": {
+              "message": "${properties.exchangeoffermessage @ context='scriptString'}",
+              "priceText": "${properties.pricetext @ context='scriptString'}",
+              "details": "${properties.detailstext @ context='scriptString'}"
+            },
+            "agreeTerms": {
+              "id": "${properties.exchangeid @ context='scriptString'}",
+              "agreeLabel": "${properties.exagreetermlabel @ context='scriptString'}",
+              "terms": {
+                "label": "${properties.extermconditionlabel @ context='scriptString'}",
+                "actionUrl": ""
+              },
+              "btnLabel": {
+                "agree": "${properties.exagreebtnlabel @ context='scriptString'}",
+                "close": "${properties.exclosebtnlabel @ context='scriptString'}"
+              },
+              "validationRules": {
+                "required": {
+                  "message": "${'selectTermsMsz' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "actionBtns":{
+              "continueBtn": {
+                  "label": "${properties.continuebtnlabel @ context='scriptString'}"
+                },
+                "backBtn": {
+                  "label": "${properties.backbtnlabel @ context='scriptString'}"
+                },
+                "getQuoteBtn": {
+                  "label": "${properties.getquotebtnlabel @ context='scriptString'}"
+                },
+                "acceptBtn": {
+                  "label": "${properties.acceptbtnlabel @ context='scriptString'}"
+                },
+                "notInterestedBtn": {
+                  "label": "${properties.nointerestbtnlabel @ context='scriptString'}"
+                },
+				"removeExchange": {
+	                "label": "${properties.removeexbtnlabel @ context='scriptString'}"
+				}
+            }
+          },
+        },
+      "ownershipPlan": {
+        "title": "${properties.ownershipplantitle @ context='scriptString'}",
+        "basicPlanDetails": {
+          "title": "${properties.basicplandetailstitle @ context='scriptString'}",
+          "message": "${properties.basicplanmessage @ context='scriptString'}",
+          "coverList": [
+            {
+              "icon": "${properties.coverlisticons1 @ context='scriptString'}",
+              "label": "${properties.coverlistlabel1 @ context='scriptString'}"
+            },
+            {
+              "icon": "${properties.coverlisticons2 @ context='scriptString'}",
+              "label": "${properties.coverlistlabel2 @ context='scriptString'}"
+            }]
+        }
+      },
+      "aadharDetails": {
+        "title": "${properties.aadhardetailstitle @ context='scriptString'}",
+        "yesBtn": {
+          "label": "${properties.yesctalabel @ context='scriptString'}"
+        },
+        "noBtn": {
+          "label": "${properties.noctalabel @ context='scriptString'}"
+        },
+        "cardDetails": {
+          "label": "${properties.carddetailslabel @ context='scriptString'}",
+          "subsidy": {
+            "label": "${properties.subsidylabel @ context='scriptString'}",
+            "details": {
+              "title": "${properties.subsidydetailstitle @ context='scriptString'}",
+              "intro": "${properties.subsidydetailsintro @ context='scriptString'}",
+              "description": "${properties.subsidydetailsdescription @ context='scriptString'}",
+              "aboutFame": {
+                "label": "${properties.aboutfamelabel @ context='scriptString'}",
+                "actionUrl": "${properties.aboutfameurl @ context='uri'}"
+              }
+            }
+          },
+          "aadharNumberfield": {
+            "label": "${properties.aadharnumberfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.aadharnumberfieldph @ context='scriptString'}"
+          },
+          "checkField": {
+            "label": "${properties.checkfieldlabel @ context='scriptString'}"
+          }
+        },
+        "infoBox": {
+          "title": "${properties.infoboxtitle @ context='scriptString'}",
+          "description": "${properties.infoboxdescription @ context='scriptString'}"
+        },
+        "validationRules": {
+          "required": {
+            "message": "${properties.aadharvalidationrulesmessage @ context='scriptString'}"
+          },
+          "minLength": {
+            "value": 12,
+            "message": "${'aadharMinCharaterMsz' @ i18n,context='scriptString'}"
+          },
+          "maxLength": {
+            "value": 12,
+            "message": "${'aadharMaxCharaterMsz' @ i18n,context='scriptString'}"
+          },
+          "checkField": {
+            "message": "${'checkboxReqMsz' @ i18n,context='scriptString'}"
+          }
+        }
+      },
+      "gstDetails": {
+        "title": "${properties.gstdetailstittle @ context='scriptString'}",
+        "message": "${properties.gstdetailsmessage @ context='scriptString'}",
+        "yesBtn": {
+          "label": "${properties.gstdetailsyesctalabel @ context='scriptString'}"
+        },
+        "noBtn": {
+          "label": "${properties.gstdetailsnoctalabel @ context='scriptString'}"
+        },
+        "cardDetails": {
+          "label": "${properties.gstcarddetailslabel @ context='scriptString'}",
+          "gstNumberField": {
+            "label": "${properties.gstnumberfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.gstnumberfieldph @ context='scriptString'}",
+            "changeGstLabel": "${properties.changestlabel @ context='scriptString'}",
+            "verifyGstLabel": "${properties.verifygstlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${properties.gstvalidationrulesmessage @ context='scriptString'}"
+              },
+                "custom": {
+                  "message": "${properties.gstvalidationrulescustommessage @ context='scriptString'}"
+                }
+            }
+          },
+          "companyField": {
+            "label": "${properties.companyfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.companyfieldph @ context='scriptString'}"
+          },
+          "companyEmailField": {
+            "label": "${properties.companyemailfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.companyemailfieldph @ context='scriptString'}",
+            "validationRules": {
+              required: {
+                message: "${'emailReqMsz' @ i18n,context='scriptString'}"
+              },
+              customValidation: {
+                message: "${'emailValidMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          }
+        }
+      },
+      "paymentOptions": {
+        "title": "${properties.paymentoptionstitle @ context='scriptString'}",
+        "message": "${properties.paymentoptionsmessage @ context='scriptString'}",
+        "plans": [
+          {
+            "id": "fullPayment",
+            "title": "${properties.plan1title @ context='scriptString'}",
+            "message": "${properties.plan1message @ context='scriptString'}",
+            "details": {
+              "subText": "${properties.plan1detailssubtext @ context='scriptString'}"
+            }
+          },
+          {
+            "id": "loan",
+            "title": "${properties.plan2title @ context='scriptString'}",
+            "details": {
+              "label": "${properties.plan2detailslabel @ context='scriptString'}",
+              "actionUrl": ""
+            }
+          }
+		  //,
+          //{
+            //"id": "lease",
+            //"title": "${properties.plan3title @ context='scriptString'}",
+            //"details": {
+              //"label": "${properties.plan3detailslabel @ context='scriptString'}",
+              //"actionUrl": ""
+            //}
+          //}
+        ]
+      },
+      "insurancePolicy": {
+        "title": "${properties.insurancepolicytitle @ context='scriptString'}",
+        "description": "${properties.insurancepolicydescription @ context='scriptString'}",
+        "addOnLabel": "${properties.addonlabel @ context='scriptString'}",
+        "tenureLabel": "${properties.tenurelabel @ context='scriptString'}",
+        "nomineeInfo": "${properties.nomineeinfo @ context='scriptString'}",
+        "selectPolicyBtn": {
+          "label": "${properties.selectpolicylabel @ context='scriptString'}"
+        },
+        "warning": {
+          "title": "${properties.warningtitle @ context='scriptString'}",
+          "description": "${properties.warningdescription @ context='scriptString'}"
+        },
+        "policySelection": {
+          "title": "${properties.policyselectiontittle @ context='scriptString'}",
+          "logoURL": "${properties.policyselectionlogourl @ context='uri'}",
+          "amountSubtext": "${properties.policyamounttext @ context='scriptString'}",
+          "description": {
+              "addCPA": {
+                "label": "${properties.policyselectionaddcpalabel @ context='scriptString'}",
+                "action": "${properties.policyselectionaddcpaaction @ context='scriptString'}"
+              },
+              "removeCPA":  {
+                "label": "${properties.policyselectionremovecpalabel @ context='scriptString'}",
+                "action": "${properties.policyselectionremovecpaaction @ context='scriptString'}"
+              }
+            },
+          "addOnLabel": "${properties.policyselectionaddonlabel @ context='scriptString'}",
+          "addOnBtn": {
+            "label": "${properties.policyselectionaddonbtn @ context='scriptString'}"
+          },
+          "noResponseModel":{
+              "title": "Information",
+              "description":"We are unable to generate Quote. Don't worry, our executives will assist you in Experience Center",
+              "okBtn":"OK"
+            },
+            "resetBtn": {
+              "label": "Reset Cover"
+            },
+                   
+          "addPolicyBtn": {
+            "label": "${properties.addpolicybtn @ context='scriptString'}"
+          },
+            "removeCPAPopup": {
+              "title": "${properties.removeCPAPopuptitle @ context='scriptString'}",
+              "description": "${properties.removeCPAPopupdescription @ context='scriptString'}",
+              "message": "${properties.removeCPAPopupmessage @ context='scriptString'}",
+              "options": [{
+                "label": "${properties.removeCPAPopupoptionslabel @ context='scriptString'}",
+                "value": "${properties.removeCPAPopupoptionsvalue @ context='scriptString'}"
+              }, {
+                "label": "${properties.removeCPAPopupoptionslabel1 @ context='scriptString'}",
+                "value": "${properties.removeCPAPopupoptionsvalue1 @ context='scriptString'}"
+              }, {
+                "label": "${properties.removeCPAPopupoptionslabel2 @ context='scriptString'}",
+                "value": "${properties.removeCPAPopupoptionsvalue2 @ context='scriptString'}"
+              }],
+              "actionLabel": "${properties.removeCPAPopupactionLabel @ context='scriptString'}"
+          }
+        }
+      },
+      "breakup": {
+        "title": "${properties.breakuptitle @ context='scriptString'}",
+        "summary": {
+          "basePriceLabel": "${properties.bkbasepricelabel @ context='scriptString'}",
+          "configureLabel": "${properties.bkconfigurelabel @ context='scriptString'}",
+          "otherChargesLabel": "${properties.bkotherchargeslabel @ context='scriptString'}",
+          "addonsLabel": "${properties.bkaddonslabel @ context='scriptString'}",
+          "gstLabel": "${properties.bkgstlabel @ context='scriptString'}",
+          "subsidyLabel": "${properties.bksubsidylabel @ context='scriptString'}",
+          "prebookingPricePaidLabel": "${properties.bkprebookingpricepaidlabel @ context='scriptString'}",
+          "exchangeLabel": "${properties.bkExchangelabel @ context='scriptString'}",
+        },
+        "estimateLabel": "${properties.bkestimateabel @ context='scriptString'}",
+        "agreeTerms": {
+		  "id": "${properties.purchaseid @ context='scriptString'}",
+          "agreeLabel": "${properties.bkagreetermlabel @ context='scriptString'}",
+          "terms": {
+            "label": "${properties.bktermactionlabel @ context='scriptString'}",
+            "actionUrl": ""
+          },
+		  "btnLabel":{
+			  "agree": "${properties.agreebtnlabel @ context='scriptString'}",
+			  "close": "${properties.closebtnlabel @ context='scriptString'}"
+		  },
+          "validationRules": {
+                "required": {
+                  "message": "${'selectTermsMsz' @ i18n,context='scriptString'}"
+                }
+            }
+        },
+        "submitBtn": {
+          "label": "${properties.bksubmitbtn @ context='scriptString'}",
+          "redirectionUrl": "${properties.bkRedirectionUrl @ context='scriptString'}"
+        },
+        "helpLink": {
+						"helpLabel": "${properties.bkhelplabel @ context='scriptString'}",
+						"chatLabel": "${properties.bkchatactionlabel @ context='scriptString'}"
+					},
+          "insuranceWarning": {
+            "message": "${properties.insurancewarningmsz @ context='scriptString'}",
+            "yesBtn": {
+              "label": "${properties.insurancewarningyesbtn @ context='scriptString'}"
+            },
+            "noBtn": {
+              "label": "${properties.insurancewarningnobtn @ context='scriptString'}"
+            }
+          }
+      },
+	"subscription":{
+          "subscriptionLabels":{
+             "monthly": "${properties.monthlyLabel @ context='scriptString'}",
+             "annual": "${properties.annualLabel @ context='scriptString'}",
+             "removePlan": "${properties.removePlanLabel @ context='scriptString'}",
+             "comparePlan": "${properties.comparePlanLabel @ context='scriptString'}",
+             "subscriptionPlan": "${properties.subPlansLabel @ context='scriptString'}"
+          }
+        }
+    }
+  })
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="PurchaseConfigurator" data-cmp-type="react" data-cmp-config="purchaseConfiguratorConfig"></div>
+</sly>

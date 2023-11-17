@@ -1,0 +1,5 @@
+{
+  "schedulername":"SFDC API Scheduler",
+  "cronExpression":"$[env:SFDC_API_CRON_EXPRESSION]",
+  "isSfdcAPISchedulerEnabled" : "$[env:SFDC_API_SCHEDULER_ENABLED]"
+}

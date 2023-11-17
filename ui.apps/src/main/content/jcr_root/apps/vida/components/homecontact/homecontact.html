@@ -1,0 +1,122 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Stay In Touch Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.TestRideModel'}"/>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+        "stayInTouch": {
+            "title": "${properties.title @ context='scriptString'}",
+            "successTitle": "${properties.congratsTitle @ context='scriptString'}",
+            "message": "${properties.message @ context='scriptString'}",
+            "successMessage": "${properties.congratsMessage @ context='scriptString'}",
+            "productImage": "${properties.productImage @ context='uri'}",
+            "socialLinks": [{
+                "name": "instagram",
+                "actionUrl": "${properties.instaurl @ context='uri'}",
+                "icon": "icon-instagram"
+            },
+            {
+                "name": "twitter",
+                "actionUrl": "${properties.twitterurl @ context='uri'}",
+                "icon": "icon-twitter"
+            },
+            {
+                "name": "linkedIn",
+                "actionUrl": "${properties.linkedinurl @ context='uri'}",
+                "icon": "icon-linkedin"
+            },
+            {
+                "name": "facebook",
+                "actionUrl": "${properties.facebookurl @ context='uri'}",
+                "icon": "icon-facebook"
+            }
+            ],
+            "firstNameField": {
+                "label": "${properties.firstname @ context='scriptString'}",
+                "placeholder": "${properties.fnplchld @ context='scriptString'}",
+                "validationRules": {
+                    "required": {
+                        "message": "${'firstNameReqMsz' @ i18n,context='scriptString'}"
+                    },
+					"minLength": {
+					  "value": 1,
+					  "message": "${'firstNameLeastMsz' @ i18n,context='scriptString'}"
+					},
+					"customValidation": {
+					  "message": "${'validfirstname' @ i18n,context='scriptString'}"
+					}
+                }
+            },
+            "lastNameField": {
+                "label": "${properties.lastname @ context='scriptString'}",
+                "placeholder": "${properties.lnplchld @ context='scriptString'}",
+                "validationRules": {
+                    "required": {
+                        "message": "${'lastNameReqMsz' @ i18n,context='scriptString'}"
+                    },
+					"minLength": {
+					  "value": 1,
+					  "message": "${'lastNameLeastMsz' @ i18n,context='scriptString'}"
+					},
+					"customValidation": {
+					  "message": "${'validlastname' @ i18n,context='scriptString'}"
+					}
+                }
+            },
+            "mobileField": {
+                "id": "mobile",
+                "countrycode": "${author.countryCodes @ context='scriptString'}",
+                "label": "${properties.phone @ context='scriptString'}",
+                "placeholder": "${properties.phplchld @ context='scriptString'}",
+                "validationRules": {
+                    "required": {
+                        "message": "${'phoneNumberReqMsz' @ i18n,context='scriptString'}"
+                    },
+                    "minLength": {
+                        "value": 10,
+                        "message": "${'minCharaterMsz' @ i18n,context='scriptString'}"
+                    },
+                    "maxLength": {
+                        "value": 10,
+                        "message": "${'minCharaterMsz' @ i18n,context='scriptString'}"
+                    },
+            "customValidation": { 
+              "message": "${'validmobilenumber' @ i18n,context='scriptString'}"
+            }
+                }
+            },
+            "errorMessage": "${properties.duplicateMobileNumberMessage @ context='scriptString'}",
+            "emailField": {
+                "label": "${properties.email @ context='scriptString'}",
+                "placeholder": "${properties.emailplaceholder @ context='scriptString'}",
+                "infoLabel": "${properties.infoLabel @ context='scriptString'}",
+                "validationRules": {
+                    "required": {
+                        "message": "${'emailReqMsz' @ i18n,context='scriptString'}"
+                    },
+                    "customValidation": {
+                        "message": "${'emailValidMsz' @ i18n,context='scriptString'}"
+                    }
+                }
+            },
+            "pinCodeField": {
+              "label": "${properties.pincodelabel @ context='scriptString'}",
+              "placeholder": "${properties.pincodeph @ context='scriptString'}",
+              "validationRules": {
+                "required": {
+                  "message": "${'pinCodeReqMsz' @ i18n,context='scriptString'}"
+                },
+                "minLength": {
+                  "value": 6,
+                  "message": "${'pinCodeMinCharaterMsz' @ i18n,context='scriptString'}"
+                }
+              }
+            },
+            "submitBtn": {
+                "label": "${properties.submitBtn @ context='scriptString'}"
+            }
+        }
+    });
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+    <div data-component="StayInTouch" data-cmp-type="react" data-cmp-config="stayInTouch" id="${properties.sectionid}"></div>
+</sly>

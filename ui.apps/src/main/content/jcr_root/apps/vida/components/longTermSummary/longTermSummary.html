@@ -1,0 +1,47 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Long Term Summary Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+	window.appConfig = Object
+			.assign(
+					window.appConfig || {},
+					{
+
+						"testDriveSummaryConfig" : {
+
+							"title" : "${properties.longTermSummaryTitle @ context='scriptString'}",
+
+							"backgroundImg" : "${properties.longTermSummaryBackgroundImg @ context='uri'}",
+
+							"summaryDetails" : {
+
+								"amountLabel" : "${properties.longTermSummaryamountLabel @ context='scriptString'}",
+
+								"disclaimer" : "${properties.longTermSummaryDisclaimer @ context='scriptString'}",
+
+								"baseLabel" : "${properties.longTermSummaryBase @ context='scriptString'}",
+
+								"taxLabel" : "${properties.longTermSummaryGST @ context='scriptString'}"
+
+							},
+
+							"terms" : "${properties.longTermSummaryTerms @ context='scriptString'}",
+
+							"primaryBtn" : {
+
+								"label" : "${properties.longTermSummaryPrimaryAction @ context='scriptString'}",
+
+							},
+
+							"messages" : {
+
+								"error" : "${'longTermSummaryMsgError' @ i18n,context='scriptString'}",
+
+								"success" : "${'longTermSummaryMsgSuccess' @ i18n,context='scriptString'}"
+
+							}
+
+						}
+
+					});
+</script>
+<div data-component="TestDriveSummary" data-cmp-type="react" data-cmp-config="testDriveSummaryConfig"></div>

@@ -1,0 +1,31 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Full Bleed Image Component"></div>
+<section class="vida-full-bleed-image" data-section-id="${properties.sectionid}">
+    <div class="vida-full-bleed-image__wrapper">
+        <div class="vida-full-bleed-image__media">
+            <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.bgimage}"></sly>
+          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+              <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealt}">
+            </picture>
+        </div>
+        <div class="vida-full-bleed-image__content vida-container">
+            <div class="vida-full-bleed-image__content--top">
+                <div class="vida-full-bleed-image__title">
+                    <h2>${properties.topheading}</h2>
+                </div>
+                <div class="vida-full-bleed-image__description">
+                    <p>${properties.topdescription}</p>
+                </div>
+            </div>
+            <div class="vida-full-bleed-image__content--bottom">
+                <div class="vida-full-bleed-image__title">
+                    <h2>${properties.bottomheading}</h2>
+                </div>
+                <div class="vida-full-bleed-image__description">
+                    <p>${properties.bottomdescription}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

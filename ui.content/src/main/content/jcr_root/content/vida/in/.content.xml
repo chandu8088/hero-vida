@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:primaryType="cq:Page">
+    <en/>
+    <jcr:content
+        cq:lastModified="{Date}2022-05-19T14:14:46.386+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated_publish="{Date}2022-05-19T15:42:07.203+05:30"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction_publish="Activate"
+        cq:lastRolledout="{Date}2022-05-19T14:14:46.431+05:30"
+        cq:lastRolledoutBy="admin"
+        cq:redirectTarget="/content/vida/us/en"
+        cq:template="/conf/vida/settings/wcm/templates/page-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveSync,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="India"
+        jcr:uuid="22897002-f244-43b9-b80f-21e311ba66e6"
+        sling:resourceType="vida/components/page"
+        hideInNav="{Boolean}true">
+        <cq:LiveSyncConfig
+            cq:isDeep="{Boolean}true"
+            cq:master="/content/vida/language-masters"
+            cq:rolloutConfigs="[/libs/msm/wcm/rolloutconfigs/default]"
+            jcr:primaryType="cq:LiveCopy"/>
+    </jcr:content>
+</jcr:root>

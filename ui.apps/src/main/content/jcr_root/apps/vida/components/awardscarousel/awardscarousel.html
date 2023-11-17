@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Awards Carousel Component"></div>
+<section class="vida-awards-carousel" data-component="awards-carousel" data-section-id="${properties.sectionid}">
+	<div class="vida-awards-carousel__wrapper">
+		<div class="vida-awards-carousel__container vida-container" data-animation-wrapper="true">
+			<h2 data-animate="true" data-animation-name="zoom-out-txt">${properties.title}</h2> </div>
+		<div class="vida-awards-carousel__slider">
+			<div class="vida-awards-carousel__slider-slides">
+				<sly data-sly-list.title="${resource.getChildren}">
+					<sly data-sly-test="${title.name == 'awardscarousel'}">
+						<sly data-sly-list.award="${title.getChildren}">
+							<div class="vida-awards-carousel__slider-item">
+								<div class="vida-awards-carousel__slider-card">
+									<h2 class="vida-awards-carousel__slider-heading">${award.heading}</h2>
+									<picture>
+									<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=award.image}"></sly>
+									      <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+									      <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)"> 
+										<img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${award.imagealt}" /> </picture>
+								</div>
+							</div>
+						</sly>
+					</sly>
+				</sly>
+			</div>
+		</div>
+	</div>
+</section>

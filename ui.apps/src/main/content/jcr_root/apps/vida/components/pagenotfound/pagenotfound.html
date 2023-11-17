@@ -1,0 +1,19 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Page Not Found Component"></div>
+<section class="vida-page-not-found">
+    <div class="vida-container vida-page-not-found__container">
+        <div class="vida-page-not-found__content">
+            <h1 class="vida-page-not-found__title">${properties.heading}</h1>
+            <h2 class="vida-page-not-found__description">${properties.desc}</h2>
+            <div class="vida-page-not-found__disclaimer">
+                 ${properties.goBackText @context = 'html'}
+            </div>
+        </div>
+        <div class="vida-page-not-found__image">
+            <picture>
+                <!-- <source media="(min-width: 1024px)" srcset="/clientlib-site/images/png/404_image.png">
+                <source media="(min-width: 360px)" srcset="/clientlib-site/images/png/404_image.png"> -->
+                <img src="${properties.imgNotFound}" alt="${properties.imgAltText}">
+            </picture>
+        </div>
+    </div>
+</section>

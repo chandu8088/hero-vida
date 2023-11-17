@@ -1,0 +1,24 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="App Cards Component"></div>
+
+
+<div data-sly-use.cmp="com.heromotocorp.vida.core.models.AppCard">
+<section class="vida-app-cards" data-component="app-cards" data-section-id="${properties.sectionid}" id="${properties.sectionid}">
+    <div class="vida-app-cards__wrapper">
+        <div class="vida-app-cards__container vida-container">
+            <div class="vida-app-cards__slider">
+			<sly data-sly-list.basictab="${cmp.basictab}">
+                    <div class="vida-app-cards__slider-card">
+                        <picture>
+                            <source srcset="${basictab.valueMap.imagepath}" media="(min-width:1024px)">
+                            <source srcset="${basictab.valueMap.imagepath}" media="(min-width: 360px)">
+                            <img class="vida-app-cards__asset-image" src="${basictab.valueMap.imagepath}" alt="${basictab.valueMap.alttext}" />
+                        </picture>
+                        <div class="vida-app-cards__slider-content">
+                            <h3>${basictab.valueMap.title}</h3>
+                        </div>
+                    </div>
+            </sly>    
+            </div>
+        </div>
+    </div>
+</section>

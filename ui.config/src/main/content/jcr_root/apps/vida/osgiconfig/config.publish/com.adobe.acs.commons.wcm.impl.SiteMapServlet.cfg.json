@@ -1,0 +1,27 @@
+{
+  "use.vanity":false,
+  "sling.servlet.resourceTypes":[
+    "/apps/vida/components/page"
+  ],
+  "include.lastmod":true,
+  "character.encoding":"",
+  "extensionless.urls":false,
+  "exclude.templates":"",
+  "changefreq.properties":[
+    "seoFrequency"
+  ],
+  "remove.slash":false,
+  "url.rewrites":[
+    ""
+  ],
+  "include.inherit":true,
+  "damassets.property":"",
+  "priority.properties":[
+    "seoPriority"
+  ],
+  "damassets.types":[
+    ""
+  ],
+  "exclude.property":"hideInNav",
+  "externalizer.domain":"publish"
+}

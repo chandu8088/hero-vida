@@ -1,0 +1,18 @@
+
+.vida-video-banner__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+	padding: 0px 0px 0px;
+}
+
+.vida-video-player__playback{
+	margin-top:55px;
+    object-fit: cover;
+    width: 100%;
+}

@@ -1,0 +1,37 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Purchase Aadhar Verification Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "aadharVerificationConfig": {
+        "title": "${properties.title @ context='scriptString'}",
+		"subtext1":"${properties.description @ context='scriptString'}",
+		"subtext2":"${properties.seconddesc @ context='scriptString'}",
+		"subtext3":"${properties.disclaimertext @ context='scriptString'}",
+		"errorMsg": "${'aadharValidErrorMsz' @ i18n,context='scriptString'}",
+		"aadharNoField": {
+			"label": "${properties.aadharNumberLabel @ context='scriptString'}",
+			"placeholder": "${properties.aadharNumberph @ context='scriptString'}",
+			"validationRules": {
+			  "required": {
+				"message": "${'aadharNumReqMsz' @ i18n,context='scriptString'}"
+			  },
+			  "minLength": {
+				"value": 12,
+				"message": "${'minAadharDigitMsz' @ i18n,context='scriptString'}"
+			  },
+			  "customValidation": {
+                "message": "${'aadharErrorMsz' @ i18n,context='scriptString'}",
+				"inValidAadharMessage" : "${'validAadharNumMsz' @ i18n,context='scriptString'}"
+               }
+            },
+				
+        },
+        "buttonText": "${properties.verifyButton @ context='scriptString'}",
+		"buttonTextManual":"${properties.manualBtnText @ context='scriptString'}",
+		"isOptimizedJourneyEnabled": ${properties.isOptimizedJourneyEnabled @ context='scriptString'}
+      }
+    });  
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="AadharVerification" data-cmp-type="react" data-cmp-config="aadharVerificationConfig"></div>
+  </sly>

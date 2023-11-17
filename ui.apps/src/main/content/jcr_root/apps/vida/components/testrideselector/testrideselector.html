@@ -1,0 +1,33 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Test Ride Selector Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.TestRideModel'}"/>
+<script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+	"testDriveConfig": {
+		"backgroundImg": "${properties.testSelectorBgImg @ context='scriptString'}",
+		"testDriveSelector": {
+			"title": "${properties.testSelectorTitle @ context='scriptString'}",
+			"options": [
+			{
+			  "id": "${'shortTermID' @ i18n,context='scriptString'}",
+			  "title": "${properties.shortTermLabel @ context='scriptString'}",
+			  "icon": "${'clockIcon' @ i18n,context='scriptString'}",
+			  "description": "${properties.shortTermDesc @ context='scriptString'}"
+			},
+			{
+			  "id": "${'longTermID' @ i18n,context='scriptString'}",
+			  "title": "${properties.longTermLabel @ context='scriptString'}",
+			  "rate": "${properties.rateMessage @ context='scriptString'}",
+			  "description": "${properties.longTermDesc @ context='scriptString'}"
+			}
+			],
+			"serviceUnavailableMsg": "${'serviceUnavailableMsz' @ i18n,context='scriptString'}",
+			"changeLocationLabel": "${properties.changeloclabel @ context='scriptString'}"
+		}
+	}
+  });
+</script>
+
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="TestDriveSelector" data-cmp-type="react" data-cmp-config="testDriveConfig"></div>
+</sly>

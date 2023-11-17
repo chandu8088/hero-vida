@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-05-19T13:19:23.252+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated_publish="{Date}2022-04-28T13:56:13.855Z"
+        cq:lastReplicated_scene7="{Date}2022-04-28T13:56:13.855Z"
+        cq:lastReplicatedBy_publish="kapant@adobe.com"
+        cq:lastReplicatedBy_scene7="kapant@adobe.com"
+        cq:lastReplicationAction_publish="Activate"
+        cq:lastReplicationAction_scene7="Activate"
+        cq:lastRolledout="{Date}2022-05-19T13:17:31.976+05:30"
+        cq:lastRolledoutBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/vida/settings/wcm/templates/xf-web-variation"
+        cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Header"
+        jcr:uuid="5478fdc5-4d2a-42ce-ab93-31e6e9f59250"
+        sling:resourceType="vida/components/xfpage">
+        <root
+            cq:lastRolledout="{Date}2022-05-19T13:17:31.951+05:30"
+            cq:lastRolledoutBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="vida/components/container"
+            layout="responsiveGrid">
+            <header
+                cq:lastRolledout="{Date}2022-05-19T13:17:31.976+05:30"
+                cq:lastRolledoutBy="admin"
+                jcr:created="{Date}2022-04-27T06:56:06.815Z"
+                jcr:createdBy="kapant@adobe.com"
+                jcr:lastModified="{Date}2022-05-19T13:19:22.983+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vida/components/header"
+                alttext="Header logo"
+                booknowbuttonlabel="Book now"
+                copyrightmessage="/content/vida/in/en/my-account"
+                headerlogo="/content/dam/vida/logo/vida-logo.png"
+                logourl="/content/vida/in/en"
+                mobileheaderlogo="/content/dam/vida/logo/vida-logo-mobile.png"
+                privacypolicy="/content/vida/in/en/my-account"
+                querytext="query"
+                refundpolicy="/content/vida/in/en/my-account"
+                termsofuse="/content/vida/in/en/my-account"
+                testridebuttonlabel="Test ride"/>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,68 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Product Info Banner Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.ProductInfoModel'}" />
+<div class="vida-product-banner" data-section-id="${properties.sectionid}" id="${properties.sectionid}">
+<sly data-sly-test.addColor="${properties.iscoloured ? 'txt-color--orange' : ''}"/>
+  <div class="vida-product-banner__wrapper">
+    <div class="vida-product-banner__content">
+      <div class="vida-product-banner__details">
+        <div class="vida-container vida-hero-simple-banner__container">
+            <div class="vida-hero-simple-banner__title"> 
+              <h1><span class="heading__top">${properties.pbprimetitle}<span class="${addColor}">${properties.pbsecondtitle}</span></span></br>
+              <span class="heading__middle-variant1 txt-color--orange">${properties.pbfirstname} ${author.productInfoBannerObj.item_name}</span></br>
+              <span class="heading__bottom">${properties.bottomtitle}</span></h1>
+            </div>
+		</div>
+        <div class="vida-product-banner__description">
+          <div class="vida-product-banner__location">
+            <div data-component="custom-dropdown">                
+              <div class="custom-select" data-target-class="price">
+                <i class="icon-location-marker"></i>
+                  <div class="custom-select__btn" data-option-label="${author.city}" data-option-value="${author.city}" data-option-addtional-value="₹ ${author.displayCitypriceMap[author.city]}">${author.city}</div>
+                <div class="custom-select__dropdown" >
+				<sly data-sly-list.keyName="${author.displayCitypriceMap}">
+                    <div class="custom-select__dropdown-option ${author.city == keyName ? 'selected' : ''}" data-option-label="${keyName}" data-option-value="${keyName}" data-option-addtional-value="₹ ${author.displayCitypriceMap[keyName]}">${keyName}</div>
+				</sly>
+                </div>
+              </div>
+            </div>
+            <p>${properties.pbavailabledesc}</p>
+          </div>
+          <div class="vida-product-banner__price">	
+			<p class="price">₹ ${author.displayCitypriceMap[author.city]}</p>
+            <p>${properties.pbstartpricelabel}</p>
+			<div class="price-subtext">${properties.pbpriceinfo}</div>
+          </div>
+        </div>
+		
+        <div class="vida-product-banner__metrics">
+		 <sly data-sly-list.productVariantInfoList="${author.productInfoBannerObj.productVariantInfoList}">
+          <div class="vida-product-banner__item">
+            <img src="${properties.rangeImage}" alt="${properties.rangeImageAlt}">
+            <p>${productVariantInfoList.variant_range_value} ${productVariantInfoList.variant_range_unit}</p>
+            <p>${properties.pbrangelabel}</p>
+          </div>
+          <div class="vida-product-banner__item">
+            <img src="${properties.speedImage}"  alt="${properties.speedImageAlt}">
+            <p>${productVariantInfoList.variant_top_speed_value} ${productVariantInfoList.variant_top_speed_unit}</p>
+            <p>${properties.pbtopspeedlabel}</p>
+          </div>
+          <div class="vida-product-banner__item">
+            <img src="${properties.chargingImage}"  alt="${properties.batteryImageAlt}">
+            <p> &lt ${productVariantInfoList.variant_charging_time_value} ${productVariantInfoList.variant_charging_time_unit}</p>
+            <p>${properties.pbbatterylabel}</p> 
+          </div>
+          <div class="vida-product-banner__item">
+            <img src="${properties.acceleratorImage}"  alt="${properties.acceleratorImageAlt}">
+            <p>${productVariantInfoList.variant_accelerator_value} ${productVariantInfoList.variant_accelerator_unit}</p>
+            <p>${properties.pbspeedlabel}</p>
+          </div>
+		  </sly>
+        </div>
+      </div>
+	  
+      <div class="vida-product-banner__image">
+        <img src="${properties.bgimage}" alt="Product information banner">
+      </div>
+    </div>
+  </div>
+</div>

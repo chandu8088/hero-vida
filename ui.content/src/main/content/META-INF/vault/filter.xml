@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/vida" mode="merge"/>
+    <filter root="/content/vida" mode="merge"/>
+    <filter root="/content/dam/vida/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/vida" mode="merge"/>
+    <filter root="/conf/global" mode="merge"/>
+</workspaceFilter>

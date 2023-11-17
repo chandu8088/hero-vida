@@ -1,0 +1,6 @@
+{
+    "youtubeAPIKey" : "AIzaSyAqy-TEm5NDCLKnLvjIPFnqr4VUdj0Euss",
+    "youtubeChannelId" : "UCIxzS690aJxqhyViPIX2X4Q",
+    "youtubeJsonPath" : "/content/dam/vida/socialfeed/youtube/youtube.json",
+    "youtubeAPIEndPoint" : "https://www.googleapis.com/youtube/v3/search?"
+}

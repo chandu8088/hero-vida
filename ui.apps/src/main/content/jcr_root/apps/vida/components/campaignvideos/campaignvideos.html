@@ -1,0 +1,20 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Videos Component"></div>
+<section class="vidaVideo page-section clearfix ptb60" id="${properties.sectionId}">
+  <div class="container">
+	${properties.title @ context = 'html'}
+	<div class="row">
+	  <sly data-sly-list.title="${resource.getChildren}">
+    	<sly data-sly-test="${title.name == 'videos'}">
+          <sly data-sly-list.items="${title.getChildren}">
+              <div class="col-lg-4 col-md-4 col-6 mb-4">
+                <div class="video-card clearfix">
+                  <div class="mb-2"><iframe class="vida-video-player__playback" width="auto" height="250" src="${items.videopath}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>
+                  ${items.videodesc @ context = 'html'}
+                </div>
+              </div>
+			</sly>
+          </sly>
+       </sly>
+	</div>
+  </div>
+</section>

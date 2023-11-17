@@ -1,0 +1,25 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="User Manual List"></div>
+
+<sly data-sly-use.searchModel="com.heromotocorp.vida.core.models.UserManualSearchModel"/>
+<sly data-sly-use.usermanual="com.heromotocorp.vida.core.models.UserManualListModel"/>
+
+
+<sly data-sly-test="${!searchModel.searchResultItems}">
+    <div class="vida-listing">
+        <div class="listing panelcontainer">
+            <sly data-sly-list.listpaths="${usermanual.childPagesPath}">
+              <a href="${listpaths.pagePath @ extension='html'}"><span class="listing-title">${listpaths.title}</span><span class="vida-listing__arrow"></span></a>
+            </sly>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${searchModel.searchResultItems}">
+    <div class="vida-listing">
+        <div class="listing panelcontainer">
+            <sly data-sly-list.items="${searchModel.searchResultItems}">
+                <a href="${items.link @ extension = 'html'}"><span class="listing-title">${items.title}</span><span class="vida-listing__arrow"></span></a>
+            </sly>
+        </div>
+    </div>
+</sly>

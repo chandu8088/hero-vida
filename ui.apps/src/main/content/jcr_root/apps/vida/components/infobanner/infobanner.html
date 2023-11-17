@@ -1,0 +1,72 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Info Banner Component"></div>
+<sly data-sly-use.InfoModel="${'com.heromotocorp.vida.core.models.InfoBannerModel'}" />
+<section class="vida-info-banner" data-component="info-banner" data-section-id="${properties.sectionid}">
+  <div class="vida-info-banner__container" data-animation-wrapper="true">
+    <sly data-sly-test="${properties.variations == 'image'}">
+      <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.image}"></sly>
+			<source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+			<source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealt}" class="vida-info-banner__media" data-animate="true" data-animation-name="zoom-out-img">
+      </picture>
+    </sly>
+    <sly data-sly-test="${properties.variations == 'video'}">
+  
+   <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=properties.video}"></sly>
+  	  
+      <div class="vida-video-player vida-info-banner__media" data-component="video-player">
+        <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback" src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+      </div>
+    </sly>
+  </div>
+  <div class="vida-container">
+    <div class="vida-info-banner__content-wrapper">
+      <sly data-sly-test="${InfoModel.bannertype == 'contentbanner'}">
+        <div class="vida-info-banner__text-wrapper">
+          <div class="vida-info-banner__text-title">
+            <h2>${InfoModel.title @ context = 'html'}</h2>
+          </div>
+          <div class="vida-info-banner__text-content"> 
+		  ${InfoModel.description @ context = 'html'} 
+		  <div class="vida-info-banner__spec-wrapper">
+              <sly data-sly-list.content="${InfoModel.multivalues}">
+                <div class="vida-info-banner__spec">
+                  <p>${content.labeltext}</p>
+                  <div class="vida-info-banner__spec-info">
+                    <h1>${content.labelvalue}</h1>
+                  </div>
+                </div>
+              </sly>
+            </div>
+          </div>
+        </div>
+      </sly>
+      <sly data-sly-test="${InfoModel.bannertype == 'accordionbanner'}">
+        <div class="vida-info-banner__accordion-wrapper" data-animation-wrapper="true">
+          <sly data-sly-list.banner="${InfoModel.accordionbanner}">
+		  <sly data-sly-test="${bannerList.index == 0}">
+            <div class="vida-info-banner__accordion vida-info-banner__accordion--active" data-animate="true" data-animation-name="slide-right" data-animation-delay="${banner.delaytime}" data-animation-scroller-start="100%">
+              <div class="vida-info-banner__accordion-header">
+                <div class="vida-info-banner__accordion-title">${banner.accordiontitle @ context = 'html'}</div>
+                <div class="vida-info-banner__accordion-indicator">
+                  <i class="icon-chevron"></i>
+                </div>
+              </div>
+              <div class="vida-info-banner__accordion-body"> ${banner.accordiondescription @ context = 'html'} </div>
+            </div>
+			</sly>
+			<sly data-sly-test="${bannerList.index >= 1}">
+            <div class="vida-info-banner__accordion" data-animate="true" data-animation-name="slide-right" data-animation-delay="${banner.delaytime}" data-animation-scroller-start="100%">
+				<div class="vida-info-banner__accordion-header">
+					<div class="vida-info-banner__accordion-title">${banner.accordiontitle @ context = 'html'}</div>
+						<div class="vida-info-banner__accordion-indicator"> <i class="icon-chevron"></i> </div>
+						</div>
+					<div class="vida-info-banner__accordion-body"> ${banner.accordiondescription @ context = 'html'} </div>
+				</div>
+			</sly>
+          </sly>
+        </div>
+      </sly>
+    </div>
+  </div>
+</section>

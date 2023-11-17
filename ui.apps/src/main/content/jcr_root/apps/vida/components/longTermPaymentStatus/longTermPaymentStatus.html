@@ -1,0 +1,51 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Long Term Payment Status Component"></div>
+<script>
+	window.appConfig = Object
+			.assign(
+					window.appConfig || {},
+					{
+
+						"testDriveStatusConfig" : {
+
+							"backgroundImg" : "${properties.longTermStatusBackgroundImg @ context='uri'}",
+
+							"backgroundImgMobile" : "${properties.longTermStatusBackgroundImgMob @ context='uri'}",
+
+							"successPage" : {
+
+								"title" : "${properties.longTermStatusSuccessTitle @ context='scriptString'}",
+
+								"message" : "${'longTermStatusSuccessMsz' @ i18n,context='scriptString'}",
+
+								"info" : "${'longTermStatusinfoMsz' @ i18n,context='scriptString'}",
+
+								"redirectBtn" : {
+
+									"label" : "${properties.longTermStatusRedirectBtn @ context='scriptString'}",
+
+								}
+
+							},
+
+							"failurePage" : {
+
+								"title" : "${properties.longTermStatusFailureTitle @ context='scriptString'}", 
+
+								"message" : "${'longTermStatusFailMsz' @ i18n,context='scriptString'}",
+
+								"info" : "${'longTermStatusFailInfoMsz' @ i18n,context='scriptString'}",
+
+								"redirectBtn" : {
+
+									"label" : "${properties.longTermStatusFailRedirectBtn @ context='scriptString'}",
+
+								}
+
+							}
+
+						}
+
+					});
+</script>
+
+<div data-component="TestDriveStatus" data-cmp-type="react" data-cmp-config="testDriveStatusConfig"></div>

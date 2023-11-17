@@ -1,0 +1,47 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Text Image Card Component"></div>
+<section class="vida-text-image-card" data-section-id="${properties.sectionid}">
+  <div class="vida-container vida-text-image-card__wrapper" data-animation-wrapper="true">
+    <div class="vida-text-image-card__title-container" data-animate="true" data-animation-name="zoom-out-txt">
+      ${properties.title @ context = 'html'}
+    </div>
+    <div class="vida-text-image-card__container">
+      <div class="vida-text-image-card__media">
+        <div class="vida-text-image-card__media-container">
+		<sly data-sly-test="${properties.variations == 'image'}">
+          <picture>
+            <sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.image}"></sly>
+			  <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+			  <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+            <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealt}"
+              class="vida-text-image-card__media-asset" data-animate="true" data-animation-name="zoom-out-img">
+          </picture>
+        </sly>
+		<sly data-sly-test="${properties.variations == 'video'}">
+	  <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=properties.video}"></sly>
+  	
+		
+          <div class="vida-video-player vida-text-image-card__media-asset" data-component="video-player">
+            <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+              src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+          </div>
+        </sly>
+        </div>
+      </div>
+      <div class="vida-text-image-card__content">
+        <div class="vida-text-image-card__content-container" data-animate="true" data-animation-name="fade-in">
+          <div class="vida-text-image-card__content-title">
+            <p>${properties.heading}</p>
+          </div>
+          <div class="vida-text-image-card__content-text">
+            <p>
+              ${properties.description}
+            </p>
+          </div>
+        </div>
+        <div class="vida-text-image-card__cta-wrapper">
+          <a href="${properties.btnurl @extension = 'html'}" class="btn btn--secondary btn--lg cta--anchor" role="Button" data-link-position="Middle">${properties.btnlabel}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

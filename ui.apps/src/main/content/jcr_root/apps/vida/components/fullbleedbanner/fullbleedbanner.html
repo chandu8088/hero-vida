@@ -1,0 +1,67 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Full Bleed Banner Component"></div>
+<sly data-sly-use.fullBleedBannerModel="${'com.heromotocorp.vida.core.models.FullBleedBannerModel'}"/>
+<section class="vida-full-bleed-banner ${properties.variations == 'small' ? 'vida-full-bleed-banner--sm' :''}" data-section-id="${properties.sectionid}" id="${properties.sectionid}">
+  <div class="vida-full-bleed-banner__container">
+    <div class="vida-full-bleed-banner__media-container">
+      <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.image}"></sly>
+          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.imagealt}">
+      </picture>
+    </div>
+    <div class="vida-container vida-full-bleed-banner__content">
+	<sly data-sly-test="${properties.variations == 'large'}">
+      <div class="vida-full-bleed-banner__text-wrapper">
+        <div class="vida-full-bleed-banner__title">
+          ${properties.title @context = 'html'}
+        </div>
+        <div class="vida-full-bleed-banner__title-description">
+          <p>${properties.subtitle}</p>
+        </div>
+        <div class="vida-full-bleed-banner__text-content">
+          ${properties.description @ context = 'html'}
+        </div>
+        <div class="vida-full-bleed-banner__spec-wrapper">
+		<sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'fullbleed'}">
+            <sly data-sly-list.bleed="${title.getChildren}">
+          <div class="vida-full-bleed-banner__spec">
+            <p>${bleed.labeltext}</p>
+            <div class="vida-full-bleed-banner__spec-info">
+              <h2>${bleed.labelvalue}
+			  <sly data-sly-test="${bleed.labelunit != null}">
+			  <span class="txt-size--mb">${bleed.labelunit}</span>
+			  </sly>
+			  </h2>
+            </div>
+          </div>
+		  </sly>
+		 </sly>
+		</sly>
+         </div>
+		 <sly data-sly-test="${fullBleedBannerModel.isExternalBtnURL}">
+			<div class="vida-full-bleed-banner__cta-wrapper">
+			  <a href="${properties.btnurl}" target="_blank" class="btn btn--secondary btn--lg cta--anchor" role="Button" data-link-position="Middle">${properties.btntext}</a>
+			</div>
+		</sly>
+		 <sly data-sly-test="${!fullBleedBannerModel.isExternalBtnURL}">
+			<div class="vida-full-bleed-banner__cta-wrapper">
+			  <a href="${properties.btnurl @extension = 'html'}" class="btn btn--secondary btn--lg cta--anchor" role="Button" data-link-position="Middle">${properties.btntext}</a>
+			</div>
+		</sly>
+      </div>
+	  </sly>
+	  <sly data-sly-test="${properties.variations == 'small'}">
+	   <div class="vida-full-bleed-banner__text-wrapper">
+        <div class="vida-full-bleed-banner__title--sm">
+          <p>${properties.title}</p>
+        </div>
+        <div class="vida-full-bleed-banner__title">
+          ${properties.largetitle @ context = 'html'}
+        </div>
+      </div>
+	  </sly>
+    </div>
+  </div>
+</section>

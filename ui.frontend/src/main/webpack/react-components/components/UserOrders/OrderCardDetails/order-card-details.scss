@@ -1,0 +1,47 @@
+.vida-order-card-details {
+  +.vida-order-card-details {
+    margin-top: rem(30px);
+  }
+
+  .vida-card {
+    &__container {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &__warning {
+      margin-top: rem(20px);
+    }
+
+    &__data {
+      &-info {
+        color: get-color("orange");
+        margin-bottom: rem(5px);
+      }
+    }
+
+    .order-card-tooltip {
+      border: 1px solid #ff5310 !important;
+      box-shadow: none !important;
+      letter-spacing: 2px;
+      line-height: 18px;
+      margin-top: 0;
+      opacity: 1 !important;
+
+      &::after {
+        border-bottom-color: transparent !important;
+        border-top-color: #ff5310;
+        margin-left: 0 !important;
+      }
+    }
+
+    .notification__icon {
+      margin-left: rem(10px);
+    }
+  }
+
+  .notification {
+    margin-top: rem(20px);
+  }
+}

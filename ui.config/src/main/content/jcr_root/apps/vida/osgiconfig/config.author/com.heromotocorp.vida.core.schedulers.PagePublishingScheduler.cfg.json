@@ -1,0 +1,7 @@
+{
+  "schedulername":"Page Publishing Scheduler",
+  "cronExpression":"$[env:PAGE_PUBLISHING_CRON_EXPRESSION]",
+  "configPagePath" : "/content/vida/language-masters/en/config",
+  "sfdcmasterPagePath" : "/content/vida/language-masters/en/config/sfdc-master",
+  "isPagePublishingSchedulerEnabled" : "$[env:PAGE_PUBLISHING_SCHEDULER_ENABLED]"
+}

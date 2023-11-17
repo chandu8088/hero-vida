@@ -1,0 +1,24 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Top bar Component"></div>
+<sly data-sly-test.changeToggle="${properties.untogglebar ? ' vida-top-bar--non-sticky' : ''}"/>
+<sly data-sly-test.changeTheme="${properties.changetheme ? ' vida-top-bar--theme-v1' : ''}"/>
+<div data-section-id="${properties.sectionid}" class="vida-top-bar${changeToggle}${changeTheme}">
+  <div class="vida-top-bar__wrapper">
+    <div class="vida-top-bar__container">
+      <div class="vida-top-bar__title">
+        <div class="vida-top-bar__title--twoline">
+          ${properties.title @context='html'}
+        </div>
+        <div class="vida-top-bar__link">
+		  <sly data-sly-test="${properties.knowmore && properties.pagelink}">
+            <a href="${properties.pagelink @ context='uri' , extension='html' }">
+                <h2 class="vida-top-bar__allginment">${properties.knowmore}<i class="icon-arrow"></i></h2>
+            </a>
+		  </sly>
+		  <sly data-sly-test="${properties.booknowbtn && properties.booknowlink}">
+			<a class="top-bar__reserve btn btn--secondary btn--action cta--anchor" href="${properties.booknowlink @ context='uri' , extension='html'}">${properties.booknowbtn}</a>
+		  </sly>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

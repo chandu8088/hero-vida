@@ -1,0 +1,50 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Two Column Card Component"></div>
+<section class="vida-two-column-card">
+  <div class="vida-two-column-card__container vida-container" data-animation-wrapper="true">
+    <div class="vida-two-column-card__left">
+      <div class="vida-two-column-card__media">
+        <picture class="vida-two-column-card__media-picture">
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.cardoneimage}"></sly>
+          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+          <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.cardoneimagealt}" class="vida-two-column-card__media-asset"
+            data-animate="true" data-animation-name="zoom-out-img">
+        </picture>
+      </div>
+      <div class="vida-two-column-card__content" data-animate="true" data-animation-name="fade-in">
+        <div class="vida-two-column-card__content-title">${properties.cardonetitle}</div>
+        <p class="vida-two-column-card__content-description">
+          ${properties.cardonedescription}
+        </p>
+      </div>
+    </div>
+    <div class="vida-two-column-card__right">
+      <div class="vida-two-column-card__media">
+	  <sly data-sly-test="${properties.variations == 'image'}">
+        <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.cardtwoimage}"></sly>
+          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+          <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${properties.cardtwoimagealt}" class="vida-two-column-card__media-asset"
+            data-animate="true" data-animation-name="zoom-out-img">
+        </picture>
+		</sly>
+		<sly data-sly-test="${properties.variations == 'video'}">
+		 <sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService' @ videoDamPath=properties.cardtwovideo}"></sly>
+  	
+		
+        <div class="vida-video-player vida-two-column-card__media-asset-video" data-component="video-player">
+          <video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+            src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+        </div>
+         </sly>
+      </div>
+      <div class="vida-two-column-card__content" data-animate="true" data-animation-name="fade-in">
+        <div class="vida-two-column-card__content-title">${properties.cardtwotitle}</div>
+        <p class="vida-two-column-card__content-description">
+          ${properties.cardtwodescription}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

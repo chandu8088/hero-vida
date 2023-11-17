@@ -1,0 +1,65 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Product Spec Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.ProductInfoModel'}" />
+
+<sly data-sly-list.productMaster="${author.productMaster}">
+    <sly data-sly-list.productVariantInfoList="${productMaster.productVariantInfoList}">
+        <sly data-sly-test="${productVariantInfoList.variant_sku == properties.psvariantsku}">
+            <div class="vida-product-specs"data-section-id="${properties.sectionid}">
+                <div class="vida-container vida-product-specs__container" data-animation-wrapper="true">
+                    <div data-sly-test="${properties.psrangelabel}" class="vida-product-specs__item">
+                        <h3 class="vida-product-specs__heading">${properties.psrangelabel}</h3>
+                        <h4 class="vida-product-specs__data">
+							<span
+                  				data-animate="true"
+                  				data-animation-name="counter"
+                  				data-counter-value="${productVariantInfoList.variant_range_value}"
+                  				data-animation-scroller-start="100%"
+                				></span>
+                			<span>${productVariantInfoList.variant_range_unit}</span>
+                        </h4>
+                    </div>
+
+                    <div data-sly-test="${properties.pstopspeedlabel}" class="vida-product-specs__item">
+                        <h3 class="vida-product-specs__heading">${properties.pstopspeedlabel}</h3>
+                        <h4 class="vida-product-specs__data">
+							<span
+                  				data-animate="true"
+                  				data-animation-name="counter"
+                  				data-counter-value="${productVariantInfoList.variant_top_speed_value}"
+                  				data-animation-scroller-start="100%"
+                				></span>
+                			<span>${productVariantInfoList.variant_top_speed_unit}</span>
+                        </h4>
+                    </div>
+
+                    <div  data-sly-test="${properties.psaccelerationlabel}" class="vida-product-specs__item">
+                        <h3 class="vida-product-specs__heading">${properties.psaccelerationlabel}</h3>
+                        <h4 class="vida-product-specs__data">
+							<span
+                              data-animate="true"
+                              data-animation-name="counter"
+                              data-counter-value="${productVariantInfoList.variant_accelerator_value}"
+                              data-decimal-value="0.1"
+                              data-animation-scroller-start="100%"
+                            ></span>
+                            <span>${productVariantInfoList.variant_accelerator_unit}</span>
+                        </h4>
+                    </div>
+                    <div  data-sly-test="${properties.pschargingtimelabel}" class="vida-product-specs__item">
+                        <h3 class="vida-product-specs__heading">${properties.pschargingtimelabel}</h3>
+                        <h4 class="vida-product-specs__data">
+                            <span>&lt;</span>
+                            <span
+                              data-animate="true"
+                              data-animation-name="counter"
+                              data-counter-value="${productVariantInfoList.variant_charging_time_value}"
+                              data-animation-scroller-start="100%"
+                            ></span>
+                            <span>${productVariantInfoList.variant_charging_time_unit}</span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </sly>
+    </sly>
+</sly>

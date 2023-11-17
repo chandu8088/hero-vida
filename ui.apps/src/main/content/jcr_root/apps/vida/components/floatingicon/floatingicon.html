@@ -1,0 +1,14 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Floating Icon Component"></div>
+<sly data-sly-test.hideIcon="${properties.hidechaticon ? 'display-none-icon' : ''}"/>
+<section class="vida-floating-icon ${hideIcon}" data-component="floating-icon">
+  <div class="vida-floating-icon__container">
+    <div onclick="bootstrapChat()" class="vida-floating-icon__section">
+      <div class="vida-floating-icon__bubble vida-floating-icon__bubble--chat">
+        <span data-vida-icon="Chat"> <i class="icon-chat"></i></span>
+      </div>
+      <div class="vida-floating-icon__pop-up vida-floating-icon__pop-up--chat">
+        <p>${properties.chatwithuslabel}</p>
+      </div>
+    </div>
+  </div>
+</section>

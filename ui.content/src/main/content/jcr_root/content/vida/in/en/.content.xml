@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-05-19T14:26:54.187+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated_publish="{Date}2022-04-29T15:23:09.157Z"
+        cq:lastReplicated_scene7="{Date}2022-04-29T15:23:09.157Z"
+        cq:lastReplicatedBy_publish="kapant@adobe.com"
+        cq:lastReplicatedBy_scene7="kapant@adobe.com"
+        cq:lastReplicationAction_publish="Activate"
+        cq:lastReplicationAction_scene7="Activate"
+        cq:lastRolledout="{Date}2022-05-19T14:14:46.759+05:30"
+        cq:lastRolledoutBy="admin"
+        cq:template="/conf/vida/settings/wcm/templates/base-template"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home"
+        jcr:uuid="aebce5fe-51ed-4c41-842f-4b546c73ee59"
+        sling:resourceType="vida/components/page"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            cq:lastRolledout="{Date}2022-05-19T14:14:46.702+05:30"
+            cq:lastRolledoutBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="vida/components/container"
+            layout="responsiveGrid">
+            <container
+                cq:lastRolledout="{Date}2022-05-19T14:14:46.712+05:30"
+                cq:lastRolledoutBy="admin"
+                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vida/components/container"
+                layout="responsiveGrid">
+                <container
+                    cq:lastRolledout="{Date}2022-05-19T14:14:46.721+05:30"
+                    cq:lastRolledoutBy="admin"
+                    jcr:mixinTypes="[cq:LiveRelationship]"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vida/components/container">
+                    <login
+                        cq:lastRolledout="{Date}2022-05-19T14:14:46.758+05:30"
+                        cq:lastRolledoutBy="admin"
+                        jcr:created="{Date}2022-04-28T10:06:32.937Z"
+                        jcr:createdBy="kapant@adobe.com"
+                        jcr:lastModified="{Date}2022-05-19T14:14:46.738+05:30"
+                        jcr:lastModifiedBy="ust26668@adobe.com"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vida/components/login"
+                        accountLabel="Dont have account?"
+                        agreelabel="I agree to"
+                        changeNumberLabel="Change Number"
+                        email="Email ID"
+                        emailplaceholder="Enter Email"
+                        existingAccountLabel="Already have account?"
+                        firstname="First Name"
+                        fnplchld="Enter First Name"
+                        generateOtpBtnLabelLogin="Generate OTP"
+                        generateOtpLabelReg="Generate OTP"
+                        homepageImg="/content/dam/vida/background-real-image.jpeg"
+                        lastname="Last Name"
+                        lnplchld="Enter Last Name"
+                        loginlabel="Login"
+                        loginNowLabel="Login Now"
+                        loginplchld="Enter Mobile Number"
+                        message="Change Number"
+                        otpLabel="OTP"
+                        phonelogin="Phone Number"
+                        phoneregister="Mobile Number"
+                        phplchld="Enter Mobile Number"
+                        redirectionUrl="/content/vida/in/en/profile"
+                        registerlabel="Register"
+                        registerNow="Register Now"
+                        resendLabel="Resend"
+                        termsAndCondition="Terms and Conditions"
+                        termsAndConditionUrl="/content/vida/in/en"
+                        timerminutes="0"
+                        timersec="30"
+                        title="Verify OTP"
+                        verifyBtn="Verify"/>
+                    <text
+                        jcr:created="{Date}2022-05-19T14:26:54.153+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-05-19T14:26:54.153+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vida/components/text"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

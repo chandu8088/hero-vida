@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Internal Complain User</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+    <!-- <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script> -->
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "internaluserformConfig": {
+        "bookingForm": {
+          "bookingTitle": "Register your complaint!",
+          "systemfield": {
+            "label": "System you are facing issue with",
+            "validationRules": {
+              "required": {
+                "message": "Please  select system"
+              }
+            }
+          },
+          "categoryfield": {
+            "label": "Category",
+            "validationRules": {
+              "required": {
+                "message": "Please select category"
+              }
+            }
+          },
+          "subcategoryfield": {
+            "label": "Sub Category",
+            "validationRules": {
+              "required": {
+                "message": "Please Select sub category"
+              }
+            }
+          },
+          "attachmentfield": {
+            "label": "Attachment",
+            "placeholder": "file upload"
+          },
+          "phoneNumberField": {
+            "countrycode": "+91",
+            "label": "Mobile Number",
+            "placeholder": "Enter Mobile Number",
+            "validationRules": {
+              "required": {
+                "message": "Mobile Number is required."
+              },
+              "minLength": {
+                "value": 10,
+                "message": "Minimum 10 digit required."
+              },
+              "maxLength": {
+                "value": 10,
+                "message": "Maximum 10 digit required."
+              },
+              "customValidation": {
+                "message": "Please enter valid mobile number."
+              }
+            }
+          },
+          "firstNameField": {
+            "label": "Name",
+            "placeholder": "Enter name",
+            "validationRules": {
+              "required": {
+                "message": "name is required."
+              },
+              "minLength": {
+                "value": 1,
+                "message": "First name should have at least 1 character."
+              },
+              "customValidation": {
+                "message": "Please enter valid first name."
+              }
+            }
+          },
+          "casesubjectField": {
+            "label": "Case Subject",
+            "placeholder": "Enter Case Subject",
+            "validationRules": {
+              "required": {
+                "message": "Case Subject is required."
+              },
+            }
+          },
+          "casedescField": {
+            "label": "Case description",
+            "placeholder": "Enter Case description",
+            "validationRules": {
+              "required": {
+                "message": "Case description is required."
+              },
+            }
+          },
+          "emailField": {
+            "label": "Email ID",
+            "placeholder": "Enter Email ID",
+            "infoLabel": "Mention active account, this will be used to send important mails",
+            "validationRules": {
+              "required": {
+                "message": "Email ID is required."
+              },
+              "customValidation": {
+                "message": "Please enter valid email address."
+              }
+            }
+          },
+          "nextBtn": {
+            "label": "Submit"
+          },
+          "errormsg": {
+            "success": "Complain registered successfully",
+            "failure": "Unavailabe to registered complain.",
+            "congratsmsg": "congratulation",
+            "casemsg": "your Case Id is"
+          }
+        },
+      }
+    });
+  </script>
+  <div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="InternalUser" data-cmp-type="react" data-cmp-config="internaluserformConfig"></div>
+</body>
+
+</html>

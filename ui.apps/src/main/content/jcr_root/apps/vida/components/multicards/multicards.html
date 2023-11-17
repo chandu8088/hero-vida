@@ -1,0 +1,39 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Multi Cards Component"></div>
+<div class="vida-multi-cards" data-section-id="${properties.sectionid}" data-animation-wrapper="true">
+	<sly data-sly-test="${properties.title != null}">
+		<div class="vida-multi-cards__heading" data-animate="true" data-animation-name="zoom-out-txt"> ${properties.title @ context = 'html'} </div>
+	</sly>
+	<div class="vida-multi-cards__container">
+		<sly data-sly-list.title="${resource.getChildren}">
+			<sly data-sly-test="${title.name == 'multicards'}">
+				<sly data-sly-list.multi="${title.getChildren}">
+					<div class="vida-multi-cards__wrap vida-container">
+						<div class="vida-multi-cards__media-wrap">
+							<sly data-sly-test="${multi.variations == 'image'}">
+								<picture class="vida-multi-cards__media">
+									<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=multi.cardimage}"></sly>
+							          <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+							          <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+									<img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${multi.cardimagealt}" class="vida-multi-cards__media-asset"> </picture>
+							</sly>
+							<sly data-sly-test="${multi.variations == 'video'}">
+							        
+							<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=multi.cardvideo}"></sly>
+							
+								<div class="vida-video-player vida-multi-cards__media-asset-video" data-component="video-player">
+									<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback" 
+									src="${DMVideoURLService.dMVideoPathLink}" muted></video>
+								</div>
+							</sly>
+						</div>
+						<section class="vida-multi-cards__content">
+							<div class="vida-multi-cards__title"> ${multi.cardtitle @ context = 'html'} </div>
+							<div class="vida-multi-cards__content-description"> ${multi.description @ context = 'html'} </div>
+						</section>
+					</div>
+				</sly>
+			</sly>
+		</sly>
+	</div>
+</div>

@@ -1,0 +1,233 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Nominee Form Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.MasterGeoModel'}" />
+<sly data-sly-use.model="${'com.heromotocorp.vida.core.models.CampaignPageModel'}"/>
+<sly data-sly-test.leadStyle="${properties.addLeadId ? 'submit-btn-lead' : 'submit-btn'}"/>
+<script>
+  window.citiesList= Object.assign(window.citiesList || {},
+	${author.stateCitiesList  @context="unsafe"}
+  );
+
+  window.submissionDetails= Object.assign(window.submissionDetails || {},{
+	"url" : "${model.formSubmitUrl @ context='uri'}"
+	});
+</script>
+
+<div id="submissionsuccess" data-component="Notification" data-cmp-type="react">
+	<section class="notification notification--fixed notification--success">
+	  <div class="notification__container">
+		<div class="notification__title">
+		  <label class="notification__label">${properties.submitsuccessmsg  @ context='html'}</label>
+		  <a href="#" class="notification__close"><i class="icon-x"></i></a>
+		</div>
+	  </div>
+	</section>
+</div>
+
+<div id="submissionsuccess-lead" data-component="Notification" data-cmp-type="react">
+	<section class="notification notification--fixed notification--success">
+	  <div class="notification__container">
+		<div class="notification__title">
+		  <label class="notification__label">${properties.leadsubmitsuccessmsg  @ context='html'}</label>
+		  <a href="#" class="notification__close"><i class="icon-x"></i></a>
+		</div>
+	  </div>
+	</section>
+</div>
+
+<div id="submissionerror" data-component="Notification" data-cmp-type="react">
+	<section class="notification notification--fixed notification--error">
+	  <div class="notification__container">
+		<div class="notification__title">
+		  <label class="notification__label">${properties.submiterrormsg  @ context='html'}</label>
+		  <a href="#" class="notification__close"><i class="icon-x"></i></a>
+		</div>
+	  </div>
+	</section>
+</div>
+
+<div id="submissionerror-duplicate" data-component="Notification" data-cmp-type="react">
+	<section class="notification notification--fixed notification--error">
+	  <div class="notification__container">
+		<div class="notification__title">
+		  <label class="notification__label">${properties.duplicateerrormsg  @ context='html'}</label>
+		  <a href="#" class="notification__close"><i class="icon-x"></i></a>
+		</div>
+	  </div>
+	</section>
+</div>
+
+<section class="nominateFrom clearfix ptb60 w-100 page-section" id="${properties.sectionId}">
+  <div class="container">
+	${properties.nomineetitle @ context = 'html'}
+	<div class="row justify-content-center">
+	  <div class="col-lg-9 col-md-12 col-12 text-center mb-3">
+		${properties.nomineedesc @ context = 'html'}
+	  </div>
+	  <form onsubmit="return false;" id="formdata" action="" class="co-lg-7 col-md-7 col-12 needs-validation" novalidate>
+		<div class="row pt-4">
+			<sly data-sly-test="${!properties.hideFullName}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+				<input onkeydown="return /[a-z\s]/i.test(event.key)" id="name" class="form-control required" type="text" placeholder="${properties.fullnameph}" required="" data-gtm-form-interact-field-id="0">
+				<div class="invalid-feedback font-weight-bold">
+				  ${'fullNameReqMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideFirstName}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+				<input onkeydown="return /[a-z\s]/i.test(event.key)" id="firstname" class="form-control required" type="text" placeholder="${properties.firstnameph}" required="" data-gtm-form-interact-field-id="0">
+				<div class="invalid-feedback font-weight-bold">
+				  ${'firstNameReqMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideLastName}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+				<input onkeydown="return /[a-z\s]/i.test(event.key)" id="lastname" class="form-control required" type="text" placeholder="${properties.lastnameph}" required="" data-gtm-form-interact-field-id="0">
+				<div class="invalid-feedback font-weight-bold">
+				  ${'lastNameReqMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideEmail}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+			    <sly data-sly-test="${properties.mandateEmail}">
+				<input pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" id="email" class="form-control" type="email" placeholder="${properties.emailph}" required="" data-gtm-form-interact-field-id="1">
+				</sly>
+			    <sly data-sly-test="${!properties.mandateEmail}">
+				<input pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" id="email" class="form-control" type="email" placeholder="${properties.emailph}" data-gtm-form-interact-field-id="1">
+				</sly>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'emailValidMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideMobileNum}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+				<input id="mobile" class="form-control" type="tel" maxlength="10" minlength="10" placeholder="${properties.mobilenumph}" pattern="[6-9]{1}[0-9]{9}" required>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'validMobileNumber' @ i18n,context='scriptString'}
+				</div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideInstaHandle}">
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+				<input id="insta" class="form-control" type="text" placeholder="${properties.instahandleph}" required>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'instaHandleReqMsz' @ i18n,context='scriptString'}
+				</div>
+			  </div>
+			</div>
+			</sly>
+			<div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+                <select id="states" class="form-control" required>
+                    <option value="">${properties.selectstate}</option>
+                    <sly data-sly-list.countryList="${author.iterateCountries}">
+                        <sly data-sly-list.stateList="${countryList.states}">
+                           <option value="${stateList.value}">${stateList.value}</option>
+                        </sly>
+                    </sly>		
+                </select>				
+			    <div class="invalid-feedback font-weight-bold">
+				  ${properties.selectstatereqmsz}
+			    </div>
+			  </div>
+			</div>
+		    <div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+                 <select id="cities" class="form-control" required>
+                    <option value="">${properties.selectcity}</option>
+                </select>
+				<div class="invalid-feedback font-weight-bold">
+				  ${properties.selectcityreqmsz}
+			    </div>
+			  </div>
+		    </div>
+			<sly data-sly-test="${!properties.hideNetworkCode}">
+		    <div class="col-lg-6 col-md-8 col-12">
+			  <div class="form-group mb-3">
+                 <select id="networkcodes" class="form-control" required>
+                    <option value="">${'selectnetworkcode' @ i18n,context='scriptString'}</option>
+                </select>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'selectnetworkcodeReqMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+		    </div>
+			</sly>
+			<sly data-sly-test="${!properties.hideUploadFile}">
+			<div class="col-lg-12 col-md-12 col-12">
+			  <div class="form-group custom-file mb-3 clearfix">
+				<input type="file" class="custom-file-input" id="customFile" name="custom-File" accept="image/*" required>
+				<label class="custom-file-label" for="customFile">${properties.filelabel}</label>
+				<span class="small-txt mt-2 mb-1">${properties.validformattext}</span>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'fileUploadReqMsz' @ i18n,context='scriptString'}
+			    </div>
+				<div id="imagefailure" class="invalid-feedback font-weight-bold">
+				  ${'fileErrorMsz' @ i18n,context='scriptString'}
+				</div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideDescription}">
+			<div class="col-lg-12 col-md-12 col-12">
+			  <div class="form-group mb-3">
+				<label>${properties.description}</label>
+				<textarea maxlength="255" id="message" class="form-control message" placeholder="${properties.descriptionph}" required></textarea>
+				<div class="invalid-feedback font-weight-bold">
+				  ${'messageReqMsz' @ i18n,context='scriptString'}
+			    </div>
+			  </div>
+			</div>
+			</sly>
+			<sly data-sly-test="${!properties.hideCheckDesc}">
+			<div class="col-lg-12 col-md-12 col-12">
+			  <div class="form-group mb-3">
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="customCheckBox1" required>
+					<label class="custom-control-label" for="customCheckBox1">${properties.checkboxdesc}</label><br>
+					<div class="invalid-feedback mb-3 font-weight-bold">
+					  ${'submitBtnReqMsz' @ i18n,context='scriptString'}
+					</div>
+				</div>
+			  </div>
+			</div>
+			</sly>
+			<div class="col-lg-12 col-md-12 col-12">
+			<div class="g-recaptcha" data-sitekey="${properties.sitekey}" data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaResponseExpiry" data-error-callback="onRecaptchaError"></div>
+			<div id="captchavalidation" class="invalid-feedback font-weight-bold">
+				  ${'captchaReqMsz' @ i18n,context='scriptString'}
+			</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-12">
+			  <div class="text-center">
+				<div class="spin"></div>
+				<button type="submit" value="submit-btn" id="${leadStyle}" class="btn btn-submit">${properties.submitbtnlabel}</button>
+			  </div>
+			</div>
+		</div>
+	  </form>
+	  <h2 class="submit-success-heading">${properties.successheading}</h2>
+	  <div class="col-lg-9 col-md-12 col-12 text-center mb-3">
+		<p><a href="javascript:location.reload();" class="submit-success-message">${properties.successmessage}</a></p>
+ 	  </div>
+	  <h2 class="submit-success-heading-lead">${properties.leadsuccessheading}</h2>
+	  <div class="col-lg-9 col-md-12 col-12 text-center mb-3">
+		<p><a href="javascript:location.reload();" class="submit-success-message-lead">${properties.leadsuccessmessage}</a></p>
+ 	  </div>
+	</div>
+  </div>
+</section>

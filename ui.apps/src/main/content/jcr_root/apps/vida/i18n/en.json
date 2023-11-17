@@ -1,0 +1,487 @@
+{
+
+"firstNameReqMsz":
+    "First name is required.",
+
+"firstNameLeastMsz":
+    "First name should have at least 1 character.",
+
+"lastNameLeastMsz":
+    "Last name should have at least 1 character.",
+
+"firstNameMaxMsz":
+    "First name cannot be more than 10 characters.",
+
+"firstNameCustomMsz":
+    "Please enter valid first name.",
+
+"lastNameReqMsz":
+    "Last name is required.",
+
+"lastNameCustomMsz":
+    "Please enter valid last name.",
+
+"phoneNumberReqMsz":
+    "Phone number is required.",
+
+
+"emailReqMsz":
+    "Email is required.",
+
+"ageReqMsz":
+    "Age is required.",
+
+"nameReqMsz":
+    "Name is required.",
+
+
+"emailValidMsz":
+    "Please enter valid email address.",
+
+
+"cityReqMsz":
+    "City / Town / District is required.",
+
+
+"stateReqMsz":
+    "State is required.",
+
+
+"countryReqMsz":
+    "Country is required.",
+
+
+"mobileReqMsz":
+    "Mobile number is required.",
+
+
+"minCharaterMsz":
+    "Minimum 10 digit required.",
+
+"ageMinCharacterMsz" :
+    "Minimum 2 digits required.",
+
+"ageMaxCharacterMsz" :
+    "Only 2 digits allowed.",
+
+"ageCustomMaxCharacterMsz" :
+    "Your age should be 18 years.",
+
+"maxCharaterMsz":
+    "Maximum 10 digit required.",
+
+"aadharMinCharaterMsz":
+    "Aadhar number must have 12 digits.",
+
+"aadharMaxCharaterMsz":
+    "Aadhar number must not exceed 12 digits.",
+
+"enterOTPMsz":
+    "Please enter OTP.",
+
+"modelVariantReqMsz":
+    "Model Variant is required.",
+
+"vidaCentreReqMsz":
+    "VIDA Centre is required.",
+
+"selectRelationReqMsz":
+    "Please select your relation",
+
+"dateReqMsz":
+    "Date is required.",
+
+"timeReqMsz":
+    "Time is required.",
+    
+"timeSlotUnavailable":
+    "Time slots not available.",
+
+"addressReqMsz":
+    "Address is required.",
+
+"addressLine1ReqMsz":
+    "Address Line 1 is required.",
+
+"addressLine2ReqMsz":
+    "Address Line 2 is required.",
+
+"buildingReqMsz":
+    "House, Flat, Floor no, Building name is required.",
+    
+"pinCodeReqMsz":
+    "PIN Code is required.",
+
+"pinCodeCustomMsz":
+    "Unfortunately, we do not have service in your area yet.",
+
+"checkboxReqMsz":"Please select checkbox to confirm",
+
+"bookingSuccessTitle": "Congratulations!",
+"bookingSuccessContent":"You have successfully reserved your Hero ACPA.",
+"bookingFailureTitle": "Payment Failed!",
+"bookingFailureContent":"The payment failed due to a techinical error. If your money was debited, you should get the refund within the next 24 hrs.",
+
+"pinCodeMinCharaterMsz":
+    "Pin code must have 6 digits.",
+"pinCodeMaxCharaterMsz":
+    "Pin code must have 6 digits.",
+"commentReqMsz":
+    "Comment is required.",
+
+"reasonReqMsz":
+    "Reason is required.",
+
+"errorMessage":
+    "Duplicate Mobile number. Please try with another number",
+
+"instagram": "Instagram",
+
+"youtube": "Youtube",
+
+"twitter": "Twitter",
+
+"socialfeed": "Social feed",
+
+"validfirstname": "Please enter valid first name.",
+
+"validlastname": "Please enter valid last name.",
+
+"validnomineename": "Please enter valid nominee name",
+
+"validmobilenumber": "Please enter valid phone Number or Email.",
+
+"noServiceMsg": "Pincode is not serviceable.",
+
+"noBranchMsg": "Nearby branches not available.",
+
+"noCityMatchMsg": "Pincode do not match with the city selected.",
+
+"pincodeReqMsz": "Pincode is required.",
+
+"pincodeMinMsz": "Pincode must have 6 digits.",
+
+"pincodeValidMsz": "Pincode do not match with the city selected.",
+
+"emailVerifyFirstMsz": "We will send a verification code to ",
+
+"emailVerifySecondMsz": "You can do this step later as well.",
+
+"minDigitMsz":
+    "Minimum 10 digit Phone Number required.",
+	
+"maxDigitMsz":
+    "Maximum 10 digits Phone Number required.",
+
+"validphonenumber":
+    "Please enter valid Phone Number.",
+
+"phoneEmailReqMsz":
+    "Phone Number or Email is required.",
+
+"validImageMsz":
+	"Please upload proper image.",
+
+"splitChar":
+	"~",
+"shortTermID":
+	"SHORT_TERM",
+
+"longTermID":
+	"LONG_TERM",
+
+"clockIcon":
+	"clock",
+
+"serviceUnavailableMsz":
+	"This service is not available for the selected location.",
+	
+"yesLabel":
+	"Yes",
+	
+"noLabel":
+	"No",
+
+"selectBrandReqMsz":
+	"Please select a vehicle brand",
+
+"selectModelReqMsz":
+	"Please select a vehicle model",
+
+"selectTypeReqMsz":
+	"Please select a vehicle type",
+
+"selectCCReqMsz":
+	"Please select cc",
+
+"selectDateReqMsz":
+	"Please select date",
+
+"cityLabelReqMsz":
+	"City is required.",
+
+"ownershipNumReqMsz":
+	"Please Enter Registration Number",
+
+"selectLabel":
+	"Select",
+
+"oneLabel":
+	"1st",
+
+"twoLabel":
+	"2nd",
+
+"othersLabel":
+	"Others",
+
+"selectOwnershipNumReqMsz":
+	"Please select number of owners",
+
+"ownLabel":
+	"Self owned",
+
+"loanLeaseLabel":
+	"Loan/Lease",
+
+"selectOwnershipTypeReqMsz":
+	"Please select Ownership type",
+
+"selectInsuranceDateValidMsz":
+	"Please select a date till when insurance is valid.",
+
+"selectPaidChallanReqMsz":
+	"Please select if you have paid challans.",
+
+"goodLabel":
+	"Good",
+
+"poorLabel":
+	"Poor",
+
+"excellentLabel":
+	"Excellent",
+
+"veryGoodLabel":
+	"Very Good",
+
+"fairLabel":
+	"Fair",
+
+"rateReqMsz":
+	"Please rate the condition of scooty.",
+
+"selectdistanceReqMsz":
+	"Please select range of distance covered.",
+	
+"modalVariantLongTermMsz" :
+   "Final amount may vary depending on the model",
+
+"modalVariantLongTermReqMsz" :
+     "Model Variant is required.",
+     
+"rentDurationLongTermReqMsz" :
+     "Duration is required.",
+     
+"pickupLocationLongTermReqMsz" :
+   "Pickup location is required.",
+   
+"pickUpDateLongTermReqMsz" :
+    "Pickup Date is required.",
+    
+"pickupTimeSlotLongTermReqMsz" :
+   "Pickup time slot is required.",
+
+"pickupTimeSlotLongTermNA" :
+    "Pickup time slots not available.",
+
+"longTermScheduleInfoMsg" :
+     "On 2nd July’22 you will have to visit Hero Space, Matunga to return the vehicle between 11:00am - 4:00pm",
+     
+"payableAmountMsgLongTerm" :
+    "May vary depending on renting days",
+     
+"emergencyNoReqMsz" :
+    "Emergency contact number is required." ,
+
+"validMobileNumber" :
+     "Please enter valid mobile number." ,
+     
+"RelationReqMsz" :
+      "Relation is required.",
+
+"validDocError" :
+     "Please upload a valid document",
+     
+"validDocUploadSuccess" :
+    "Document uploaded successfully",
+
+"finalSuccessMsz" :
+     "User successfully registered!"  ,   
+
+"selectMonthMsz" :
+     "Please select month",
+     
+"selectYearMsz" :
+     "Please select year",
+
+"longTermSummaryMsgError" :
+     "Please upload a valid document",
+
+"longTermSummaryMsgSuccess" :
+      "Document uploaded successfully",
+
+"longTermStatusSuccessMsz" :
+      "You have successfully booked your long term test drive. Find your pickup information below",
+
+"longTermStatusinfoMsz" :
+       "The same information is sent to your phone number, you can log in using this number to edit your test drive details.",
+
+"longTermStatusFailMsz" :
+       "Your payment failed, please retry payment",
+
+"longTermStatusFailInfoMsz" :
+        "Please click on the below button to retry payment",
+
+"loginAgreeTermsMsz" :
+        "Please agree the terms and conditions.",
+
+"insuranceValidityRulesMsz" :
+        "Insurance validity must be grater than or equal to today",
+
+"networkErrorMsz" :
+        "Something went wrong",
+
+"monthMsz" :
+        "Month",
+
+"yearMsz" :
+        "Year",
+
+"landmarkReqMsz" :
+    "Landmark is required.",
+	
+"selectTermsMsz" :
+	"Please agree the terms and conditions.",
+	
+"fileFormatErrorMsz" :
+	"Please upload the files in the format of jpg, jpeg or png.",
+	
+"inventoryAvailabilityMsz" :
+	"Inventory not available",
+	
+"slotAvailabilityMsz" :
+	"Date slots not available.",
+	
+"manuFacturePurchaseErrorMsz" :
+	"Purchase is after mfg date.",
+
+"aadharNumReqMsz":
+    "Aadhar Number is required.",
+
+"minAadharDigitMsz":
+    "Minimum 12 digit Aadhar Number required.",
+
+"aadharErrorMsz":
+    "An error has occurred. Please check and try again later.",
+
+"aadharValidErrorMsz":
+    "An Error has occurred validating your Aadhar.",
+
+"otpRequiredMsz":
+    "OTP is required.",
+
+"gstDetailsReqMsz":
+    "Please provide the GST details",
+
+"validGSTDetails":
+    "Please verify GST details.",
+
+"loanLabel":
+    "Loan",
+
+"leaseLabel":
+    "Lease",
+	
+"distanceReqMsz":
+	"Please select distance covered.",
+	
+"addressErrorMsg":
+	"Please update the address before proceeding.",
+	
+"validAadharNumMsz":	
+	"Please enter valid Aadhar Number.",
+	
+"shippingAddressErrorMsg":	
+	"Please update the shipping address before proceeding.",
+	
+"billingAddressErrorMsg":	
+	"Please update the billing address before proceeding.",
+	
+"loanErrorMsg":	
+	"Your Loan status is under processing can't edit the order.",
+
+"selectDealerReqMsz":
+	"Please select a dealer.",
+
+"badLabel":
+	"Bad",
+
+"availableDealerMsz":
+	"No Dealers found.",
+	
+"minAmountMsg":
+	"Please enter minimum Rs MINIMUMAMOUNT.",
+	
+"maxAmountMsg":
+	"Please enter less then total outstanding value Rs MAXAMOUNT.",
+	
+"sameAmountMsg":
+	"Please enter Rs TOTALAMOUNT i.e  total outstanding value.",
+	
+"noOptionSelectMsg":
+	"No Option is Selected",
+	
+"cityStateSelectMsz":
+	"Please select City and State",
+	
+"selectstate":
+	"Select Customer State",
+	
+"selectcity":
+	"Select Customer City",
+	
+"fullNameReqMsz":
+    "Please enter full name.",
+	
+"instaHandleReqMsz":
+    "Please enter instagarm handle.",
+	
+"selectStateReqMsz":
+    "Please select a customer state.",
+	
+"selectCityReqMsz":
+    "Please select a customer city.",
+	
+"fileUploadReqMsz":
+    "Please select a file to upload.",
+	
+"messageReqMsz":
+    "Please write a message.",
+	
+"submitBtnReqMsz":
+    "Please select the checkbox to submit.",
+	
+"captchaReqMsz":
+    "Please select the captcha.",
+	
+"fileErrorMsz":
+    "File size should be under 2mb and file type should be of jpeg or png.",
+	
+"selectnetworkcode":
+    "Select Your Dealer Code.",
+	
+"selectnetworkcodeReqMsz":
+    "Please select a dealer code."
+
+}

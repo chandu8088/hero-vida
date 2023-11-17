@@ -1,0 +1,19 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Tabs Component"></div>
+<section class="RideYourWay page-section  ptb60 clearfix text-center" id="${properties.sectionId}">
+  <div class="container">
+	${properties.title @ context = 'html'}
+	<div class="row justify-content-center">
+	  <sly data-sly-list.title="${resource.getChildren}">
+    	<sly data-sly-test="${title.name == 'tabsfields'}">
+          <sly data-sly-list.items="${title.getChildren}">
+              <div class="col-lg-3 col-md-4 col-10">
+                <div class="card text-center">
+                    ${items.tabcontent @ context = 'html'}
+                </div>
+              </div>
+			</sly>
+          </sly>
+       </sly>
+	</div>
+  </div>
+</section>	

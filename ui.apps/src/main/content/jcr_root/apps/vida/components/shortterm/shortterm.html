@@ -1,0 +1,134 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Short Term Test Ride Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveShortTermConfig": {
+		"backgroundImg": "${properties.backgroundImg @ context='uri'}",
+        "scheduleAppointment": {
+          "scheduleTitle": "${properties.scheduleappointmentheading @ context='scriptString'}",
+          "rescheduleTitle": "${properties.rescheduleappointmentheading @ context='scriptString'}",
+		  "dropdownDefaultLabel": "${properties.selectdefaulttext @ context='scriptString'}",
+          "mapIcon": "${properties.mapIconImagePath @ context='scriptString'}",
+		  "phoneIcon": "${properties.phoneIconImagePath @ context='scriptString'}",
+          "locationOptionField": {
+            "label": "${properties.scheduleappointmentlabel @ context='scriptString'}",
+            "optionOne": "${properties.nearbyvidacentre @ context='scriptString'}",
+            "optionTwo": "${properties.athome @ context='scriptString'}"
+          },
+          "modelVarientField": {
+            "label": "${properties.modelvariantfieldlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'modelVariantReqMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "vidaCentreField": {
+            "label": "${properties.vidacentrefieldlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'vidaCentreReqMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "dateField": {
+            "label": "${properties.datefieldlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'dateReqMsz' @ i18n,context='scriptString'}"
+				},
+              "custom": {
+                "message": "${'slotAvailabilityMsz' @ i18n,context='scriptString'}"
+            
+              }
+            }
+          },
+          "timeField": {
+            "label": "${properties.timefieldlabel @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'timeReqMsz' @ i18n,context='scriptString'}"
+              },
+              "custom": {
+                "message": "${'timeSlotUnavailable' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "addressField": {
+            "label": "${properties.addressfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.addressfieldph @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'addressReqMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "buildingField": {
+            "label": "${properties.buildingfieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.buildingfieldlph @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'buildingReqMsz' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "pinCodeField": {
+            "label": "${properties.pincodefieldlabel @ context='scriptString'}",
+            "placeholder": "${properties.pincodefieldph @ context='scriptString'}",
+            "validationRules": {
+              "required": {
+                "message": "${'pinCodeReqMsz' @ i18n,context='scriptString'}"
+              }, 
+              "custom": {
+                "noServiceMsg": "${'noServiceMsg' @ i18n,context='scriptString'}",
+                "noCityMatchMsg": "${'noCityMatchMsg' @ i18n,context='scriptString'}",
+                "noBranchMsg": "${'noBranchMsg' @ i18n,context='scriptString'}"
+              }
+            }
+          },
+          "submitBtn": {
+            "label": "${properties.booktestridectalabel @ context='scriptString'}"
+          },
+          "rescheduleSubmitBtn": {
+            "label": "${properties.reschedulesubmitbtn @ context='scriptString'}"
+          },
+          "isAtHomeDisabled" : ${properties.homedisabled @ context='scriptString'}
+        },
+        "successPage": {
+          "title": "${properties.congratulationsheading @ context='scriptString'}",
+          "message": "${properties.congratulationssummary @ context='scriptString'}",
+          "rescheduleMessage": "${properties.reschedulemessage @ context='scriptString'}",
+          "info": "${properties.congratulationsdescription @ context='scriptString'}",
+          "redirectBtn": {
+            "label": "${properties.gotohomectalabel @ context='scriptString'}",
+            "actionURL": ""
+          },          
+		  "buyLaterLabel" : "${properties.buylaterlabel @ context='scriptString'}",
+		  "buyOptions": [{
+			"label": "${properties.firstoption @ context='scriptString'}",
+			"value": "7"
+		  },
+		  {
+			"label": "${properties.secondoption @ context='scriptString'}",
+			"value": "15"
+		  },
+		  {
+			"label": "${properties.thirdoption @ context='scriptString'}",
+			"value": "30"
+		  },
+		  {
+			"label": "${properties.forthoption @ context='scriptString'}",
+			"value": "45"
+		  },
+		  ],
+		  "buyLaterBtn" : "${properties.buylaterctalabel @ context='scriptString'}",
+		  "buyLaterConfirmationMsg" : "${properties.buylaterconfirmmsg @ context='scriptString'}",
+          "noOptionSelectedMessage": "${'noOptionSelectMsg' @ i18n,context='scriptString'}"
+        }
+      }
+    });
+  </script>
+
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="TestDriveShortTerm" data-cmp-type="react" data-cmp-config="testDriveShortTermConfig"></div>
+</sly>

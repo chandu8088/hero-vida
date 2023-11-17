@@ -1,0 +1,12 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Two Column Text Component"></div>
+<sly data-sly-test.changeStyle="${properties.changestyle ? 'vida-two-column-text__heading' : 'vida-two-column-text__description'}"/>
+<section class="vida-two-column-text"data-section-id="${properties.sectionid}">
+    <div class="vida-container vida-two-column-text__container" data-animation-wrapper="true">
+        <div class="vida-two-column-text__heading" data-animate="true" data-animation-name="slide-right" data-animation-xvalue="-15">
+            ${properties.lefttext @context = 'html'}
+        </div>
+        <div class="${changeStyle}" data-animate="true" data-animation-name="slide-right" data-animation-xvalue="-15" data-animation-delay="0.2">
+            ${properties.righttext @context = 'html'}
+        </div>
+    </div>
+</section>

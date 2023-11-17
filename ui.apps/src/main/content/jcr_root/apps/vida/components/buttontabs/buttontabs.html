@@ -1,0 +1,11 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Button Tabs Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.ButtonTabsModel'}" />
+<div class="vida-container vida-button-tabs" data-component="button-tabs">
+    <div class="vida-button-tabs__navs">
+      <sly data-sly-list.tabdetail="${author.tabdetail}">
+		<button data-url="${tabdetail.buttonurl @ extension = 'html', context='uri'}" data-id="${tabdetail.sectionid}" class="vida-button-tabs__navs--tab">
+			${tabdetail.buttontext @context = 'html'}
+		</button>
+        </sly>
+    </div>
+</div>

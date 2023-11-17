@@ -1,0 +1,99 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Product Info Component"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.ProductInfoModel'}" />
+
+<section class="vida-product-info" data-component="product-info" data-section-id="${properties.sectionid}">
+  <div class="vida-product-info__wrapper" data-animation-wrapper="true">
+    <div class="vida-product-info__heading" data-animate="true" data-animation-name="zoom-out-txt">
+      <p>${properties.piheading @context = 'html'}</p>
+    </div>
+    <div class="vida-product-info__description txt-color--solid-grey" data-animate="true" data-animation-name="fade-in"
+      data-animation-delay="0.2">
+      <p>${properties.pisubheading @context = 'html'}</p>
+    </div>
+    <div class="vida-product-info__slider-container">
+      <div class="vida-product-info__slider-slides" data-autoplay="${properties.enableautoplay}" data-autoplay-speed="${properties.autoplayspeed}">
+        <sly data-sly-list.productMaster="${author.productMaster}">
+          <div class="vida-product-info__item">
+            <div class="vida-product-info__card">
+   <picture>
+			<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=productMaster.item_image}"></sly>
+              <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+              <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+              <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${productMaster.item_name}">
+
+        </picture>              <div class="vida-product-info__card-desc">
+                <h2 class="vida-product-info__card-heading">${productMaster.item_name}</h2>
+                <sly data-sly-test="${properties.showvariantandprice}">
+                  <div class="vida-product-info__selection">
+                    <div class="vida-product-info__selection-color">
+                      <h2 class="vida-product-info__selection-heading">${productMaster.item_name}</h2>
+                      <div class="vida-product-info__color-container">
+                        <ul class="vida-product-info__color-list">
+                          <sly data-sly-list.productVariantInfoList="${productMaster.productVariantInfoList}">
+                            <li
+                              class="vida-product-info__color-list-item ${productVariantInfoListList.first? 'vida-product-info__color-list-item--active':''}"
+                              style="background:${productVariantInfoList.varinatColorGradiant @context = 'styleString'};"
+                              data-rel="${productVariantInfoList.varinat_color_id}-${productVariantInfoList.variant_sku}-${productMasterList.index}-${productVariantInfoListList.index}">
+                            </li>
+                          </sly>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="vida-product-info__selection-price">
+                      <sly data-sly-list.productVariantInfoList="${productMaster.productVariantInfoList}">
+                        <sly data-sly-list.key=${author.getPriceMasterMap}>
+                          <sly data-sly-test="${key == productVariantInfoList.variant_sku}">
+                            <div
+                              class="vida-product-info__selection-price-item ${productVariantInfoListList.first? 'vida-product-info__selection-price-item--active':''}"
+                              data-section-id="${productVariantInfoList.varinat_color_id}-${key}-${productMasterList.index}-${productVariantInfoListList.index}">
+                              <p class="vida-product-info__price-label">Starting Price</p>
+                              <h2 class="vida-product-info__price-value"><span class="vida-product-info__price-symbol">₹</span>
+                                <span class="vida-product-info__price-amount">${author.getPriceMasterMap[key]}</span></h2>
+                            </div>
+                          </sly>
+                        </sly>
+                      </sly>
+                    </div>
+                  </div>
+                </sly>
+                <div class="vida-product-info__card-spec">
+                  <sly data-sly-list.productVariantInfoList="${productMaster.productVariantInfoList}">
+                    <sly data-sly-test="${productVariantInfoListList.index == 0}">
+                      <div class="vida-product-info__card-spec-item">
+                        <p>${properties.pirangelabel}</p>
+                        <h2>${productVariantInfoList.variant_range_value}
+                          <span>${productVariantInfoList.variant_range_unit}</span>
+                        </h2>
+                      </div>
+                      <div class="vida-product-info__card-spec-item">
+                        <p>${properties.pitopspeedlabel}</p>
+                        <h2>${productVariantInfoList.variant_top_speed_value}
+                          <span>${productVariantInfoList.variant_top_speed_unit}</span>
+                        </h2>
+                      </div>
+                      <div class="vida-product-info__card-spec-item">
+                        <p>${properties.piaccelerationlabel}</p>
+                        <h2>${productVariantInfoList.variant_accelerator_value}
+                          <span>${productVariantInfoList.variant_accelerator_unit}</span>
+                        </h2>
+                      </div>
+                      <div class="vida-product-info__card-spec-item">
+                        <p>${properties.pichargingtimelabel}</p>
+                        <h2>${productVariantInfoList.variant_charging_time_value}
+                          <span>${productVariantInfoList.variant_charging_time_unit}</span>
+                        </h2>
+                      </div>
+                    </sly>
+                  </sly>
+                </div>
+              </div>
+              <div class="vida-product-info__card-link">
+                <a class="btn btn--secondary" href="${properties.piproductdetailsurl @ extension ='html'}" data-product-details="productDetails">${properties.piproductdetailslabel}</a>
+              </div>
+            </div>
+          </div>
+        </sly>
+      </div>
+    </div>
+  </div>
+</section>

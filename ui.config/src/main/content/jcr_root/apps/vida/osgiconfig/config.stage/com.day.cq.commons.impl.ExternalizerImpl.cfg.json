@@ -1,0 +1,8 @@
+{
+  "externalizer.domains":[
+  "local https://author-p62973-e533926.adobeaemcloud.com",
+  "author https://author-p62973-e533926.adobeaemcloud.com",
+  "publish https://stage.vidaworld.com",
+  "preview https://publish-p62973-e533926.adobeaemcloud.com"
+  ]
+  }

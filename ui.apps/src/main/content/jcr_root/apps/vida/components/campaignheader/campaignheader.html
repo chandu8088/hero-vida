@@ -1,0 +1,26 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Header Component"></div>
+
+<header>
+  <nav class="navbar navbar-expand-lg pl-0 pr-0">
+	<div class="container">
+	  <a class="navbar-brand" href="${properties.logourl}"><img src="${properties.logoimagepath}" alt="${properties.logoimagealttext}"/></a>
+	  <a href="${properties.sectionId}" class="ride-btn">${properties.ridewaylabel}</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav ml-auto">
+		  <sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'navigation'}">
+            <sly data-sly-list.items="${title.getChildren}">
+				<sly data-sly-test.addActive="${itemsList.index == 0 ? ' active' : ''}"/>
+				<sly data-sly-test.addHide="${itemsList.last ? ' hide' : ''}"/>
+		  		<li class="nav-item${addHide}"><a class="nav-link${addActive}" href="${items.navigationId}">${items.navigationtext}</a></li>
+            </sly>
+          </sly>
+          </sly>
+		</ul>
+	  </div>
+	</div>		
+  </nav>
+</header>	

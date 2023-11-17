@@ -1,0 +1,79 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Leadership Cards Component"></div>
+<div class="vida-leadership-cards" data-component="leadership-cards" data-section-id="${properties.sectionid}">
+  <div class="vida-leadership-cards__container vida-container" data-animation-wrapper="true">
+    <div class="vida-leadership-cards__heading" data-animate="true" data-animation-name="zoom-out-txt"> ${properties.title @ context = 'html'} </div>
+    <div class="vida-leadership-cards__slider">
+      <div class="vida-leadership-cards__slider-slides">
+        <sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'multicards'}">
+            <sly data-sly-list.ship="${title.getChildren}">
+              <sly data-sly-test="${ship.variations == 'small'}">
+                <div class="vida-leadership-cards__slider-item">
+                  <div class="vida-leadership-cards__slider-item-card">
+                    <section class="vida-leadership-cards__item vida-leadership-cards__small">
+                      <picture class="vida-leadership-cards__media">
+						<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=ship.scimage}"></sly>
+							<source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+							<source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${ship.scimagealt}" class="vida-multi-cards__media-asset">
+                      </picture>
+                      <div class="vida-leadership-cards__description">
+                        <h4 class="vida-leadership-cards__title">${ship.scdesignation}</h4>
+                        <h4 class="vida-leadership-cards__name">${ship.scprefix} <br />${ship.scname} </h4>
+                        <p>
+                          <a href="${ship.sclinkurl @extension = 'html'}">${ship.sclinklabel}</a>
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </sly>
+              <sly data-sly-test="${ship.variations == 'medium'}">
+                <div class="vida-leadership-cards__slider-item">
+                  <div class="vida-leadership-cards__slider-item-card">
+                    <section class="vida-leadership-cards__item vida-leadership-cards__medium">
+                      <picture class="vida-leadership-cards__media">
+						<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=ship.mcimage}"></sly>
+							<source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+							<source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${ship.scimagealt}" class="vida-multi-cards__media-asset">
+                      </picture>
+                      <div class="vida-leadership-cards__description">
+                        <h4 class="vida-leadership-cards__title">${ship.mcdesignation}</h4>
+                        <h4 class="vida-leadership-cards__name">${ship.mcprefix} <br />${ship.mcname} </h4>
+                        <p>
+                          <a href="${ship.mclinkurl @extension = 'html'}">${ship.mclinklabel}</a>
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </sly>
+              <sly data-sly-test="${ship.variations == 'large' && shipList.index == 2}">
+                <div class="vida-leadership-cards__slider-item">
+                  <div class="vida-leadership-cards__slider-item-card">
+                    <section class="vida-leadership-cards__item vida-leadership-cards__large">
+                      <picture class="vida-leadership-cards__media">
+						<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=ship.lcimage}"></sly>
+							<source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+							<source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                        <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${ship.lcimagealt}" class="vida-multi-cards__media-asset">
+                      </picture>
+                      <div class="vida-leadership-cards__description">
+                        <h4 class="vida-leadership-cards__title">${ship.lcdesignation}</h4>
+                        <h4 class="vida-leadership-cards__name">${ship.lcprefix} <br />${ship.lcname} </h4>
+                        <p>
+                          <a href="${ship.lclinkurl @extension = 'html'}">${ship.lclinklabel}</a>
+                        </p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </sly>
+            </sly>
+          </sly>
+        </sly>
+      </div>
+    </div>
+  </div>
+</div>

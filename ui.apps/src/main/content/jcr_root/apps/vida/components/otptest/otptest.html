@@ -1,0 +1,11 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="OTP Test Component"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "sampleConfig": {
+      
+    }
+  });
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="OtpFormTest" data-cmp-type="react" data-cmp-config="sampleConfig"></div>
+ </sly>

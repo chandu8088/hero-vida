@@ -1,0 +1,42 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Text Asset Component" ></div>
+<section class="vida-text-asset" data-section-id="${properties.sectionid}">
+    <div class="vida-text-asset__container vida-container" data-animation-wrapper="true">
+      <sly data-sly-test="${properties.image}">
+      <div class="vida-text-asset__media">
+        <div class="vida-text-asset__media-container">
+          <picture>
+			<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.image}"></sly>
+			 <source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+			  <source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+            <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="product-feature-image"
+              class="vida-text-asset__media-asset" data-animate="true" data-animation-name="zoom-out-img">
+          </picture>
+        </div>
+      </div>
+    </sly>
+    <sly data-sly-test="${properties.text}">
+      <div class="vida-text-asset__content">
+        <div class="vida-text-asset__content-container" data-animate="true" data-animation-name="fade-in">
+          <section class="vida-rich-text">
+            <div class="vida-rich-text__wrapper">
+              ${properties.text @context = 'html'}
+              <p>
+                ${properties.desc}
+              </p>
+              <div class="vida-text-asset__content-spec">
+                <div data-sly-test=${properties.cityLabel} class="vida-text-asset__content-spec-info">
+                  <p>${properties.cityLabel}</p>
+                  <h1>${properties.cityValue}</h1>
+                </div>
+                <div data-sly-test=${properties.swappingLabel} class="vida-text-asset__content-spec-info">
+                  <p>${properties.swappingLabel}</p>
+                  <h1>${properties.swappingValue}</h1>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </sly>
+    </div>
+  </section>

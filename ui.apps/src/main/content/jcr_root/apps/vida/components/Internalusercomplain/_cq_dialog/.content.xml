@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Test Ride"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <fieldlabels
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Test Ride Booking Form"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                         <welcometitle
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Title"
+                                            name="./welcometitle"
+                                            required="{Boolean}true"/>
+                                            <systemfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="system field heading"
+                                                name="./systemfieldlabel"
+                                                required="{Boolean}true"
+                                            />
+                                            <systemfieldmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="system field error message"
+                                                name="./systemfieldmessage"
+                                                required="{Boolean}true"
+                                               />
+                                               
+                                                <categoryfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="category field label"
+                                                name="./categoryfieldlabel"
+                                                required="{Boolean}true"
+                                               />
+
+                                                <categoryfieldmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Category field error message"
+                                                name="./categoryfieldmessage"
+                                                required="{Boolean}true"
+                                               />
+
+                                                <subcategoryfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Sub category field label"
+                                                name="./subcategoryfieldlabel"
+                                                required="{Boolean}true"
+                                               />
+
+                                               <subcategoryfieldmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Sub category field error message"
+                                                name="./subcategoryfieldmessage"
+                                                required="{Boolean}true"
+                                               />
+                                                <attachmentfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Attchment label"
+                                                name="./attachmentfieldlabel"
+                                                required="{Boolean}true"
+                                               />
+
+                                               <attachmentfieldplace
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Attchment placeholder message"
+                                                name="./attachmentfieldplace"
+                                                required="{Boolean}true"
+                                               />
+                                            <phonelabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone Number label"
+                                                name="./phonelabel"
+                                                required="{Boolean}true"
+                                                value="Phone number"/>
+                                             <phoneplacemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone Placeholder message"
+                                                name="./phoneplacemessage"
+                                                required="{Boolean}true"
+                                                />
+                                                 <phonemessagevalidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone validation message"
+                                                name="./phonemessagevalidation"
+                                                required="{Boolean}true"
+                                                />
+                                                 <phoneminLengthemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone min length message"
+                                                name="./phoneminLengthemessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <phonemaxLengthmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone max length message"
+                                                name="./phonemaxLengthmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <phonecustomValidationmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Phone custom message"
+                                                name="./phonecustomValidationmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <firstNameFieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name label"
+                                                name="./firstNameFieldlabel"
+                                                required="{Boolean}true"
+                                                 />
+
+                                                <firstNameplacemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name Placeholder message"
+                                                name="./firstNameplacemessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <firstNamemessagevalidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name Error message"
+                                                name="./firstNamemessagevalidation"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <firstNameminLengthemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Min length error message"
+                                                name="./firstNameminLengthemessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <firstNamecustomValidationmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name Customer error message"
+                                                name="./firstNamecustomValidationmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <casesubjectFieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case Label"
+                                                name="./casesubjectFieldlabel"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <casesubjectPlacemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case Placeholder message"
+                                                name="./casesubjectPlacemessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                 <casesubjectFieldmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case Error message"
+                                                name="./casesubjectFieldmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <casedesclabelmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case description Label"
+                                                name="./casedesclabelmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <casedescplacemessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case description placeholder"
+                                                name="./casedescplacemessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <casedescFieldmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Case description Error message"
+                                                name="./casedescFieldmessage"
+                                                required="{Boolean}true"
+                                                />
+
+                                                <emaillabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Email label"
+                                                name="./emaillabel"
+                                                required="{Boolean}true"
+                                                value="Email"/>
+
+                                                <emailplacelabel
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Email Placeholder Label"
+                                                  name="./emailplacelabel"
+                                                  />
+
+                                                <emailvalidationlabel
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Email Validation Message"
+                                                  name="./emailvalidationlabel"
+                                                  />
+
+                                                  <emailvalidationcustom
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Email custom Message"
+                                                  name="./emailvalidationcustom"
+                                                  />
+
+                                                  <successmsg
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel="Success Message"
+                                                  name="./successmsg"
+                                                  />
+
+                                                  <errormsg
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel=" Error Message"
+                                                  name="./errormsg"
+                                                  />
+
+                                                <casemsg
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel=" Case Message"
+                                                  name="./casemsg"
+                                                  /> 
+
+                                                   <congratsmsg
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                  fieldLabel=" Case congratulation text"
+                                                  name="./congratsmsg"
+                                                  /> 
+
+                                                <nextctalabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Next cta label"
+                                                name="./nextctalabel"
+                                                required="{Boolean}true"
+                                                value="submit"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </fieldlabels>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

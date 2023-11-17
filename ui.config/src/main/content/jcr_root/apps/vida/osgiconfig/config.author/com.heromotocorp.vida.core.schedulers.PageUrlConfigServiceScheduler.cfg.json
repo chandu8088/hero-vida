@@ -1,0 +1,5 @@
+{
+  "schedulername":"Page URLs Activating Scheduler",
+  "cronExpression":"$[env:PAGE_URL_CONFIG_CRON_EXPRESSION]",
+  "isPageUrlConfigSchedulerEnabled" : "$[env:PAGE_URL_CONFIG_SCHEDULER_ENABLED]"
+}

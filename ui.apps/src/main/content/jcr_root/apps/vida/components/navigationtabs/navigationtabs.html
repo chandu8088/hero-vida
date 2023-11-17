@@ -1,0 +1,14 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Navigation Tabs Component"></div>
+<section class="vida-navigation" data-component="navigation">
+    <div class="vida-navigation__wrapper">
+        <nav class="vida-navigation-container vida-container">
+		 <sly data-sly-list.title="${resource.getChildren}">
+          <sly data-sly-test="${title.name == 'tabsconfig'}">
+            <sly data-sly-list.items="${title.getChildren}">
+             <a class="vida-navigation__links" data-navigation-id="${items.sectionId}" href="${items.tablink @ extension='html'}">${items.tablabel}</a>
+            </sly>
+          </sly>
+         </sly>
+        </nav>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Pre Booking Status Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+	window.appConfig = Object.assign(window.appConfig || {}, {
+		"preBookingStatusConfig": {
+			"paymentSuccess": {
+				"title": "${'bookingSuccessTitle' @ i18n,context='scriptString'}",
+				 "successMessage": "You have successfully reserved your VIDA",
+		          "pendingMessage": "We are processing your reserve for VIDA",
+				
+				"orderDetails": {
+					"message": "${properties.orderdetailsmsg @ context='scriptString'}",
+					"subText": "${properties.orderdetailssubText @ context='scriptString'}"
+				},
+				"launchDetails": {
+					"message": "${properties.launchdetailsmsg @ context='scriptString'}",
+					"subText": "${properties.launchdetailssubText @ context='scriptString'}"
+				},
+				"disclaimer": {
+					"title": "${properties.disclaimerTitle @ context='scriptString'}",
+					"subText": "${properties.disclaimersubText @ context='scriptString'}"
+				},
+				"configureBtn": {
+					"label": "${properties.btnTitle @ context='scriptString'}"
+				},
+				  "profileBtn": {
+					"label": "${properties.profileBtn @ context='scriptString'}"
+				  }
+			},
+
+			"paymentFailure": {
+				"title": "${'bookingFailureTitle' @ i18n,context='scriptString'}",
+				"imageUrl": "${properties.imgUrl @ extension = 'html', context='uri'}",
+				"message": "${'bookingFailureContent' @ i18n,context='scriptString'}",
+				"retryPaymentBtn": {
+					"label": "${properties.retrybtnTitle @ context='scriptString'}",
+					"actionUrl": "${properties.retryactionurl @ extension = 'html', context='uri'}"
+				},
+				"helpLink": {
+				"helpLabel": "${properties.helpLabel @ context='scriptString'}",
+				"chatLabel": "${properties.chatLabel @ context='scriptString'}"
+			  }
+			}
+		}
+	});  
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+<div data-component="PreBookingPaymentStatus" data-cmp-type="react" data-cmp-config="preBookingStatusConfig"></div>
+</sly>

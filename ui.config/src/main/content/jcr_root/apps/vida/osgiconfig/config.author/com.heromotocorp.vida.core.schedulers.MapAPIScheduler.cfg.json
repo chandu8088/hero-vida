@@ -1,0 +1,5 @@
+{
+  "schedulerName":"Map Scheduler",
+  "cronExpression":"$[env:MAP_API_CRON_EXPRESSION]",
+  "isMapAPISchedulerEnabled" : "$[env:MAP_API_SCHEDULER_ENABLED]"
+}

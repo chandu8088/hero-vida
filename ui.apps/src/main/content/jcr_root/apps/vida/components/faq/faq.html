@@ -1,0 +1,11 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="FAQ Component"></div>
+<div class="vida-faq" data-component="faq">
+	<div class="vida-container vida-faq__container">
+		<h1 class="vida-faq__title">${properties.title}</h1>
+<tabs>
+<sly data-sly-resource="${'tab' @ resourceType='vida/components/container',decorationTagName='div'}"
+                  data-sly-test="${(wcmmode.edit || wcmmode.disabled)}"></sly>
+		</tabs>
+	</div>
+</div>
+

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Dealers Locator"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[vida.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <dealerlocator
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Dealer Locator"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dealertitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Dealer Locator Title"
+                                                name="./dealertitle"
+                                                value="Loacte your Nearest"/>
+                                            <maintitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Main Dealer Locator Title"
+                                                name="./maintitle"
+                                                value="Dealer"/>
+                                            <selectedtitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Selected Dealer Locator Title"
+                                                name="./selectedtitle"
+                                                value="Your nearest"/>
+                                            <selectedmaintitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Selected Main Dealer Locator Title"
+                                                name="./selectedmaintitle"
+                                                value="Dealers"/>
+                                            <mobilenotext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Mobile No Data Text"
+                                                name="./mobilenotext"
+                                                value="To make green mobility a global reality."/>
+											<mobilenoimgpath
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldDescription="Please provide mobile no data image path"
+												fieldLabel="Mobile No Data Image Path"
+												name="./mobilenoimgpath"
+												rootPath="/content/dam/vida"/>
+											<bgimgpath
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldDescription="Please provide background image path"
+												fieldLabel="Background Image Path"
+												name="./bgimgpath"
+												rootPath="/content/dam/vida"/>
+											<mobilebgimgpath
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldDescription="Please provide mobile background image path"
+												fieldLabel="Mobile Background Image Path"
+												name="./mobilebgimgpath"
+												rootPath="/content/dam/vida"/>
+											<mapiconimgpath
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldDescription="Please provide map icon image path"
+												fieldLabel="Map Icon Image Path"
+												name="./mapiconimgpath"
+												rootPath="/content/dam/vida"/>
+											<phoneiconimgpath
+												jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+												fieldDescription="Please provide phone icon image path"
+												fieldLabel="Phone Icon Image Path"
+												name="./phoneiconimgpath"
+												rootPath="/content/dam/vida"/>
+                                            <loadingmessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Dealers Loading Message"
+                                                name="./loadingmessage"
+                                                value="Loading Dealers..."/>
+                                            <defaultcity
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Select City"
+                                                name="./defaultcity">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/apps/vida"/>
+                                            </defaultcity>
+                                            <latitude
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Add Default City Latitude"
+                                                name="./latitude"/>
+                                            <longitude
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Add Default City Longitude"
+                                                name="./longitude"/>
+                                            <defaultzoom
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Add Default City Zoom"
+                                                name="./defaultzoom"/>
+                                            <mapcityzoom
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Add Map City Zoom"
+                                                name="./mapcityzoom"/>
+                                            <navigatelabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Navigate Label"
+                                                name="./navigatelabel"
+                                                value="Navigate"/>
+                                            <cityfieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="City Field Label"
+                                                name="./cityfieldlabel"
+                                                value="City"/>
+                                            <cityfieldph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="City Field Placeholder"
+                                                name="./cityfieldph"
+                                                value="Enter your city"/>
+                                            <statefieldlabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="State Field Label"
+                                                name="./statefieldlabel"
+                                                value="State"/>
+                                            <statefieldph
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="State Field Placeholder"
+                                                name="./statefieldph"
+                                                value="Enter your state"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </dealerlocator>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

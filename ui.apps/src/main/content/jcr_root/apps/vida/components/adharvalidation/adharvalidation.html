@@ -1,0 +1,15 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Adhar Validation Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "validateAadharDetails": {
+        "title": "${properties.title @ context='scriptString'}",
+        "primaryBtn": {
+          "label": "${properties.btnLabel @ context='scriptString'}"
+        }
+      }
+    });  
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="AadharValidation" data-cmp-type="react" data-cmp-config="validateAadharDetails"></div>
+  </sly>

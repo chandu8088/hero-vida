@@ -1,0 +1,10 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Image List Component"></div>
+<div class="vida-logo-graphics">
+	<sly data-sly-list.title="${resource.getChildren}">
+      <sly data-sly-test="${title.name == 'imagedetails'}">
+        <sly data-sly-list.items="${title.getChildren}">
+			<img className="vida-logo-graphics__image" src="${items.imagepath}" alt="${items.imagealttext}"/>
+         </sly>
+      </sly>
+	</sly>
+</div>

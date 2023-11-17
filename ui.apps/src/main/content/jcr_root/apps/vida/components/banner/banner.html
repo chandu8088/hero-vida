@@ -1,0 +1,19 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Banner Component"></div>
+
+<sly data-sly-test="${!wcmmode.edit}">
+<section class="vida-banner" data-component="banner">
+    <div class="vida-banner__wrapper" data-animation-wrapper="true">
+        <div class="vida-container vida-banner__container">
+            <div class="vida-banner__heading-wrapper">
+                <h1 class="vida-container vida-banner__heading" data-animate="true" data-animation-name="slide-right">
+                    ${properties.text @context = 'html'}
+                </h1>
+            </div>
+            <div class="vida-banner__image">
+				<img src="${properties.bannerimagepath}" title="" alt="${properties.imagealt}" />
+            </div>
+        </div>        
+    </div>
+</section>
+
+</sly>

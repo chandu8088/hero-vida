@@ -1,0 +1,48 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="News Cards Component"></div>
+
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.NewsCardsModel'}" />
+
+<section class="vida-news-cards bg-color--smoke-white" data-component="news-cards">
+  <div class="vida-container vida-news-cards__container" data-animation-wrapper="true">
+    <div class="vida-news-cards__title-wrapper" data-animate="true" data-animation-name="zoom-out-txt">
+      <p>${author.heading @context = 'html'}</p>
+    </div>
+
+    <div class="vida-news-cards__item-wrapper">
+      <sly data-sly-list.items="${author.items}">
+        <div class="vida-news-cards__card">
+          <div class="vida-news-cards__item">
+
+            <a href="#">
+              <div class="vida-news-cards__item-media">
+                <picture>
+					<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=items.imagepath}"></sly>
+					<source srcset="${DMImageURLService.dMImagePathLink}" media="(min-width:1024px)">
+					<source srcset="${DMImageURLService.imageforWidth1024}" media="(min-width: 360px)">
+                  <img loading='lazy' src="${DMImageURLService.imageforWidth360}" alt="${items.imagealttext}"
+                    class="vida-news-cards__item-media-asset">
+                </picture>
+              </div>
+              <div class="vida-news-cards__item-content">
+                <div class="vida-news-cards__item-content-text">
+                  <p>${items.newsheading}</p>
+                </div>
+                <div class="vida-news-cards__rich-text">
+                  <p>
+                    ${items.source @context='html'}
+                  </p>
+                </div>
+              </div>
+
+            </a>
+          </div>
+        </div>
+      </sly>
+    </div>
+
+    <div class="vida-news-cards__cta-wrapper">
+      <a href="#" class="btn btn--secondary btn--lg cta--anchor" role="Button" data-link-position="Middle">${properties.viewmorelabel}</a>
+    </div>
+
+  </div>
+</section>

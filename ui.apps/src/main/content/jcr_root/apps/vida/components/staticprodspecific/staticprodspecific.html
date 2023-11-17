@@ -1,0 +1,32 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Static Product Specifications"></div>
+<sly data-sly-use.author="${'com.heromotocorp.vida.core.models.StaticProductSpecModel'}" />
+<div class="vida-product-specs">
+	<div class="vida-container vida-product-specs__container" data-animation-wrapper="true">
+		<sly data-sly-list.items="${author.items}">
+			<div class="vida-product-specs__item">
+				<h3 class="vida-product-specs__heading">${items.specificationheading}</h3>
+				<h4 class="vida-product-specs__data">
+					<sly data-sly-test="${!items.enablenumeric}">
+                        <span
+                            data-animate="true"
+                            data-animation-name="counter"
+                            data-counter-value="${items.datadecimal}"
+                            data-decimal-value="0.1"
+                            data-animation-scroller-start="100%"
+                           ></span>
+                        <span>${items.dataunit}</span>
+					</sly>
+					<sly data-sly-test="${items.enablenumeric}">
+                        <span
+                  			data-animate="true"
+                  			data-animation-name="counter"
+                  			data-counter-value="${items.datanumeric}"
+                  			data-animation-scroller-start="100%"
+                		></span>
+                		<span>${items.dataunit}</span>
+					</sly>
+                </h4>   
+			 </div>
+		</sly>
+	</div>
+</div>

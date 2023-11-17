@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Nominee Details"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[vida.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <nomineetittle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Nominee Tittle"
+                        name="./nomineetittle"
+                        value="Nominee Details for Insurance"/>
+                    <nomineeimagepath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Nominee Image Path"
+                        name="./nomineeimagepath"
+                        rootPath="/content/dam/vida"/>
+                    <namefieldlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Name Field Label"
+                        name="./namefieldlabel"
+                        value="Nominee Name"/>
+                    <namefieldlabelph
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Name Field Label Placeholder"
+                        name="./namefieldlabelph"
+                        value="Enter"/>
+                    <agefieldlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Age Field Label"
+                        name="./agefieldlabel"
+                        value="Nominee Age"/>
+                    <agefieldlabelph
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Age Field Label Placeholder"
+                        name="./agefieldlabelph"
+                        value="Enter"/>
+                    <relationfieldlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Relation Field Label"
+                        name="./relationfieldlabel"
+                        value="Nominee Relation"/>
+                    <defaultoptionslabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Default Options Label"
+                        name="./defaultoptionslabel"
+                        value="Select"/>
+                    <fatheroptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Father Option Label"
+                        name="./fatheroptionlabel"
+                        value="Father"/>
+                    <motheroptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Mother Option Label"
+                        name="./motheroptionlabel"
+                        value="Mother"/>
+                    <husbandoptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Husband Option Label"
+                        name="./husbandoptionlabel"
+                        value="Husband"/>
+                    <wifeoptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Wife Option Label"
+                        name="./wifeoptionlabel"
+                        value="Wife"/>
+                    <sonoptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Son Option Label"
+                        name="./sonoptionlabel"
+                        value="Son"/>
+                    <daughteroptionlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Daughter Option Label"
+                        name="./daughteroptionlabel"
+                        value="Daughter"/>
+                    <primayrctalabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Primary Cta Label"
+                        name="./primayrctalabel"
+                        value="Submit"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

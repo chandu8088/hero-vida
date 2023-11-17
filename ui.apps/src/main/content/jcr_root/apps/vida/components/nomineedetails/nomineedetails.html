@@ -1,0 +1,88 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Nominee Details Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "nomineeDetails": {
+      "title": "${properties.nomineetittle @ context='scriptString'}",
+      "imgPath": "${properties.nomineeimagepath @ context='uri'}",
+      "nameField": {
+        "label": "${properties.namefieldlabel @ context='scriptString'}",
+        "placeholder": "${properties.namefieldlabelph @ context='scriptString'}",
+        "validationRules": {
+          "required": {
+            "message": "${'nameReqMsz' @ i18n,context='scriptString'}"
+          },
+            "customValidation": { 
+               "message": "${'validnomineename' @ i18n,context='scriptString'}"
+          }
+        }
+      },
+      "ageField": {
+        "label": "${properties.agefieldlabel @ context='scriptString'}",
+        "placeholder": "${properties.agefieldlabelph @ context='scriptString'}",
+        "validationRules": {
+          "required": {
+            "message": "${'ageReqMsz' @ i18n,context='scriptString'}"
+          },
+          "minLength": {
+            "value": 2,
+            "message": "${'ageMinCharacterMsz' @ i18n,context='scriptString'}"
+          },
+          "maxLength": {
+            "value": 2,
+            "message": "${'ageMaxCharacterMsz' @ i18n,context='scriptString'}"
+          },
+          "customValidation": {
+            "value": 18,
+            "message": "${'ageCustomMaxCharacterMsz' @ i18n,context='scriptString'}"
+          }
+        }
+      },
+      "relationField": {
+        "label": "${properties.relationfieldlabel @ context='scriptString'}",
+        "options": [{
+          "value": "",
+          "label": "${properties.defaultoptionslabel @ context='scriptString'}"
+        },
+        {
+          "value": "Father",
+          "label": "${properties.fatheroptionlabel @ context='scriptString'}"
+        },
+        {
+          "value": "Mother",
+          "label": "${properties.motheroptionlabel @ context='scriptString'}"
+        },
+        {
+          "value": "Husband",
+          "label": "${properties.husbandoptionlabel @ context='scriptString'}"
+        },
+        {
+          "value": "Wife",
+          "label": "${properties.wifeoptionlabel @ context='scriptString'}"
+        },
+        {
+          "value": "Son",
+          "label": "${properties.sonoptionlabel @ context='scriptString'}"
+        },
+        {
+          "value": "Daughter",
+          "label": "${properties.daughteroptionlabel @ context='scriptString'}"
+        }
+        ],
+        "validationRules": {
+        "required": {
+          "message": "${'selectRelationReqMsz' @ i18n,context='scriptString'}"
+        }
+      }
+      },
+      "primaryBtn": {
+        "label": "${properties.primayrctalabel @ context='scriptString'}"
+      }
+    }
+  }
+)
+
+</script>
+<sly data-sly-test="${!wcmmode.edit}">
+	<div data-component="NomineeDetails" data-cmp-type="react" data-cmp-config="nomineeDetails"></div>
+</sly>

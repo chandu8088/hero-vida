@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Blog Cards Component"></div>
+<section class="vida-blog-card">
+    <div class="vida-blog-card__container">
+      <div class="vida-blog-card__title">
+        <div>${properties.cardstitle @ context = 'html'}</div>
+      </div>
+	  <div class="vida-blog-card__body">
+	  <sly data-sly-list.title="${resource.getChildren}">
+       <sly data-sly-test="${title.name == 'carddetail'}">
+        <sly data-sly-list.items="${title.getChildren}">
+			<div class="vida-blog-card__articlebody">
+				<a href="${items.cardlink @ extension='html'}"><img class="vida-blog-card__imgsize" src="${items.cardimage}" alt="${items.cardimagealttext}"></a>
+				<div class="vida-blog-card__content">
+				  ${items.cardtitle @ context = 'html'}
+				  <div>
+					<a class="vida-blog-card__blogname" href="${items.cardlink @ extension='html'}">${items.cardlinktext}</a>
+					${items.carddesc @ context = 'html'}
+					<div>${items.cardtimelinetext @ context = 'html'}</div>
+				  </div>
+				</div>
+			</div>
+        </sly>
+       </sly>
+      </sly>
+	  </div>
+    </div>
+</section>

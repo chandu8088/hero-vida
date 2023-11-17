@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Info Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+					<sectionid
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldDescription="Fill for in page navigation purpose"
+						fieldLabel="Section Id"
+						name="./sectionid"/>
+                    <pbprimetitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Please enter primary title"
+                        fieldLabel="Primary Title"
+                        name="./pbprimetitle"/>
+					<iscoloured
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+						fieldLabel="Is Secondary Text Coloured?"
+						name="./iscoloured"
+						text="Is Secondary Text Coloured?"
+						uncheckedValue="false"
+						value="{Boolean}true"/>
+                    <pbsecondtitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Please enter secondary title"
+                        fieldLabel="Secondary Title"
+                        name="./pbsecondtitle"/>
+                    <pbfirstname
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Please enter first name"
+                        fieldLabel="First Name"
+                        name="./pbfirstname"/>
+                    <bottomtitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="Please enter title"
+                        fieldLabel="Bottom Title"
+                        name="./bottomtitle"/>
+                    <pbavailabledesc
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Availability Description"
+                        name="./pbavailabledesc"/>
+                    <bgimage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Please provide background image"
+                        fieldLabel="Banner Image"
+                        name="./bgimage"
+                        rootPath="/content/dam/vida"/>
+                    <city
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Select City"
+                        name="./city">
+                        <datasource
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="/apps/vida"/>
+                    </city>
+                    <pbvariantsku
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Variant Sku"
+                        name="./pbvariantsku"/>
+                    <pbstartpricelabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Starting Price Label"
+                        name="./pbstartpricelabel"/>
+                    <pbpriceinfo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Price Information"
+                        name="./pbpriceinfo"/>
+                    <pbrangelabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Range Label"
+                        name="./pbrangelabel"/>
+                    <rangeImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Please provide range icon"
+                        fieldLabel="Range Icon"
+                        name="./rangeImage"
+                        rootPath="/content/dam/vida"/>
+                    <pbrangealt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Range Alt Text"
+                        name="./rangeImageAlt"/>
+                    <pbtopspeedlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Top Speed Label"
+                        name="./pbtopspeedlabel"/>
+                    <speedImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Please provide speed icon"
+                        fieldLabel="Speed Icon"
+                        name="./speedImage"
+                        rootPath="/content/dam/vida"/>
+                    <pbspeedalt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Speed Alt Text"
+                        name="./speedImageAlt"/>
+                    <pbbatterylabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="battery Label"
+                        name="./pbbatterylabel"/>
+                    <chargingImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Please provide battery icon"
+                        fieldLabel="Battery Icon"
+                        name="./chargingImage"
+                        rootPath="/content/dam/vida"/>
+                    <pbbatteryalt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Battery Alt Text"
+                        name="./batteryImageAlt"/>
+                    <pbspeedlabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Acceleration Label"
+                        name="./pbspeedlabel"/>
+                    <acceleratorImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="Please provide accelerator icon"
+                        fieldLabel="Acceleration Icon"
+                        name="./acceleratorImage"
+                        rootPath="/content/dam/vida"/>
+                    <pbacceleratoralt
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Accelerator Alt Text"
+                        name="./acceleratorImageAlt"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

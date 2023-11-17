@@ -1,0 +1,24 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Adhar Validation Status Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "aadharValidationStatus": {
+        "aadharValidationSuccess": {
+          "title": "Success",
+          "content": "Your aadhar was verified successfully for the order",
+          "redirectMessage": "Redirecting to profile..."
+        },
+        "aadharValidationFailure": {
+          "title": "Failure",
+          "content": "Your aadhar was failed to validate. Please try again."
+        },
+        "primaryBtn": {
+          "label": "Re-Validate Aadhar"
+        },
+        "pageRedirectionTimeout" : 3000
+      }
+    });  
+  </script>
+  <sly data-sly-test="${!wcmmode.edit}">
+  	<div data-component="AadharValidationStatus" data-cmp-type="react" data-cmp-config="aadharValidationStatus"></div>
+  </sly>

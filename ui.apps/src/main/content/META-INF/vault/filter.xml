@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/vida/clientlibs"/>
+    <filter root="/apps/vida/components"/>
+    <filter root="/apps/vida/i18n"/>
+    <filter root="/apps/msm/vida_blueprint" mode="merge"/>
+	<filter root="/apps/msm/rolloutconfigs" mode="merge"/>
+	<filter root="/apps/sling" mode="merge"/>
+</workspaceFilter>

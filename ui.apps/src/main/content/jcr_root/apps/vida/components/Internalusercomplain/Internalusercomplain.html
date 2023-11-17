@@ -1,0 +1,129 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Internal User Complain Component"></div>
+<div data-component="Notification" data-cmp-type="react"></div>
+<script>
+  window.appConfig = Object.assign(window.appConfig || {}, {
+    "internaluserformConfig": {
+      "bookingForm": {
+        "bookingTitle": "${properties.welcometitle @ context='scriptString'}",
+        "systemfield": {
+          "label": "${properties.systemfieldlabel @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.systemfieldmessage @ context='scriptString'}"
+            }
+          }
+        },
+        "categoryfield": {
+          "label": "${properties.categoryfieldlabel @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.categoryfieldmessage @ context='scriptString'}"
+            }
+          }
+        },
+        "subcategoryfield": {
+          "label": "${properties.subcategoryfieldlabel @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.subcategoryfieldmessage @ context='scriptString'}"
+            }
+          }
+        },
+        "internalcommentfield": {
+          "label": "${properties.internalcommentfieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.internalcommentfieldmessage @ context='scriptString'}"
+        },
+        "customerfeebackfield": {
+          "label": "${properties.customerfeebackfieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.customerfeebackfieldmessage @ context='scriptString'}"
+        },
+        "resolutionfield": {
+          "label": "${properties.resolutionfieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.resolutionfielddmessage @ context='scriptString'}"
+        },
+        "attachmentfield": {
+          "label": "${properties.attachmentfieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.attachmentfieldplace @ context='scriptString'}",
+        },
+        "phoneNumberField": {
+          "countrycode": "+91",
+          "label": "${properties.phonelabel @ context='scriptString'}",
+          "placeholder": "${properties.phoneplacemessage @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.phonemessagevalidation @ context='scriptString'}"
+            },
+            "minLength": {
+              "value": 10,
+              "message": "${properties.phoneminLengthemessage @ context='scriptString'}"
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "${properties.phonemaxLengthmessage @ context='scriptString'}"
+            },
+            "customValidation": {
+              "message": "${properties.phonecustomValidationmessage @ context='scriptString'}"
+            }
+          }
+        },
+        "firstNameField": {
+          "label": "${properties.firstNameFieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.firstNameplacemessage @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.firstNamemessagevalidation @ context='scriptString'}",
+            },
+            "minLength": {
+              "value": 1,
+              "message": "${properties.firstNameLeastMsz @ context='scriptString'}",
+            },
+            "customValidation": {
+              "message": "${properties.firstNamecustomValidationmessage @ context='scriptString'}",
+            }
+          }
+        },
+        "casesubjectField": {
+          "label": "${properties.casesubjectFieldlabel @ context='scriptString'}",
+          "placeholder": "${properties.casesubjectPlacemessage @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.casesubjectFieldmessage @ context='scriptString'}"
+            },
+          }
+        },
+        "casedescField": {
+          "label": "${properties.casedesclabelmessage @ context='scriptString'}",
+          "placeholder": "${properties.casedescplacemessage @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.casedescFieldmessage @ context='scriptString'}",
+            },
+          }
+        },
+        "emailField": {
+          "label": "${properties.emaillabel @ context='scriptString'}",
+          "placeholder": "${properties.emailplacelabel @ context='scriptString'}",
+          "validationRules": {
+            "required": {
+              "message": "${properties.emailvalidationlabel @ context='scriptString'}",
+            },
+            "customValidation": {
+              "message": "${properties.emailvalidationcustom @ context='scriptString'}",
+            }
+          }
+        },
+        "nextBtn": {
+          "label": "${properties.nextctalabel @ context='scriptString'}",
+        },
+        "errormsg": {
+          "success": "${properties.successmsg @ context='scriptString'}",
+          "failure": "${properties.errormsg @ context='scriptString'}",
+          "congratsmsg": "${properties.congratsmsg @ context='scriptString'}",
+          "casemsg": "${properties.casemsg @ context='scriptString'}",
+        }
+      },
+    }
+  });
+</script>
+<div data-component="Spinner" data-cmp-type="react"></div>
+<div data-component="InternalUser" data-cmp-type="react" data-cmp-config="internaluserformConfig"></div>

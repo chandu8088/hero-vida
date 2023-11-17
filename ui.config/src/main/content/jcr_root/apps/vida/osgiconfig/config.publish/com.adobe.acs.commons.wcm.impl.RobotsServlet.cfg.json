@@ -1,0 +1,29 @@
+{
+  "sling.servlet.resourceTypes":[
+    "/apps/vida/components/page"
+  ],
+  "disallow.property.names":[
+    ""
+  ],
+  "sitemap.property.names":[
+    ""
+  ],
+  "disallow.directives":[
+    ""
+  ],
+  "sitemap.directives":[
+    ""
+  ],
+  "allow.directives":[
+    ""
+  ],
+  "print.grouping.comments":false,
+  "externalizer.domain":"publish",
+  "allow.property.names":[
+    ""
+  ],
+  "robots.content.property.path":"/content/dam/vida/config/seo-robots/robots.txt/jcr:content/renditions/original/jcr:content/jcr:data",
+  "user.agent.directives":[
+    ""
+  ]
+}

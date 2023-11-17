@@ -1,0 +1,17 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Full Image Banner Component"></div>
+<sly data-sly-test="${!wcmmode.edit}">
+<div class="vida-full-image-banner" data-section-id="${properties.sectionid}">
+    <div class="vida-full-image-banner__wrapper">
+      <div class="vida-full-image-banner__image" style="background-image: url('${properties.bgimage @ context='styleString'}');">
+        <div class="vida-full-image-banner__content">
+          <div class="vida-full-image-banner__title">
+            <p>${properties.title}</p>
+          </div>
+          <div class="vida-full-image-banner__description">
+            <p>${properties.description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</sly>

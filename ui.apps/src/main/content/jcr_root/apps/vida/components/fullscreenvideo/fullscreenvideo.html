@@ -1,0 +1,52 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder"
+	data-emptytext="Full Screen Video Component"></div>
+<sly data-sly-test="${!wcmmode.edit}">
+<div class="vida-full-screen-video" data-section-id="${properties.sectionid}">
+	<div class="vida-full-screen-video__asset">
+		<sly data-sly-test="${properties.variations == 'video'}">
+		<sly data-sly-use.DMVideoURLService="${'com.heromotocorp.vida.core.models.DMVideoURLService'
+								@ videoDamPath=properties.fullScreenvideo}"></sly>
+		<div class="vida-video-player" data-component="video-player">
+			<sly data-sly-test="${!properties.mobScreenVideo}">
+			<video class="vida-video-player__playback" autoplay playsinline
+				aria-label="video playback" src="${DMVideoURLService.dMVideoPathLink}"
+				muted loop></video>
+			</sly>
+			<sly data-sly-test="${properties.mobScreenVideo}">
+			<video class="vida-video-player__playback" autoplay playsinline aria-label="video playback"
+                src="" muted loop data-src-mobile="${properties.mobScreenVideo}"
+				data-src-desktop="${DMVideoURLService.dMVideoPathLink}"></video>
+			</sly>
+		</div>
+		</sly>
+
+		<sly data-sly-test="${properties.variations == 'image'}"> <picture>
+		<sly data-sly-use.DMImageURLService="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.fullScreenimage}"></sly>
+		<sly data-sly-use.DMImageURLServiceMob="${'com.heromotocorp.vida.core.models.DMImageURLService' @ imageDamPath=properties.fullScreenImageMob}"></sly>
+		<source srcset="${DMImageURLService.dMImagePathLink}"
+			media="(min-width:1024px)">
+		<source srcset="${DMImageURLServiceMob.dMImagePathLink}"
+			media="(min-width: 360px)">
+		<img class="vida-full-screen-video__asset-image"
+			src="${DMImageURLServiceMob.dMImagePathLink}" alt="${properties.imagealt}" />
+		</picture> </sly>
+	</div>
+	<div class="vida-container vida-full-screen-video__container">
+		<div data-sly-test="${properties.heading}"
+			class="vida-full-screen-video__title">${properties.heading
+			@context='html'}</div>
+		<div data-sly-test="${properties.contentTitle}"
+			class="vida-full-screen-video__content">
+			<div class="vida-full-screen-video__content-title">${properties.contentTitle
+				@context='html'}</div>
+			<div data-sly-test="${properties.contentSubTitle}"
+				class="vida-full-screen-video__content-description">${properties.contentSubTitle
+				@context='html'}</div>
+		</div>
+		<div data-sly-test="${properties.ctaLabel}"
+			class="vida-full-screen-video__cta">
+			<a href="${properties.ctaPath @ extension = 'html'}" class="btn btn--tertiary btn--lg cta--anchor" role="Button" data-link-position="Middle">${properties.ctaLabel}</a>
+		</div>
+	</div>
+</div>
+</sly>

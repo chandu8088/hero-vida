@@ -1,0 +1,8 @@
+{
+  "externalizer.domains":[
+  "local localhost:4502",
+  "author localhost:4502",
+  "publish localhost:4502",
+  "preview localhost:4502"
+  ]
+  }

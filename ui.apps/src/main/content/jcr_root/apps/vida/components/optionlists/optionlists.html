@@ -1,0 +1,18 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Option Lists Component"></div>
+<div class="vida-options-list">
+    <div class="vida-options-list__options-container">
+	  <sly data-sly-list.title="${resource.getChildren}">
+      	<sly data-sly-test="${title.name == 'optionlists'}">
+          <sly data-sly-list.items="${title.getChildren}">
+        	<div class="vida-options-list__options-container__option">
+                <img class="vida-full-screen-video__asset-image" src="${items.optioniconimage}" alt="${items.optioniconimagealttext}"/>
+                <div class="vida-options-list__options-container__option--body">
+                    ${items.optiontitle @ context = 'html'}
+                    ${items.optiondesc @ context = 'html'}
+                </div>
+        	</div>
+            </sly>
+          </sly>
+        </sly>
+    </div>
+</div>

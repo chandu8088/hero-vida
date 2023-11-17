@@ -1,0 +1,6 @@
+{
+     "scripts":[
+    "create path (sling:OrderedFolder) /content/dam/vida\r\n        create path (nt:unstructured) /content/dam/vida/jcr:content\r\n        set properties on /content/dam/vida/jcr:content\r\n        set cq:conf{String} to /conf/vida\r\n        set jcr:title{String} to \"Vida\"\r\n        end\r\ncreate service user vida-reader-service\r\n    set ACL on /conf, /etc,/content\r\n        allow jcr:read for vida-reader-service\r\n    end",
+    "create path (sling:OrderedFolder) /content/dam/vida\r\n        create path (nt:unstructured) /content/dam/vida/jcr:content\r\n        set properties on /content/dam/vida/jcr:content\r\n        set cq:conf{String} to /conf/vida\r\n        set jcr:title{String} to \"Vida\"\r\n        end\r\ncreate service user vida-writer-service\r\n    set ACL on /conf, /etc,/content\r\n        allow jcr:all for vida-writer-service\r\n    end"
+  ]
+}

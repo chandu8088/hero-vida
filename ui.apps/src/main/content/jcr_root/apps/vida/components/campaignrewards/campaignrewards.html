@@ -1,0 +1,20 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Campaign Rewards Component"></div>
+<section class="TurningImpact page-section  ptb60 clearfix" id="${properties.sectionId}">
+  <div class="container">
+	${properties.title @ context = 'html'}
+	<div class="row justify-content-center">
+	  <sly data-sly-list.title="${resource.getChildren}">
+        <sly data-sly-test="${title.name == 'rewards'}">
+          <sly data-sly-list.items="${title.getChildren}">
+              <div class="col-lg-4 col-md-4 col-11">
+                  <div class="card position-relative">
+                    <div class="icon"><img src="${items.rewardimagepath}" alt="${items.rewardimagealttext}"/></div>
+                    ${items.rewarddesc @ context = 'html'}
+                  </div>
+              </div>
+			</sly>
+          </sly>
+       </sly>
+	</div>
+  </div>
+</section>

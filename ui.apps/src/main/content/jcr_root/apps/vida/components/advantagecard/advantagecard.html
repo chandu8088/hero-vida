@@ -1,0 +1,31 @@
+<div data-sly-test="${wcmmode.edit}" class="cq-placeholder" data-emptytext="Advantage Card Component"></div>
+<section class="vida-advantage-card" data-component="advantage-card">
+<sly data-sly-list.title="${resource.getChildren}">
+  <sly data-sly-test="${title.name == 'advantage'}">
+	<sly data-sly-list.items="${title.getChildren}">
+		<div class="vida-advantage-card__wrapper vida-container" data-animation-wrapper="true">
+		  <div class="vida-advantage-card__container">
+			<div class="vida-advantage-card__container-image">
+			  <span class="vida-advantage-card__container-image__container"><img src="${items.iconimgpath}" alt=" ${items.iconimgalttext}"/></span>
+			</div>
+			<div class="vida-advantage-card__container-data">
+				<div class="vida-advantage-card__container-header vida-advantage-card__container-data-item">
+					<h2 class="vida-advantage-card__container-header__container">${items.advantagetitle @ context = 'html'}</h2>
+				</div>
+				<div class="vida-advantage-card__container-content vida-advantage-card__container-data-item">
+					${items.advdescription @ context = 'html'}
+					<ul class="vida-advantage-card__container-content__features">
+						<sly data-sly-list.child="${items.getChildren}">
+						  <sly data-sly-list.subchild="${child.getChildren}">
+							<li>${subchild.subpointtext @ context = 'html'} <br/></li> 
+						  </sly>
+						</sly>                   
+					</ul>
+				</div>
+			</div>
+		  </div>
+		</div>
+	</sly>
+  </sly>
+</sly>
+</section>
